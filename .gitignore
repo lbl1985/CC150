@@ -3,3 +3,4 @@
 *.v12*
 *.vcx*
 Debug/*
+.gitattributes
