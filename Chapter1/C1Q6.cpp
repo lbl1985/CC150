@@ -5,6 +5,7 @@
 #include <vector>
 #include "..\utils.h"
 
+
 typedef unsigned int uint;
 
 #define SIZE 6
@@ -23,8 +24,8 @@ void rotateMat(int** arr, uint s)
             arr[lastIndex - index][loop] = t;
         }
 
-        printf("\n This rotated matrix after loop %d is: \n", loop);
-        print2DMat<int>(arr, s, s);
+        //printf("\n This rotated matrix after loop %d is: \n", loop);
+        //print2DMat<int>(arr, s, s);
 
     }
 
@@ -32,8 +33,6 @@ void rotateMat(int** arr, uint s)
     print2DMat<int>(arr, s, s);
     
 }
-
-
 
 int main()
 {
@@ -49,6 +48,8 @@ int main()
             arrMat[i][j] = ++count;
         }
     }
+
+    generateRandomValue2D<int>(arrMat, SIZE, SIZE, 10);
 
     printf("dynamic allocation matrix is: \n");
     print2DMat<int>(arrMat, SIZE, SIZE);
