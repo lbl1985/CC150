@@ -3,32 +3,11 @@
 
 #include <iostream>
 #include <vector>
-//#include "..\utils.h"
+#include "..\utils.h"
 
 typedef unsigned int uint;
 
-#define SIZE 5
-
-void printMat(int arr[][5])
-{
-    for (uint i = 0; i < 5; i++) {
-        for (uint j = 0; j < 5; j++) {
-            printf("%3d", arr[i][j]);
-        }
-        printf("\n");
-    }
-}
-
-template<class T>
-void print2DMat(T** mat, uint rows, uint cols)
-{
-    for (uint i = 0; i < rows; i++) {
-        for (uint j = 0; j < cols; j++) {
-            printf("%4d ", mat[i][j]);
-        }
-        printf("\n");
-    }
-}
+#define SIZE 6
 
 void rotateMat(int** arr, uint s)
 {
@@ -58,23 +37,22 @@ void rotateMat(int** arr, uint s)
 
 int main()
 {
-    int arr[5][5] = { { 1, 2, 3, 4, 5 }, { 6, 7, 8, 9, 10 }, { 11, 12, 13, 14, 15 }, { 16, 17, 18, 19, 20 }, { 21, 22, 23, 24, 25 } };
     // Dynamically create a 2D array
-    int** arrMat = new int*[5];
-    for (int i = 0; i < 5; i++) {
-        arrMat[i] = new int[5];
+    int** arrMat = new int*[SIZE];
+    for (int i = 0; i < SIZE; i++) {
+        arrMat[i] = new int[SIZE];
     }
 
     int count = 10; 
-    for (int i = 0; i < 5; i++) {
-        for (int j = 0; j < 5; j++) {
+    for (int i = 0; i < SIZE; i++) {
+        for (int j = 0; j < SIZE; j++) {
             arrMat[i][j] = ++count;
         }
     }
 
     printf("dynamic allocation matrix is: \n");
-    print2DMat<int>(arrMat, 5, 5);
+    print2DMat<int>(arrMat, SIZE, SIZE);
 
-    rotateMat(arrMat, 5);
+    rotateMat(arrMat, SIZE);
     return 0;
 }

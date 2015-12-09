@@ -5,7 +5,7 @@
 
 typedef unsigned int uint;
 
-template<T>
+template<class T>
 void print2DMat(T** mat, uint rows, uint cols)
 {
     for (uint i = 0; i < rows; i++) {
