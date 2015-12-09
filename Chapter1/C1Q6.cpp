@@ -55,5 +55,11 @@ int main()
     print2DMat<int>(arrMat, SIZE, SIZE);
 
     rotateMat(arrMat, SIZE);
+
+    for (int i = 0; i < SIZE; i++) {
+        delete[] arrMat[i];
+    }
+    delete[] arrMat;
+
     return 0;
 }
