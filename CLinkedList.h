@@ -38,10 +38,10 @@ public:
     // print out the list from the current node
     void printList()
     {
-        printf("%3d,", this->data);
+        cout << this->data << ", ";        
         const Node* n = this->next;
         while (n != nullptr) {
-            cout << n->data << "   ";
+            cout << n->data << ", ";
             n = n->next;
         }
         printf("\n");

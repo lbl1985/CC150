@@ -29,3 +29,11 @@ void generateRandomValue2D(T** arr, uint rows, uint cols, T maxValue)
         }
     }
 }
+
+template<class T>
+T generateRandomValue(T minValue, T maxValue)
+{
+    time_t* t = new time_t();
+    srand(uint(time(t)));
+    return rand() % maxValue + minValue;
+}
