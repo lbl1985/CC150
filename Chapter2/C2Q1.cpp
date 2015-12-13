@@ -16,9 +16,12 @@ void removeOneNode(Node<int>* p, Node<int>* c)
 
 int main()
 {
+    time_t* t = new time_t();
+    srand(uint(time(t)));
+    
     Node<int>* head = new Node<int>(0);
     for (int i = 0; i < SIZE; i++) {
-        head->appendToTail(generateRandomValue<int>(0, 5));
+        head->appendToTail(rand() % 5 + 1);
     }
 
     printf("The original linked list is: \n");
