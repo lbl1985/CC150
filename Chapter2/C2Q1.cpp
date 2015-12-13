@@ -5,15 +5,6 @@
 
 #define SIZE 10
 
-// p is the previous node
-void removeOneNode(Node<int>* p, Node<int>* c)
-{
-    p->next = c->next;
-    c->next = nullptr;
-    c->data = 0;
-    delete c;
-}
-
 int main()
 {
     time_t* t = new time_t();
@@ -23,6 +14,17 @@ int main()
     for (int i = 0; i < SIZE; i++) {
         head->appendToTail(rand() % 5 + 1);
     }
+    //head->appendToTail(2);
+    //head->appendToTail(1);
+    //head->appendToTail(3);
+    //head->appendToTail(1);
+    //head->appendToTail(1);
+    //head->appendToTail(2);
+    //head->appendToTail(5);
+    //head->appendToTail(1);
+    //head->appendToTail(3);
+    //head->appendToTail(5);
+
 
     printf("The original linked list is: \n");
     head->printList();
@@ -30,23 +32,27 @@ int main()
 
     // Start to remove elements from the list
     Node<int>* h = head;
-    Node<int>* p = head;
-    Node<int>* n = h->next;
+    Node<int> *p, *n;
     int data;
 
-    while (h != nullptr) {
+    while (h != nullptr && h->next != nullptr) {
         data = h->data;
+        cout << "Working at " << data << endl;
+        n = h->next;
         p = h;
         while (n != nullptr) {
             if (n->data == data) {
-                removeOneNode(p, n);
-                n = p->next;
+                p->next = n->next; 
+                //delete n;
+                n = p->next;  
+                cout << data << ", ";                
             } else {
                 p = n;
                 n = n->next;
             }
         }
         h = h->next;
+        cout << endl;
     }
 
     printf("The linked list after remove duplicate items. \n");

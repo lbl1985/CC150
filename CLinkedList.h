@@ -16,7 +16,7 @@ public:
         next = nullptr;
     }
 
-    ~Node()
+    void deallocateWholeLinkedList()
     {
         if (this->next == nullptr) {
             data = 0;
