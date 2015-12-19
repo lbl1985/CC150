@@ -3,6 +3,10 @@
 // EXAMPLE
 // input: the node c from the linked list a -> b -> c -> d -> e
 // result: nothing is returned, but the new linked list looks like a->b->d->e
+// 
+// This question is answered in-correct, I have not paid any attention to 
+// "Given only access to that node"
+// 
 
 #include <iostream>
 #include "..\utils.h"
