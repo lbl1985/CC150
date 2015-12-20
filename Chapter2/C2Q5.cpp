@@ -36,7 +36,6 @@ Node<int>* NumberToLinkedList(int num)
     Node<int>* head = new Node<int>(num % 10);
     num = num / 10;
     int count = 2;
-    int divider;
     while (num) {        
         head->appendToTail(num % 10);
         num /= 10;
