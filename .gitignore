@@ -4,3 +4,4 @@
 *.vcx*
 Debug/*
 .gitattributes
+cc150/*
