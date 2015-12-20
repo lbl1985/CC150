@@ -11,6 +11,9 @@
 // Input: (6 -> 1 -> 7) + (2 -> 9 -> 5) that is: 617 + 295
 // Output: 9 -> 1 -> 2. That is 912
 
+// The current implement is correct, but this may not be ideal
+// it's better to reimplement this question. 
+
 #include <iostream>
 #include "..\utils.h"
 #include "..\CLinkedList.h"
