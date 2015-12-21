@@ -34,6 +34,17 @@ void removeMiddleItem(Node<int>* head)
     delete slow;    
 }
 
+bool removeOneNode(Node<int>* n)
+{
+    if (n != nullptr && n->next != nullptr) {
+        Node<int>* next = n->next;
+        n->data = next->data;
+        n->next = next->next;
+        return true;
+    } else {
+        return false;
+    }
+}
 
 int main()
 {
@@ -45,7 +56,10 @@ int main()
     }
     head->printList();
 
-    removeMiddleItem(head);
+    //removeMiddleItem(head);
+
+    printf("head->next->next is: %d\n", head->next->next->data);
+    removeOneNode(head->next->next);
     head->printList();
 
     head->deallocateWholeLinkedList();
