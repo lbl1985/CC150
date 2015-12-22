@@ -7,6 +7,7 @@
 // This question is answered in-correct, I have not paid any attention to 
 // "Given only access to that node"
 // 
+// Now the answer is corrected, with the function removeOneNode below.
 
 #include <iostream>
 #include "..\utils.h"
