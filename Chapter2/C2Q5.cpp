@@ -13,6 +13,7 @@
 
 // The current implement is correct, but this may not be ideal
 // it's better to reimplement this question. 
+// Today I should be able to fix this issue and proceed to another 2 questions.
 
 #include <iostream>
 #include "..\utils.h"
