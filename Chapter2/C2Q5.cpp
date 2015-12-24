@@ -52,6 +52,58 @@ int addTwoLinkedList(const Node<int>* a, const Node<int>*b)
     return aNum + bNum;
 }
 
+// This is a linked list solution
+Node<int>* AddTwoLinkedList(Node<int>* a, Node<int>* b)
+{
+    if (nullptr == a && nullptr == b) {
+        return nullptr;
+    }
+    if (nullptr == a) {
+        return b;
+    }
+    if (nullptr == b) {
+        return a;
+    }
+    Node<int>* runnerA = a;
+    Node<int>* runnerB = b;
+    // initial the res head node as 0, 
+    Node<int>* res = new Node<int>(0);    
+    bool initial = true;
+
+    int additional = 0;
+    while (runnerA != nullptr && runnerB != nullptr) {
+        int temp = runnerA->data + runnerB->data;             
+        if (initial) {
+            res->data = temp % 10;
+            initial = false;
+        } else {
+            res->appendToTail(temp % 10 + additional); 
+            additional = 0;
+        }        
+        additional = temp / 10;
+        runnerA = runnerA->next;
+        runnerB = runnerB->next;
+    }
+
+    if (nullptr == runnerA) {
+        while (runnerB != nullptr) {
+            res->appendToTail(runnerB->data + additional);
+            additional = 0;
+            runnerB = runnerB->next;
+        }
+    }
+
+    if (nullptr == runnerB) {
+        while (runnerA != nullptr) {
+            res->appendToTail(runnerA->data + additional);
+            additional = 0;
+            runnerA = runnerA->next;
+        }
+    }
+
+    return res;
+}
+
 
 int main()
 {
@@ -72,11 +124,17 @@ int main()
 
     int res = addTwoLinkedList(a, b);
 
-    Node<int> *c = NumberToLinkedList(res);
+    Node<int> *c = NumberToLinkedList(res);    
 
+    printf("Used number: \n");
     cout << linkedListToNumber(a) << " + " << linkedListToNumber(b) << " = " << linkedListToNumber(c) << endl;
+    
+    Node<int> *d = AddTwoLinkedList(a, b);
+    printf("Used linked list: \n");
+    cout << linkedListToNumber(a) << " + " << linkedListToNumber(b) << " = " << linkedListToNumber(d) << endl;
 
     a->deallocateWholeLinkedList();
     b->deallocateWholeLinkedList();
     c->deallocateWholeLinkedList();
+    d->deallocateWholeLinkedList();
 }
