@@ -15,7 +15,7 @@
 // it's better to reimplement this question. 
 // Today I should be able to fix this issue and proceed to another 2 questions.
 
-#include "..\utils.h"
+#include "..\inc\utils.h"
 
 Node<int>* NumberToLinkedList(int num)
 {    

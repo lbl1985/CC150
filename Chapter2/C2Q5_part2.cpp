@@ -16,7 +16,7 @@
 // Section 2, test case 2: 9912 + 88
 // Section 2, test case 3: 8912 + 88
 
-#include "..\utils.h"
+#include "..\inc\utils.h"
 
 int addTwoLinkedListDesOrder(Node<int>* la, Node<int>* lb)
 {
