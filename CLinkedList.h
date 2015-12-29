@@ -35,6 +35,17 @@ public:
         n->next = end;
     }
 
+    size_t size()
+    {
+        size_t s = 0;
+        Node* head = this;
+        while (head) {
+            s++;
+            head = head->next;
+        }
+        return s;
+    }
+
     // print out the list from the current node
     void printList()
     {

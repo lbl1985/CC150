@@ -47,7 +47,7 @@ T linkedListToNumAscOrder(const Node<T>* head)
     if (nullptr == head) {
         return -1;
     } else {
-        int num = 0;
+        T num = 0;
         int count = 0;
         while (head) {
             num += (T)(head->data * pow(10, count++));
@@ -55,4 +55,21 @@ T linkedListToNumAscOrder(const Node<T>* head)
         }
         return num;
     }        
+}
+
+template<class T>
+T linkedListToNumDesOrder(Node<T>* head)
+{
+    if (nullptr == head) {
+        return -1;
+    } else {
+        size_t s = head->size();
+        T num = 0; 
+        while (s) {
+            num += head->data * (T)(pow(10, --s));
+            head = head->next;
+        }
+        return num;
+    }
+    
 }

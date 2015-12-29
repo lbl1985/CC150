@@ -11,6 +11,10 @@
 // Input: (6 -> 1 -> 7) + (2 -> 9 -> 5) that is: 617 + 295
 // Output: 9 -> 1 -> 2. That is 912
 
+// 
+// Section 2, test case: 9653 + 653
+// 
+
 #include "..\utils.h"
 
 int main()
@@ -20,7 +24,19 @@ int main()
     l1->appendToTail(5);
     l1->appendToTail(3);
 
-    int l1Num= linkedListToNumAscOrder<int>(l1);
-    std::cout << "l1Num is: " << l1Num << std::endl;
+    Node<int> *l2 = new Node<int>(6);
+    l2->appendToTail(5);
+    l2->appendToTail(3);
+        
+    std::cout << "print list l1 is: "; 
+    l1->printList();
+    std::cout << "print list l2 is: ";
+    l2->printList();
+    std::cout << "L1Num in Ascend order is: " << linkedListToNumAscOrder<int>(l1) << std::endl;
+    std::cout << "L2Num in Ascend order is: " << linkedListToNumAscOrder<int>(l2) << std::endl;
+    std::cout << "l1Num in Descend order is: " << linkedListToNumDesOrder<int>(l1) << std::endl;
+    std::cout << "l2Num in Descend order is: " << linkedListToNumDesOrder<int>(l2) << std::endl;
+    std::cout << "L1 size is: " << l1->size() << std::endl;
+    std::cout << "L2 size is: " << l2->size() << std::endl;
     return 0;
 }
