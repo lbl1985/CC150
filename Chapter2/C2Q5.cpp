@@ -14,24 +14,8 @@
 // The current implement is correct, but this may not be ideal
 // it's better to reimplement this question. 
 // Today I should be able to fix this issue and proceed to another 2 questions.
-// Test commit
 
-#include <iostream>
 #include "..\utils.h"
-#include "..\CLinkedList.h"
-#include <time.h>
-#include <stdlib.h>
-
-int linkedListToNumber(const Node<int>* l)
-{
-    int count = 0;
-    int num = 0;
-    while (l) {
-        num += l->data * (int)(pow(10, count++));
-        l = l->next;
-    }
-    return num;
-}
 
 Node<int>* NumberToLinkedList(int num)
 {    
@@ -48,8 +32,8 @@ Node<int>* NumberToLinkedList(int num)
 
 int addTwoLinkedList(const Node<int>* a, const Node<int>*b)
 {
-    int aNum = linkedListToNumber(a);
-    int bNum = linkedListToNumber(b);
+    int aNum = linkedListToNumAscOrder<int>(a);
+    int bNum = linkedListToNumAscOrder<int>(b);
 
     return aNum + bNum;
 }
@@ -129,11 +113,11 @@ int main()
     Node<int> *c = NumberToLinkedList(res);    
 
     printf("Used number: \n");
-    cout << linkedListToNumber(a) << " + " << linkedListToNumber(b) << " = " << linkedListToNumber(c) << endl;
+    cout << linkedListToNumAscOrder<int>(a) << " + " << linkedListToNumAscOrder<int>(b) << " = " << linkedListToNumAscOrder<int>(c) << endl;
     
     Node<int> *d = AddTwoLinkedList(a, b);
     printf("Used linked list: \n");
-    cout << linkedListToNumber(a) << " + " << linkedListToNumber(b) << " = " << linkedListToNumber(d) << endl;
+    cout << linkedListToNumAscOrder<int>(a) << " + " << linkedListToNumAscOrder<int>(b) << " = " << linkedListToNumAscOrder<int>(d) << endl;
 
     a->deallocateWholeLinkedList();
     b->deallocateWholeLinkedList();

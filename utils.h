@@ -4,6 +4,7 @@
 #include <iostream>
 #include <time.h>       // time
 #include <stdlib.h>     // srand, rand
+#include "CLinkedList.h"
 
 typedef unsigned int uint;
 
@@ -36,4 +37,22 @@ T generateRandomValue(T minValue, T maxValue)
     time_t* t = new time_t();
     srand(uint(time(t)));
     return rand() % maxValue + minValue;
+}
+
+// convert linked list to number for Ascend order
+template<class T>
+T linkedListToNumAscOrder(const Node<T>* head)
+{
+
+    if (nullptr == head) {
+        return -1;
+    } else {
+        int num = 0;
+        int count = 0;
+        while (head) {
+            num += (T)(head->data * pow(10, count++));
+            head = head->next;
+        }
+        return num;
+    }        
 }
