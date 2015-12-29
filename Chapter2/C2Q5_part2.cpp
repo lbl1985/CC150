@@ -89,10 +89,12 @@ int addTwoLinkedListDesOrder(Node<int>* la, Node<int>* lb)
 
 int C2Q5_part2()
 {
-    Node<int> *l1 = new Node<int>(9);
-    l1->appendToTail(6);
-    l1->appendToTail(5);
-    l1->appendToTail(3);
+    int l1arr[4] = {9, 6, 5, 3};
+    Node<int> *l1 = new Node<int>(l1arr, 4);
+    //Node<int> *l1 = new Node<int>(9);
+    //l1->appendToTail(6);
+    //l1->appendToTail(5);
+    //l1->appendToTail(3);
 
     Node<int> *l2 = new Node<int>(6);
     l2->appendToTail(5);

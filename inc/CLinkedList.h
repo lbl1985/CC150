@@ -10,11 +10,23 @@ template <class T>
 class Node
 {
 public:
-    Node(int d)
+    Node(T d)
     {
         data = d;
         next = nullptr;
         s = 1;
+    }
+
+    Node(T* arr, std::size_t s)
+    {
+        if (arr != nullptr) {
+            data = arr[0];
+            next = nullptr;
+            s = 1;
+            for (size_t i = 1; i < s; i++) {
+                this->appendToTail(arr[i]);                
+            }
+        }
     }
 
     void deallocateWholeLinkedList()
