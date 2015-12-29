@@ -29,7 +29,7 @@ int addTwoLinkedListDesOrder(Node<int>* la, Node<int>* lb)
     } else {
         size_t sa = lb->size();
         size_t sb = lb->size();
-        Node<int> *curP1 = nullptr, *anchorP1 = nullptr;
+        Node<int> *curP1 = nullptr;
         Node<int> *curP2 = nullptr;
         size_t s1 = 0, s2 = 0, s1anchor = 0;
         if (sa >= sb) {
@@ -38,8 +38,7 @@ int addTwoLinkedListDesOrder(Node<int>* la, Node<int>* lb)
         } else {
             curP1 = lb; s1 = sb; s1anchor = sb;
             curP2 = la; s2 = sa;
-        }
-        Node<int>*  preP1 = curP1;        
+        }        
         Node<int>* head = nullptr;
 
         while (s1-- > s2) {
@@ -57,9 +56,22 @@ int addTwoLinkedListDesOrder(Node<int>* la, Node<int>* lb)
             temp = temp ? temp - 10 : 0;
 
             if (additional) {
-                int ts = head->size();
-                while (ts--) {
-                    int subtemp = (*head)[ts] + additional;
+                int updatePos = head->size() - 1;
+                head->appendToTail(temp);
+                while (updatePos-- >= 0) {
+                    temp = (*head)[updatePos] + additional;
+                    additional = temp > 9 ? 1 : 0;
+                    (*head)[updatePos] = temp - 10;
+                }
+                // The first element still have additional, then we need to extend the existing link into another one.
+                if (additional) {
+                    Node<int>* newHead = new Node<int>(1);
+                    size_t oldListSize = head->size();
+                    for (int i = 0; i < oldListSize; i++) {
+                        newHead->appendToTail((*head)[i]);
+                    }                    
+                    head->deallocateWholeLinkedList();
+                    head = newHead;
                 }
             } else {
                 head->appendToTail(temp);
