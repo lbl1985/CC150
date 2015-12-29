@@ -48,20 +48,23 @@ int addTwoLinkedListDesOrder(Node<int>* la, Node<int>* lb)
                 curP1 = curP1->next;
             } else {
                 head = new Node<int>(curP1->data);
-                if (curP1->data < 9) {
-                    anchorP1 = head;
-                }
             }
         }
 
-        while (s1) {            
+        while (s1--) {            
             int temp = curP1->data + curP2->data;
             int additional = temp > 9 ? 1 : 0;
             temp = temp ? temp - 10 : 0;
 
-            int deltaPos = s1anchor - s1;
+            if (additional) {
+                int ts = head->size();
+                while (ts--) {
+                    int subtemp = (*head)[ts] + additional;
+                }
+            } else {
+                head->appendToTail(temp);
+            }
 
-            s1--;
         }
         return 0;
 
@@ -78,7 +81,8 @@ int main()
     Node<int> *l2 = new Node<int>(6);
     l2->appendToTail(5);
     l2->appendToTail(3);
-        
+     
+    (*l1)[2] = 3;
     std::cout << "print list l1 is: "; 
     l1->printList();
     int t = (*l1)[1];

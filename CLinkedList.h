@@ -63,6 +63,15 @@ public:
         return head->data;
     }
 
+    T& operator[](std::size_t idx)
+    {
+        Node* head = this;
+        while (idx-- && head) {
+            head = head->next;
+        }
+        return head->data;
+    }
+
     Node* next;
     T data;
     size_t s;
