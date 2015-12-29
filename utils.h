@@ -58,7 +58,7 @@ T linkedListToNumAscOrder(const Node<T>* head)
 }
 
 template<class T>
-T linkedListToNumDesOrder(Node<T>* head)
+T linkedListToNumDesOrder(const Node<T>* head)
 {
     if (nullptr == head) {
         return -1;
