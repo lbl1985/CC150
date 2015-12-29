@@ -27,7 +27,7 @@ int addTwoLinkedListDesOrder(Node<int>* la, Node<int>* lb)
     } else if (nullptr == lb) {
         return linkedListToNumDesOrder<int> (la);
     } else {
-        size_t sa = lb->size();
+        size_t sa = la->size();
         size_t sb = lb->size();
         Node<int> *curP1 = nullptr;
         Node<int> *curP2 = nullptr;
@@ -41,33 +41,35 @@ int addTwoLinkedListDesOrder(Node<int>* la, Node<int>* lb)
         }        
         Node<int>* head = nullptr;
 
-        while (s1-- > s2) {
+        while (s1 > s2) {
             if (head) {
-                head->appendToTail(curP1->data);
-                curP1 = curP1->next;
+                head->appendToTail(curP1->data);                
             } else {
-                head = new Node<int>(curP1->data);
+                head = new Node<int>(curP1->data);                
             }
+            curP1 = curP1->next;
+            s1--;
         }
 
-        while (s1--) {            
+        while (s1) {            
             int temp = curP1->data + curP2->data;
             int additional = temp > 9 ? 1 : 0;
-            temp = temp ? temp - 10 : 0;
+            temp = additional ? temp - 10 : temp;
 
             if (additional) {
                 int updatePos = head->size() - 1;
                 head->appendToTail(temp);
-                while (updatePos-- >= 0) {
+                while (additional && updatePos >= 0) {
                     temp = (*head)[updatePos] + additional;
                     additional = temp > 9 ? 1 : 0;
-                    (*head)[updatePos] = temp - 10;
+                    (*head)[updatePos] = additional ? temp - 10 : temp;
+                    updatePos--;
                 }
                 // The first element still have additional, then we need to extend the existing link into another one.
                 if (additional) {
                     Node<int>* newHead = new Node<int>(1);
                     size_t oldListSize = head->size();
-                    for (int i = 0; i < oldListSize; i++) {
+                    for (size_t i = 0; i < oldListSize; i++) {
                         newHead->appendToTail((*head)[i]);
                     }                    
                     head->deallocateWholeLinkedList();
@@ -76,9 +78,11 @@ int addTwoLinkedListDesOrder(Node<int>* la, Node<int>* lb)
             } else {
                 head->appendToTail(temp);
             }
-
+            curP1 = curP1->next;
+            curP2 = curP2->next;
+            s1--;
         }
-        return 0;
+        return linkedListToNumDesOrder(head);
 
     }
 }
@@ -94,20 +98,14 @@ int main()
     l2->appendToTail(5);
     l2->appendToTail(3);
      
-    (*l1)[2] = 3;
-    std::cout << "print list l1 is: "; 
-    l1->printList();
-    int t = (*l1)[1];
-    std::cout << "L1 3rd element is: " << (*l1)[2] << std::endl;
-    std::cout << "print list l2 is: ";
-    l2->printList();
-    std::cout << "L2 2nd element is: " << (*l2)[1] << std::endl;
-    std::cout << "L1Num in Ascend order is: " << linkedListToNumAscOrder<int>(l1) << std::endl;
-    std::cout << "L2Num in Ascend order is: " << linkedListToNumAscOrder<int>(l2) << std::endl;
-    std::cout << "l1Num in Descend order is: " << linkedListToNumDesOrder<int>(l1) << std::endl;
-    std::cout << "l2Num in Descend order is: " << linkedListToNumDesOrder<int>(l2) << std::endl;
+    std::cout << "print list l1 is: "; l1->printList();
+    std::cout << "print list l2 is: "; l2->printList();
     std::cout << "L1 size is: " << l1->size() << std::endl;
     std::cout << "L2 size is: " << l2->size() << std::endl;
+    
+    std::cout << "l1Num in Descend order is: " << linkedListToNumDesOrder<int>(l1) << std::endl;
+    std::cout << "l2Num in Descend order is: " << linkedListToNumDesOrder<int>(l2) << std::endl;
+    std::cout << linkedListToNumDesOrder<int>(l1) << " + " << linkedListToNumDesOrder(l2) << " = " << addTwoLinkedListDesOrder(l1, l2) << std::endl;
     
     return 0;
 }
