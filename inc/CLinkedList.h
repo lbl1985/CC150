@@ -17,13 +17,13 @@ public:
         s = 1;
     }
 
-    Node(T* arr, std::size_t s)
+    Node(T* arr, std::size_t size)
     {
         if (arr != nullptr) {
             data = arr[0];
             next = nullptr;
             s = 1;
-            for (size_t i = 1; i < s; i++) {
+            for (size_t i = 1; i < size; i++) {
                 this->appendToTail(arr[i]);                
             }
         }
