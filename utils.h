@@ -8,6 +8,10 @@
 
 typedef unsigned int uint;
 
+// List of major entries for each question
+int C2Q5();
+int C2Q5_part2();
+
 template<class T>
 void print2DMat(T** mat, uint rows, uint cols)
 {

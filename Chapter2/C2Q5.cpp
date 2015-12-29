@@ -91,7 +91,7 @@ Node<int>* AddTwoLinkedList(Node<int>* a, Node<int>* b)
 }
 
 
-int main()
+int C2Q5()
 {
     Node<int> *a = new Node<int>(7);
     a->appendToTail(1);
@@ -123,4 +123,5 @@ int main()
     b->deallocateWholeLinkedList();
     c->deallocateWholeLinkedList();
     d->deallocateWholeLinkedList();
+    return 0;
 }

@@ -87,7 +87,7 @@ int addTwoLinkedListDesOrder(Node<int>* la, Node<int>* lb)
     }
 }
 
-int main()
+int C2Q5_part2()
 {
     Node<int> *l1 = new Node<int>(9);
     l1->appendToTail(6);
