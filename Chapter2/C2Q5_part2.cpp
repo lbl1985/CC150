@@ -89,19 +89,43 @@ int addTwoLinkedListDesOrder(Node<int>* la, Node<int>* lb)
 
 int C2Q5_part2()
 {
-    int l1arr[4] = {9, 6, 5, 3};
-    int l2arr[3] = {6, 5, 3};
-    Node<int> *l1 = new Node<int>(l1arr, 4);
-    Node<int> *l2 = new Node<int>(l2arr, 3);
-         
-    std::cout << "print list l1 is: "; l1->printList();
-    std::cout << "print list l2 is: "; l2->printList();
-    std::cout << "L1 size is: " << l1->size() << std::endl;
-    std::cout << "L2 size is: " << l2->size() << std::endl;
+    bool debug = false;
     
-    std::cout << "l1Num in Descend order is: " << linkedListToNumDesOrder<int>(l1) << std::endl;
-    std::cout << "l2Num in Descend order is: " << linkedListToNumDesOrder<int>(l2) << std::endl;
-    std::cout << linkedListToNumDesOrder<int>(l1) << " + " << linkedListToNumDesOrder(l2) << " = " << addTwoLinkedListDesOrder(l1, l2) << std::endl;
+    // Test case 1: 9643 + 653 = 
+    int arr1_1[4] = {9, 6, 5, 3};
+    int arr1_2[3] = {6, 5, 3};
+    Node<int> *l1 = new Node<int>(arr1_1, 4);
+    Node<int> *l2 = new Node<int>(arr1_2, 3);
     
+    if (debug) {
+        std::cout << "print list l1 is: "; l1->printList();
+        std::cout << "print list l2 is: "; l2->printList();
+        std::cout << "L1 size is: " << l1->size() << std::endl;
+        std::cout << "L2 size is: " << l2->size() << std::endl;
+    
+        std::cout << "l1Num in Descend order is: " << linkedListToNumDesOrder<int>(l1) << std::endl;
+        std::cout << "l2Num in Descend order is: " << linkedListToNumDesOrder<int>(l2) << std::endl;
+    }
+    
+    std::cout << "Test case 1: " << linkedListToNumDesOrder<int>(l1) << " + " << linkedListToNumDesOrder(l2) << " = " << addTwoLinkedListDesOrder(l1, l2) << std::endl;
+    
+    l1->deallocateWholeLinkedList();    l1 = nullptr;
+    l2->deallocateWholeLinkedList();    l2 = nullptr;
+
+    // Section 2, test case 2: 9912 + 88
+    int arr2_1[4] = {9, 9, 1, 2};
+    int arr2_2[2] = {8, 8};
+    l1 = new Node<int>(arr2_1, 4);
+    l2 = new Node<int>(arr2_2, 2);
+
+    std::cout << "Test case 2: " << linkedListToNumDesOrder<int>(l1) << " + " << linkedListToNumDesOrder(l2) << " = " << addTwoLinkedListDesOrder(l1, l2) << std::endl;
+    
+    // Section 2, test case 3: 8912 + 88
+    int arr3_1[4] = {8, 9, 1, 2};
+    int arr3_2[2] = {8, 8};
+    l1 = new Node<int>(arr3_1, 4);
+    l2 = new Node<int>(arr3_2, 2);
+
+    std::cout << "Test case 3: " << linkedListToNumDesOrder<int>(l1) << " + " << linkedListToNumDesOrder(l2) << " = " << addTwoLinkedListDesOrder(l1, l2) << std::endl;
     return 0;
 }
