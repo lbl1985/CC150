@@ -30,24 +30,24 @@ int addTwoLinkedListDesOrder(Node<int>* la, Node<int>* lb)
         size_t sb = lb->size();
         Node<int>* curP1;
         Node<int>* curP2;
-        size_t s1, s2;
+        size_t s1, s2, s1anchor;
         if (sa >= sb) {
-            curP1 = la; s1 = sa;
+            curP1 = la; s1 = sa; s1anchor = sa;
             curP2 = lb; s2 = sb;
         } else {
-            curP1 = lb; s1 = sb; 
+            curP1 = lb; s1 = sb; s1anchor = sb;
             curP2 = la; s2 = sa;
         }
         Node<int>*  preP1 = curP1;        
         Node<int>* head = nullptr;
 
-        while (s1 > s2) {
+        while (s1-- > s2) {
             if (head) {
                 head->appendToTail(curP1->data);
-
+                curP1 = curP1->next;
             }
         }
-
+        return 0;
 
     }
 }

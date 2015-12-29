@@ -14,6 +14,7 @@ public:
     {
         data = d;
         next = nullptr;
+        s = 1;
     }
 
     void deallocateWholeLinkedList()
@@ -33,16 +34,11 @@ public:
             n = n->next;
         }
         n->next = end;
+        s++;
     }
 
-    size_t size()
+    size_t size() const
     {
-        size_t s = 0;
-        Node* head = this;
-        while (head) {
-            s++;
-            head = head->next;
-        }
         return s;
     }
 
@@ -60,4 +56,5 @@ public:
 
     Node* next;
     T data;
+    size_t s;
 };
