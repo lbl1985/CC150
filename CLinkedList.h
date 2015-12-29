@@ -54,6 +54,15 @@ public:
         printf("\n");
     }
 
+    const T& operator[](std::size_t idx) const
+    {
+        const Node* head = this;
+        while (idx-- && head) {
+            head = head->next;
+        }
+        return head->data;
+    }
+
     Node* next;
     T data;
     size_t s;
