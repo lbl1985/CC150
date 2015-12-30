@@ -3,9 +3,41 @@
 // palindrome example 2: a -> b -> c -> c -> b -> a
 
 #include "..\inc\utils.h"
+#include <stack>
+
+bool isPalindrome(const Node<int>* head)
+{
+    if (nullptr == head) {
+        return false;
+    }
+
+    const Node<int>* p = head;
+    std::stack<int> stk;
+    while (p) {
+        stk.push(p->data);
+        p = p->next;
+    }
+
+    p = head;
+    while (p) {
+        if (stk.top() == p->data) {
+            stk.pop();
+            p = p->next;
+        } else {
+            return false;
+        }
+    }
+    return true;
+}
 
 int C2Q7()
 {
-    std::cout << "this is C2Q7" << std::endl;
+    int arr[8] = { 1, 2, 3, 4, 3, 2, 1, 5 };
+    Node<int>* head = new Node<int>(arr, 8);
+
+    std::cout << "Test case 1: " << std::endl;
+    head->printList();
+    std::cout << " is palindrome: " << (isPalindrome(head) ? "true" : "false");
+
     return 0;
 }
