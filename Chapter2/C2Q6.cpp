@@ -17,21 +17,31 @@ const Node<int>* GetBeginOfLoop(const Node<int>* head)
 
     Node<int> const *fastRunner = head, *slowRunner = head;
 
-    if (fastRunner->next != nullptr) {
-        fastRunner = fastRunner->next->next;
-    }
-
-    while (fastRunner->next && fastRunner->next->next && fastRunner != slowRunner) {
+    while (fastRunner && fastRunner->next) {
         slowRunner = slowRunner->next;
         fastRunner = fastRunner->next->next;
+        if (fastRunner == slowRunner) {
+            break;
+        }
     }
+
+    if (fastRunner == nullptr || fastRunner->next == nullptr) {
+        return nullptr;
+    }
+
+    slowRunner = head;
+    while (slowRunner != fastRunner) {
+        slowRunner = slowRunner->next;
+        fastRunner = fastRunner->next;
+    }
+
     return slowRunner;
 }
 
 int C2Q6()
 {
-    int arr[6] = { 3, 6, 9, 10, 8, 7 };
-    Node<int> *head = new Node<int>(arr, 6);
+    int arr[7] = { 3, 6, 9, 10, 8, 7, 6 };
+    Node<int> *head = new Node<int>(arr, 7);
     Node<int> *runner = head;
     while (runner->next != nullptr) {
         runner = runner->next;
