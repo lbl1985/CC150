@@ -6,9 +6,10 @@ int main()
 
     // Chapter 1
 
-    // Chapter 2
+    // Chapter 2 
     //res = C2Q5();
-    res = C2Q5_part2();
+    //res = C2Q5_part2();
+    res = C2Q6();
 
     return res;
 }
