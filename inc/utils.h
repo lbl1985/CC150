@@ -12,6 +12,7 @@ typedef unsigned int uint;
 int C2Q5();
 int C2Q5_part2();
 int C2Q6();
+int C2Q7();
 
 template<class T>
 void print2DMat(T** mat, uint rows, uint cols)
