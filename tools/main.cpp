@@ -10,7 +10,10 @@ int main()
     //res = C2Q5();
     //res = C2Q5_part2();
     //res = C2Q6();
-    res = C2Q7();
+    //res = C2Q7();
+
+    // Chapter 3
+    res = C3Q1();
 
     return res;
 }

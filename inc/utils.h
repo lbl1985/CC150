@@ -9,10 +9,13 @@
 typedef unsigned int uint;
 
 // List of major entries for each question
+// Chapter 2
 int C2Q5();
 int C2Q5_part2();
 int C2Q6();
 int C2Q7();
+// Chapter 3
+int C3Q1();
 
 template<class T>
 void print2DMat(T** mat, uint rows, uint cols)
