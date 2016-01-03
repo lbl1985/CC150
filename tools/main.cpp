@@ -14,7 +14,8 @@ int main()
 
     // Chapter 3
     // res = C3Q1();
-    res = C3Q2();
+    // res = C3Q2();
+    res = C3Q3();
 
     return res;
 }
