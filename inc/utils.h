@@ -8,6 +8,11 @@
 
 typedef unsigned int uint;
 
+#define S_OK 0
+#define S_OverFlow -1
+#define S_Invalid -2
+#define S_Res int
+
 // List of major entries for each question
 // Chapter 2
 int C2Q5();
