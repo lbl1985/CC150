@@ -13,7 +13,8 @@ int main()
     //res = C2Q7();
 
     // Chapter 3
-    res = C3Q1();
+    // res = C3Q1();
+    res = C3Q2();
 
     return res;
 }
