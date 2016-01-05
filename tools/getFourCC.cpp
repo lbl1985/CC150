@@ -8,6 +8,8 @@ typedef unsigned int uint32_t;
 
 const bool isDebug = false;
 
+const uint32_t maxVal = -1;
+
 int main(int argc, char* argv[])
 {
     uint32_t tmp = 0;
@@ -20,9 +22,13 @@ int main(int argc, char* argv[])
     }
     if (isDebug) {
         cout << endl << tmp << endl;
+    }
+
+    if (tmp == maxVal) {
+        printf("%s is ANYFORMAT", argv[1]);
+    } else {
+        printf("%s is: %c%c%c%c", argv[1], tmp & 0xff, tmp>>8 & 0xff, tmp>>16 & 0xff, tmp>>24 & 0xff);
     }    
-    
-    printf("%s is: %c%c%c%c", argv[1], tmp & 0xff, tmp>>8 & 0xff, tmp>>16 & 0xff, tmp>>24 & 0xff);
 
     return 0;
 }
