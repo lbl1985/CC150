@@ -3,5 +3,6 @@
 *.v12*
 *.vcx*
 Debug/*
+Release/*
 .gitattributes
 cc150/*

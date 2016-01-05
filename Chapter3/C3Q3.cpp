@@ -25,7 +25,7 @@ public:
             vStacks.push_back(tmpStack);
         } else {
             vector<stack<int>>::iterator itStack = vStacks.end();
-            if (itStack->size < stackLimit) {
+            if (itStack->size() < stackLimit) {
                 itStack->push(v);
             } else {
                 stack<int> tmpStack;
