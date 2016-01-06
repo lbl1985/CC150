@@ -18,7 +18,8 @@ int main()
     // res = C3Q3();
     // res = C3Q4();
     // res = C3Q5();
-    res = C3Q6();
+    // res = C3Q6();
+    res = C3Q7();
 
     return res;
 }
