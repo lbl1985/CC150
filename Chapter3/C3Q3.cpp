@@ -16,6 +16,8 @@ const int isDebug = true;
 
 class SetOfStacks {
 public:
+    SetOfStacks():topValue(0) {}
+
     void push(int v)
     {
         if (vStacks.empty()) {
@@ -46,11 +48,13 @@ public:
         }
     }
 
-    int& top()
+    int top()
     {
         if (!vStacks.empty()) {
             vector<stack<int>>::iterator itStack = vStacks.end() - 1;
             return itStack->top();
+        } else {
+            return S_Invalid;
         }
     }
 
@@ -67,7 +71,7 @@ public:
         }
     }
 
-    int& topat(int stackIdx)
+    int topat(int stackIdx)
     {
         if (!vStacks.empty()) {
             if (vStacks.size() > (std::size_t)stackIdx) {
@@ -75,6 +79,7 @@ public:
                 return itStack->top();
             }
         }
+        return S_Invalid;
     }
 
     std::size_t size()
@@ -90,6 +95,7 @@ public:
 private:
     static const int stackLimit = 5;
     vector<stack<int>> vStacks;
+    int topValue;
 };
 
 int C3Q3()
