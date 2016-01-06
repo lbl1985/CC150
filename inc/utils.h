@@ -23,6 +23,7 @@ int C2Q7();
 int C3Q1();
 int C3Q2();
 int C3Q3();
+int C3Q4();
 
 template<class T>
 void print2DMat(T** mat, uint rows, uint cols)
