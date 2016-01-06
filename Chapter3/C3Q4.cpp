@@ -7,9 +7,64 @@
 // (3) A disk can only be placed on top of a larger disk.
 
 #include "..\inc\utils.h"
+#include <stack>
+#include <vector>
+
+using namespace std;
+
+class Tower{
+public:
+    Tower(int index):id(index) { }
+
+    void add(int v)
+    {
+        if (!stk.empty() && v >= stk.top()) {
+            printf(" %d could not add to stack %d, stack %d top is %d\n", v, id, id, stk.top());
+        }
+        stk.push(v);
+    }
+
+    void moveTop(Tower* dst)
+    {
+        if (!stk.empty()) {
+            printf("Move %d from Tower %d to Tower %d\n", stk.top(), id, dst->getId());
+            dst->add(stk.top());
+            stk.pop();
+        }        
+    }
+
+    void moveDisks(int iDiskNum, Tower* dst, Tower* buffer)
+    {
+        if (iDiskNum >= 1) {
+            moveDisks(iDiskNum - 1, buffer, dst);
+            moveTop(dst);
+            buffer->moveDisks(iDiskNum - 1, dst, this);
+        }
+    }
+    
+    const int getId() const
+    {
+        return id;
+    }
+private:
+    stack<int> stk;
+    const int id;
+};
+
 
 int C3Q4()
 {
-    cout << "This is C3Q4" << endl;
+    vector<Tower> vTower;
+    for (int i = 0; i < 3; i++) {
+        Tower tmpTower(i);
+        vTower.push_back(tmpTower);
+    }
+
+    for (int i = 5; i > 0; i--) {
+        vTower[0].add(i);
+    }
+
+    vTower[0].moveDisks(5, &vTower[2], &vTower[1]);
+    
     return 0;
 }
