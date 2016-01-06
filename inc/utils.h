@@ -41,7 +41,7 @@ void print2DMat(T** mat, uint rows, uint cols)
 template<class T>
 void generateRandomValue2D(T** arr, uint rows, uint cols, T maxValue)
 {
-    srand(uint(time(NULL)));
+    srand(uint(time()));
 
     for (uint i = 0; i < rows; i++) {
         for (uint j = 0; j < cols; j++) {
@@ -53,8 +53,8 @@ void generateRandomValue2D(T** arr, uint rows, uint cols, T maxValue)
 template<class T>
 T generateRandomValue(T minValue, T maxValue)
 {
-    time_t* t = new time_t();
-    srand(uint(time(t)));
+    //time_t* t = new time_t();
+    //srand(uint(time(t)));
     return rand() % maxValue + minValue;
 }
 
