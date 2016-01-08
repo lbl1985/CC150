@@ -19,7 +19,9 @@ int main()
     // res = C3Q4();
     // res = C3Q5();
     // res = C3Q6();
-    res = C3Q7();
+    // res = C3Q7();
+
+	// tree
 
     return res;
 }
