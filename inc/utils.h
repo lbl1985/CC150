@@ -28,6 +28,10 @@ int C3Q5();
 int C3Q6();
 int C3Q7();
 
+// leetCode
+int Q326_PowerOfThree();
+
+
 template<class T>
 void print2DMat(T** mat, uint rows, uint cols)
 {

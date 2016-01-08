@@ -23,5 +23,8 @@ int main()
 
 	// tree
 
+	// leetCode
+	res = Q326_PowerOfThree();
+
     return res;
 }
