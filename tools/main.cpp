@@ -22,9 +22,10 @@ int main()
     // res = C3Q7();
 
 	// tree
+    res = BinaryTreeTest();
 
 	// leetCode
-	res = Q326_PowerOfThree();
+	// res = Q326_PowerOfThree();
 
     return res;
 }

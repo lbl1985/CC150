@@ -27,6 +27,8 @@ int C3Q4();
 int C3Q5();
 int C3Q6();
 int C3Q7();
+//Chapter 4 Tree
+int BinaryTreeTest();
 
 // leetCode
 int Q326_PowerOfThree();
