@@ -1,5 +1,7 @@
 // Utility functions for printing and generating data
 // Author: Binlong Li   12/08/2015
+#ifndef UTILS_H
+#define UTILS_H
 
 #include <iostream>
 #include <time.h>       // time
@@ -99,3 +101,5 @@ T linkedListToNumDesOrder(const Node<T>* head)
     }
     
 }
+
+#endif
