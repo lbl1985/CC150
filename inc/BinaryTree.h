@@ -4,6 +4,7 @@
 
 #include <queue>
 #include <stack>
+#include <vector> 
 
 const bool isDebug = true;
 
@@ -23,6 +24,10 @@ public:
 	BinaryTreeNode<T>& operator = (const BinaryTreeNode<T> &other);
 
 	static BinaryTreeNode<T>* createMinimalBST(const T* arr, int startIndex, int endIndex);
+
+	S_Res getNodesDFS(vector< BinaryTreeNode<T>* >* treeList);
+
+	S_Res displayNodeDFS();
 
 	BinaryTreeNode *left;
 	BinaryTreeNode *right;
@@ -74,4 +79,36 @@ template <class T> BinaryTreeNode<T>* BinaryTreeNode<T>::createMinimalBST(const 
 	root->left = createMinimalBST(arr, startIndex , midIndex - 1);
 	root->right = createMinimalBST(arr, midIndex + 1, endIndex);
 	return root;
+}
+
+template<class T> S_Res BinaryTreeNode<T>::getNodesDFS( vector< BinaryTreeNode<T>* >* treeList){
+	std::stack< BinaryTreeNode<T>* > s;
+
+	this->st = visited;
+	s.push(this);
+
+	while(!s.empty()){
+		BinaryTreeNode<T> * k = s.top();
+		s.pop();
+		if(k->right != NULL && k->right->st != visited){
+			s.push(k->right);
+			k->right->st = visiting;
+		}
+		if(k->left != NULL && k->left->st != visited){
+			s.push(k->left);
+			k->left->st = visiting;
+		}
+		k->st = visited;
+		treeList->push_back(k);
+	}
+	return S_OK;
+}
+
+template<class T> S_Res BinaryTreeNode<T>::displayNodeDFS(){
+	vector< BinaryTreeNode<T>* > treeList;
+	this->getNodesDFS(&treeList);
+	for(vector< BinaryTreeNode<T>* >::iterator vBegin = treeList.begin(); vBegin != treeList.end(); vBegin++){
+		printf("%d\t", (*vBegin)->data);
+	}
+	return S_OK;
 }
