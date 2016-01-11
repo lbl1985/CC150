@@ -21,19 +21,43 @@ public:
 
 	BinaryTreeNode<T>(T d);
 
-	BinaryTreeNode<T>& operator = (const BinaryTreeNode<T> &other);
-
-	static BinaryTreeNode<T>* createMinimalBST(const T* arr, int startIndex, int endIndex);
+	BinaryTreeNode<T>& operator = (const BinaryTreeNode<T> &other);	
 
 	S_Res getNodesDFS(vector< BinaryTreeNode<T>* >* treeList);
-
-	S_Res displayNodeDFS();
-
+	
 	BinaryTreeNode *left;
 	BinaryTreeNode *right;
 	Status st;
 	T data;
 };
+
+template <class T>
+BinaryTreeNode<T>* createMinimalBST(const T* arr, int startIndex, int endIndex) {
+	if (NULL == arr) {
+		return NULL;
+	}
+
+	if (startIndex > endIndex) {
+		return NULL;
+	}
+
+	int midIndex = (startIndex + endIndex) / 2;
+	int midValue = arr[midIndex];
+
+	BinaryTreeNode<T>* root = new BinaryTreeNode<T>(midValue);
+	root->left = createMinimalBST(arr, startIndex, midIndex - 1);
+	root->right = createMinimalBST(arr, midIndex + 1, endIndex);
+	return root;
+}
+
+template <class T>
+S_Res displayTreeNodeList(const vector< BinaryTreeNode<T>* >* treeList) {
+	
+	for (vector< BinaryTreeNode<T>* >::const_iterator vBegin = treeList->cbegin(); vBegin != treeList->cend(); vBegin++) {
+		cout << (*vBegin)->data << "\t";
+	}
+	return S_OK;
+}
 
 template<class T> BinaryTreeNode<T>::BinaryTreeNode(){
 	left = NULL;
@@ -60,27 +84,6 @@ template<class T> BinaryTreeNode<T>& BinaryTreeNode<T>::operator = (const Binary
 	data = other.data;
 }
 
-template <class T> BinaryTreeNode<T>* BinaryTreeNode<T>::createMinimalBST(const T* arr, int startIndex, int endIndex){
-	if(NULL == arr){
-		if(isDebug)	printf("return error arr is NULL\n");
-		return NULL;
-	}
-
-	if(startIndex > endIndex){
-		if(isDebug) printf("return startIndex > endIndex\n");
-		return NULL;
-	}
-
-	int midIndex = (startIndex + endIndex) / 2;
-	int midValue = arr[midIndex];
-
-	BinaryTreeNode<T> *root = new BinaryTreeNode<T>(midValue);
-	if(isDebug) printf("create node %d \n", midValue);
-	root->left = createMinimalBST(arr, startIndex , midIndex - 1);
-	root->right = createMinimalBST(arr, midIndex + 1, endIndex);
-	return root;
-}
-
 template<class T> S_Res BinaryTreeNode<T>::getNodesDFS( vector< BinaryTreeNode<T>* >* treeList){
 	std::stack< BinaryTreeNode<T>* > s;
 
@@ -104,11 +107,3 @@ template<class T> S_Res BinaryTreeNode<T>::getNodesDFS( vector< BinaryTreeNode<T
 	return S_OK;
 }
 
-template<class T> S_Res BinaryTreeNode<T>::displayNodeDFS(){
-	vector< BinaryTreeNode<T>* > treeList;
-	this->getNodesDFS(&treeList);
-	for(vector< BinaryTreeNode<T>* >::iterator vBegin = treeList.begin(); vBegin != treeList.end(); vBegin++){
-		printf("%d\t", (*vBegin)->data);
-	}
-	return S_OK;
-}
