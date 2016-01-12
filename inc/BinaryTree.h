@@ -26,6 +26,9 @@ public:
 	S_Res getNodesDFS(vector< BinaryTreeNode<T>* >* treeList);
 	S_Res getNodesBFS(vector< BinaryTreeNode<T>* >* treeList);
 	
+	S_Res getNodesInOrderDFS(vector<BinaryTreeNode<T> *> *treeList);
+	S_Res getNodesPreOrderDFS(vector<BinaryTreeNode<T> *> *treeList);
+	S_Res getNodesPostOrderDFS(vector<BinaryTreeNode<T> *> *treeList);
 	BinaryTreeNode *left;
 	BinaryTreeNode *right;
 	Status st;
@@ -130,3 +133,53 @@ template<class T> S_Res BinaryTreeNode<T>::getNodesBFS(vector< BinaryTreeNode<T>
 	return S_OK;
 }
 
+template<class T> S_Res BinaryTreeNode<T>::getNodesInOrderDFS(vector<BinaryTreeNode *> *treeList) {
+	if (NULL == treeList) {
+		return S_Invalid;
+	}
+	
+	if (NULL != this->left) {
+		this->left->getNodesInOrderDFS(treeList);
+	}
+	
+	treeList->push_back(this);
+
+	if (NULL != this->right) {
+		this->right->getNodesInOrderDFS(treeList);
+	}	
+	return S_OK;
+}
+
+template<class T> S_Res BinaryTreeNode<T>::getNodesPreOrderDFS(vector<BinaryTreeNode *> *treeList) {
+	if (NULL == treeList) {
+		return S_Invalid;
+	}
+
+	treeList->push_back(this);
+
+	if (NULL != this->left) {
+		this->left->getNodesPreOrderDFS(treeList);
+	}
+
+	if (NULL != this->right) {
+		this->right->getNodesPreOrderDFS(treeList);
+	}
+	return S_OK;
+}
+
+template<class T> S_Res BinaryTreeNode<T>::getNodesPostOrderDFS(vector<BinaryTreeNode*> *treeList) {
+	if (NULL == treeList) {
+		return S_Invalid;
+	}
+
+	if (NULL != this->left) {
+		this->left->getNodesPostOrderDFS(treeList);
+	}
+
+	if (NULL != this->right) {
+		this->right->getNodesPostOrderDFS(treeList);
+	}
+
+	treeList->push_back(this);
+	return S_OK;
+}

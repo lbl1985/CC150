@@ -21,5 +21,22 @@ int BinaryTreeTest() {
 	displayTreeNodeList(&treeList);
 	printf("\n");
 
+	treeList.clear();
+	printf("displayInOrderDFS\n");
+	root->getNodesInOrderDFS(&treeList);
+	displayTreeNodeList(&treeList);
+	printf("\n");
+
+	treeList.clear();
+	printf("displayPreOrderDFS\n");
+	root->getNodesPreOrderDFS(&treeList);
+	displayTreeNodeList(&treeList);
+	printf("\n");
+
+	treeList.clear();
+	printf("displayPostOrderDFS\n");
+	root->getNodesPostOrderDFS(&treeList);
+	displayTreeNodeList(&treeList);
+	printf("\n");
 	return 0;
 }
