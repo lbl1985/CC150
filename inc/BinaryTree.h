@@ -24,6 +24,7 @@ public:
 	BinaryTreeNode<T>& operator = (const BinaryTreeNode<T> &other);	
 
 	S_Res getNodesDFS(vector< BinaryTreeNode<T>* >* treeList);
+	S_Res getNodesBFS(vector< BinaryTreeNode<T>* >* treeList);
 	
 	BinaryTreeNode *left;
 	BinaryTreeNode *right;
@@ -103,6 +104,28 @@ template<class T> S_Res BinaryTreeNode<T>::getNodesDFS( vector< BinaryTreeNode<T
 		}
 		k->st = visited;
 		treeList->push_back(k);
+	}
+	return S_OK;
+}
+
+template<class T> S_Res BinaryTreeNode<T>::getNodesBFS(vector< BinaryTreeNode<T>* > *treeList) {
+	if (NULL == treeList) {
+		return S_Invalid;
+	}
+
+	queue< BinaryTreeNode<T> *> q;
+	q.push(this);
+
+	while (!q.empty()) {
+		BinaryTreeNode<T> *tmp = q.front();
+		treeList->push_back(tmp);		
+		q.pop();
+		if (tmp->left != NULL) {
+			q.push(tmp->left);
+		}
+		if (tmp->right != NULL) {
+			q.push(tmp->right);
+		}
 	}
 	return S_OK;
 }

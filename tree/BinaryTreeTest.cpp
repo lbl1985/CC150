@@ -11,7 +11,15 @@ int BinaryTreeTest() {
 	//printf("\n");
 	vector< BinaryTreeNode<int>* > treeList;
 	root->getNodesDFS(&treeList);
+	printf("displayNodeDFS:\n");
 	displayTreeNodeList(&treeList);
+	printf("\n");
+
+	treeList.clear();
+	root->getNodesBFS(&treeList);
+	printf("displayNodeBFS:\n");
+	displayTreeNodeList(&treeList);
+	printf("\n");
 
 	return 0;
 }
