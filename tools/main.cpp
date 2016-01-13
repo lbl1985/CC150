@@ -22,7 +22,8 @@ int main()
     // res = C3Q7();
 
 	// tree
-    res = BinaryTreeTest();
+    // res = BinaryTreeTest();
+	res = C4Q1();
 
 	// leetCode
 	// res = Q326_PowerOfThree();
