@@ -26,9 +26,11 @@ int main()
 	// res = C4Q1();
 
 	// Chapter 10 sort
-	res = bubbleSortTest();
+	// res = bubbleSortTest();
+	
 	// leetCode
 	// res = Q326_PowerOfThree();
+	res = Q324_WiggleSortII();
 
     return res;
 }

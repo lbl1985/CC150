@@ -15,3 +15,12 @@
 //         
 //     }
 // };
+
+#include "..\inc\utils.h"
+#include <vector>
+
+int Q324_WiggleSortII()
+{
+	cout << "Q324_WiggleSortII" << endl;
+	return 0;
+}

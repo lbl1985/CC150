@@ -36,6 +36,7 @@ int C4Q1();
 int bubbleSortTest();
 // leetCode
 int Q326_PowerOfThree();
+int Q324_WiggleSortII();
 
 
 template<class T>
