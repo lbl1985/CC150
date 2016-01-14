@@ -21,10 +21,12 @@ int main()
     // res = C3Q6();
     // res = C3Q7();
 
-	// tree
+	// Chapter 04 tree
     // res = BinaryTreeTest();
-	res = C4Q1();
+	// res = C4Q1();
 
+	// Chapter 10 sort
+	res = bubbleSortTest();
 	// leetCode
 	// res = Q326_PowerOfThree();
 
