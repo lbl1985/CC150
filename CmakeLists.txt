@@ -7,10 +7,14 @@ include_directories ("${PROJECT_SOURCE_DIR}/tools")
 add_subdirectory(inc)
 add_subdirectory(tools)
 add_subdirectory(leetCode)
+add_subdirectory(Chapter10_sort)
 
 
 
-set(CC150_LIBNAME cc150_lib)
+# set(CC150_LIBNAME cc150_lib)
+# add_library(${CC150_LIBNAME} 
+# 	${CC150_LEETCODE_SRCS}
+# 	${CC150_CHAPTER10_SORT_SRCS})
 # add_mixed_library(${CC150_LIBNAME}
 # 	${CC150_INC_SRCS}
 # 	${CC150_LEETCODE_SRCS}
@@ -19,7 +23,11 @@ set(CC150_LIBNAME cc150_lib)
 #source_group(inc FILES ${CC150_INC_SRCS})
 #source_group(leetCode FILES ${CC150_LEETCODE_SRCS})
 
-add_executable(cc150 "${PROJECT_SOURCE_DIR}/tools/main.cpp")
+add_executable(cc150 ${CC150_TOOLS_SRCS} 
+	${CC150_LEETCODE_SRCS}
+	${CC150_CHAPTER10_SORT_SRCS}
+	)
+
 #add_executable(cc150 "${PROJECT_SOURCE_DIR}/tools/main.cpp" "${PROJECT_SOURCE_DIR}/leetCode/Q324_WiggleSortII.cpp")
 #add_executable(cc150 "${CC150_TOOLS_SRCS}")
-target_link_libraries(cc150 ${CC150_LIBNAME})
+# target_link_libraries(cc150 ${CC150_LIBNAME})

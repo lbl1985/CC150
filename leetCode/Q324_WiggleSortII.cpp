@@ -19,7 +19,7 @@
 #include "..\inc\utils.h"
 #include <vector>
 
-void bubbleSort(vector<int>& arr)
+void bubbleSort2(vector<int>& arr)
 {
 	int sz = (int)arr.size();
 	int temp;
@@ -35,13 +35,13 @@ void bubbleSort(vector<int>& arr)
 }
 
 void wiggleSort(vector<int>& num) {
-	bubbleSort(num);
+	bubbleSort2(num);
 	size_t sz = num.size();
 	int halfSize = sz / 2;
 	int offset = sz % 2 == 0 ? halfSize : halfSize + 1;
 
 	vector<int> numSorted(num);
-	int index = 0;
+	size_t index = 0;
 	for (int i = 0; i < halfSize; i++) {
 		num[index++] = numSorted[i];
 		num[index++] = numSorted[i + offset];
