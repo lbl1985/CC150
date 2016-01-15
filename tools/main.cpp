@@ -29,7 +29,7 @@ int main()
 	// res = bubbleSortTest();
 	
 	// leetCode
-	// res = Q326_PowerOfThree();
+	res = Q326_PowerOfThree();
 	res = Q324_WiggleSortII();
 
     return res;

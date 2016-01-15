@@ -6,3 +6,4 @@ Debug/*
 Release/*
 .gitattributes
 cc150/*
+build/
