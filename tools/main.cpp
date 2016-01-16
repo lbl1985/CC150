@@ -28,14 +28,14 @@ int main()
 	// Chapter 10 sort
     // cout << endl << "bubbleSortTest" << endl;
 	// res = bubbleSortTest();    
-	cout << endl << "quicksort" << endl;
-    res = quicksortTest();
+	// cout << endl << "quicksort" << endl;
+    // res = quicksortTest();
 
 	// leetCode
     // cout << endl << "Q326_PowerOfThree" << endl;
 	// res = Q326_PowerOfThree();
     // cout << endl << "Q324_WiggleSortII" << endl;
-	// res = Q324_WiggleSortII();
+	res = Q324_WiggleSortII();
 
     return res;
 }

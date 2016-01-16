@@ -4,23 +4,25 @@
 #include "..\inc\utils.h"
 #include <vector>
 
+void swap(int& a, int&b){
+	int temp;
+	temp = a;
+	a = b;
+	b = temp;
+}
+
 int partition(vector<int> &arr, size_t low, size_t high){
 	int p = arr[high];
 	size_t smallIndex = low;
 	int tmp = 0;
 	for(size_t i = low; i < high; i++){
 		if(arr[i] <= p){
-			tmp = arr[i];
-			arr[i] = arr[smallIndex]; 
-			arr[smallIndex] = tmp;
+			swap(arr[i], arr[smallIndex]);			
 			smallIndex++;
 		}		
 	}
 
-	tmp = arr[smallIndex];
-	arr[smallIndex] = arr[high];
-	arr[high] = tmp;
-	
+	swap(arr[smallIndex], arr[high]);	
 	return smallIndex;
 }
 

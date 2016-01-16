@@ -34,8 +34,39 @@ void bubbleSort2(vector<int>& arr)
 	}
 }
 
+void swap_leetCode(int& a, int&b){
+	int temp;
+	temp = a;
+	a = b;
+	b = temp;
+}
+
+int partition_leetCode(vector<int> &arr, size_t low, size_t high){
+	int p = arr[high];
+	size_t smallIndex = low;
+	int tmp = 0;
+	for(size_t i = low; i < high; i++){
+		if(arr[i] <= p){
+			swap(arr[i], arr[smallIndex]);			
+			smallIndex++;
+		}		
+	}
+
+	swap(arr[smallIndex], arr[high]);	
+	return smallIndex;
+}
+
+void quicksort_leetCode(vector<int> &arr, int low, int high){
+	if(low < high){
+		int middle = partition_leetCode(arr, low, high);
+		quicksort_leetCode(arr, low, middle - 1);
+		quicksort_leetCode(arr, middle + 1, high);
+	}
+}
+
+
 void wiggleSort(vector<int>& num) {
-	bubbleSort2(num);
+	quicksort_leetCode(num, 0, num.size()-1);
 	size_t sz = num.size();
 	int halfSize = sz / 2;
 	int offset = sz % 2 == 0 ? halfSize : halfSize + 1;
