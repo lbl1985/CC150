@@ -26,11 +26,16 @@ int main()
 	// res = C4Q1();
 
 	// Chapter 10 sort
-	res = bubbleSortTest();
-	
+    // cout << endl << "bubbleSortTest" << endl;
+	// res = bubbleSortTest();    
+	cout << endl << "quicksort" << endl;
+    res = quicksortTest();
+
 	// leetCode
-	res = Q326_PowerOfThree();
-	res = Q324_WiggleSortII();
+    // cout << endl << "Q326_PowerOfThree" << endl;
+	// res = Q326_PowerOfThree();
+    // cout << endl << "Q324_WiggleSortII" << endl;
+	// res = Q324_WiggleSortII();
 
     return res;
 }

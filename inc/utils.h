@@ -32,8 +32,11 @@ int C3Q7();
 //Chapter 4 Tree
 int BinaryTreeTest();
 int C4Q1();
+
 // Chapter 10 Sort
 int bubbleSortTest();
+int quicksortTest();
+
 // leetCode
 int Q326_PowerOfThree();
 int Q324_WiggleSortII();

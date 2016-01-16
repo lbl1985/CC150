@@ -1,5 +1,6 @@
 set(list
 	bubbleSortTest.cpp
+	quicksort.cpp
 )
 
 foreach(item ${list})
