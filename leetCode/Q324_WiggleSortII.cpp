@@ -65,20 +65,16 @@ void quicksort_leetCode(vector<int> &arr, int low, int high){
 }
 
 
+
 void wiggleSort(vector<int>& num) {
 	quicksort_leetCode(num, 0, num.size()-1);
 	size_t sz = num.size();
-	int halfSize = sz / 2;
+	int halfSize = ((int)sz + 1) >> 1;
 	int offset = sz % 2 == 0 ? halfSize : halfSize + 1;
-
-	vector<int> numSorted(num);
-	size_t index = 0;
-	for (int i = 0; i < halfSize; i++) {
-		num[index++] = numSorted[i];
-		num[index++] = numSorted[i + offset];
-	}
-	if (index < sz - 1) {
-		num[index++] = numSorted[halfSize];
+	// int highIndex = halfSize + 1;
+	for (int lowIndex = 1, highIndex = halfSize + 1; lowIndex < halfSize && highIndex < (int)sz; lowIndex += 2){
+		swap_leetCode(num[lowIndex], num[highIndex]);
+		highIndex += 2;
 	}
 }
 
@@ -90,7 +86,7 @@ void printVector(const vector<int> &v) {
 
 int Q324_WiggleSortII()
 {
-	vector<vector<int> > tests{ { 1, 5, 1, 1, 6, 4 }, { 1, 3, 2, 2, 3, 1} };
+	vector<vector<int> > tests{ { 1, 5, 1, 1, 6, 4 }, { 1, 3, 2, 2, 3, 1} , {1, 3, 2, 2, 3}};
 	for (size_t i = 0; i < tests.size(); i++) {
 		printf("test set %d: \n", i);
 		printVector(tests[i]);
