@@ -56,25 +56,19 @@ int partition_leetCode(vector<int> &arr, size_t low, size_t high){
 	return smallIndex;
 }
 
-void quicksort_leetCode(vector<int> &arr, int low, int high){
+void quicksort_leetCode(vector<int> &arr, int low, int high, const int origMiddleIndex){
 	if(low < high){
 		int middle = partition_leetCode(arr, low, high);
-		quicksort_leetCode(arr, low, middle - 1);
-		quicksort_leetCode(arr, middle + 1, high);
-	}
-}
 
-
-
-void wiggleSort(vector<int>& num) {
-	quicksort_leetCode(num, 0, num.size()-1);
-	size_t sz = num.size();
-	int halfSize = ((int)sz + 1) >> 1;
-	int offset = sz % 2 == 0 ? halfSize : halfSize + 1;
-	// int highIndex = halfSize + 1;
-	for (int lowIndex = 1, highIndex = halfSize + 1; lowIndex < halfSize && highIndex < (int)sz; lowIndex += 2){
-		swap_leetCode(num[lowIndex], num[highIndex]);
-		highIndex += 2;
+		if(middle == origMiddleIndex){
+			return;
+		}
+		if(middle > origMiddleIndex){
+			quicksort_leetCode(arr, low, middle - 1, origMiddleIndex);	
+		}
+		if(middle < origMiddleIndex){
+			quicksort_leetCode(arr, middle + 1, high, origMiddleIndex);	
+		}
 	}
 }
 
@@ -84,9 +78,33 @@ void printVector(const vector<int> &v) {
 	}
 }
 
+void wiggleSort(vector<int>& num) {
+	quicksort_leetCode(num, 0, num.size()-1, (num.size()>>1)-1);
+	
+	printf("\n printf vector before final step\n");
+	printVector(num);
+
+	size_t sz = num.size();
+	int midIndex = (((int)sz + 1) >> 1) - 1;
+	int endIndex = (int)(num.size() - 1);
+	
+
+	vector<int> numSorted(num);
+	size_t index = 0;
+	for(int i = midIndex, j = endIndex; i >= 0 && j > midIndex; ){
+		num[index++] = numSorted[i--];
+		num[index++] = numSorted[j--];
+	}	
+	if(index == num.size() - 1){
+		num[index] = numSorted[0];
+	}
+}
+
+
+
 int Q324_WiggleSortII()
 {
-	vector<vector<int> > tests{ { 1, 5, 1, 1, 6, 4 }, { 1, 3, 2, 2, 3, 1} , {1, 3, 2, 2, 3}};
+	vector<vector<int> > tests{ { 1, 5, 1, 1, 6, 4 }, { 1, 3, 2, 2, 3, 1} , {1,1,2,1,2,2,1}, {4, 5, 5, 6}, {3,2,1,1,3,2}};
 	for (size_t i = 0; i < tests.size(); i++) {
 		printf("test set %d: \n", i);
 		printVector(tests[i]);
