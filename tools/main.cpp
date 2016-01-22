@@ -35,7 +35,9 @@ int main()
     // cout << endl << "Q326_PowerOfThree" << endl;
 	// res = Q326_PowerOfThree();
     // cout << endl << "Q324_WiggleSortII" << endl;
-	res = Q324_WiggleSortII();
+	// res = Q324_WiggleSortII();
+    cout << endl << "Q328_OddEvenLinkedList" << endl;
+    res = Q328_OddEvenLinkedList();
 
     return res;
 }

@@ -40,6 +40,7 @@ int quicksortTest();
 // leetCode
 int Q326_PowerOfThree();
 int Q324_WiggleSortII();
+int Q328_OddEvenLinkedList();
 
 
 template<class T>
