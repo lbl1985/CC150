@@ -32,8 +32,97 @@
 
 #include "..\inc\utils.h"
 
+struct ListNode {
+    int val;
+    ListNode *next;
+    ListNode(int x) : val(x), next(NULL) {}
+};
+
+ListNode* oddEvenList(ListNode* head)
+{
+    if (nullptr == head) {
+        return nullptr;
+    }
+    // return the original list when there is only one or two elements
+    if (nullptr == head->next || nullptr == head->next->next) {
+        return head;
+    }
+    
+    ListNode* oddRunner = head; 
+    ListNode* newOddRunner = oddRunner;
+    ListNode *operatePoint = head;
+
+    // find the last odd node
+    ListNode* runner = head->next;
+    bool isEven = true;
+    while (nullptr != runner->next) {
+        runner = runner->next;
+        isEven = !isEven;
+        if (!isEven) {
+            operatePoint = runner;
+        }
+    }
+    
+    // Start to insert even node behind of odd nodes
+    runner = operatePoint;
+    while (oddRunner != operatePoint) {
+        // insert even node
+        newOddRunner = oddRunner->next->next;
+        oddRunner->next->next = runner->next;
+        runner->next = oddRunner->next;
+        // update runner and oddRunner
+        runner = runner->next;
+        oddRunner->next = newOddRunner;
+        oddRunner = newOddRunner;
+    }
+    return head;
+}
+
+void printList(const ListNode* head)
+{
+    const ListNode* runner = head;
+    while (runner) {
+        printf("%d ", runner->val);
+        runner = runner->next;
+    }
+    printf("\n");    
+}
 int Q328_OddEvenLinkedList()
 {
-    cout << "Q328_OddEvenLinkedList";
+    ListNode* head = new ListNode(1);
+    ListNode* runner = head;
+    for (int i = 2; i < 7; i++) {        
+        runner->next = new ListNode(i);
+        runner = runner->next;
+    }
+    printList(head);    
+    printList(oddEvenList(head));
+
+    runner = head;
+    ListNode* anchor;
+    while (runner != nullptr) {
+        anchor = runner;
+        runner = runner->next;
+        delete anchor;
+    }
+
+    head = new ListNode(1);
+    runner = head;
+    for (int i = 2; i < 8; i++) {
+        runner->next = new ListNode(i);
+        runner = runner->next;
+    }
+
+    printf("\n");
+    printList(head);
+    printList(oddEvenList(head));
+    
+    runner = head;    
+    while (runner != nullptr) {
+        anchor = runner;
+        runner = runner->next;
+        delete anchor;
+    }
+
     return 0;
 }
