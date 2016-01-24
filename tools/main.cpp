@@ -24,6 +24,9 @@ int main()
 	// Chapter 04 tree
     // res = BinaryTreeTest();
 	// res = C4Q1();
+    cout << endl << "C4Q3" << endl;
+    res = C4Q3();
+
 
 	// Chapter 10 sort
     // cout << endl << "bubbleSortTest" << endl;
@@ -36,8 +39,8 @@ int main()
 	// res = Q326_PowerOfThree();
     // cout << endl << "Q324_WiggleSortII" << endl;
 	// res = Q324_WiggleSortII();
-    cout << endl << "Q328_OddEvenLinkedList" << endl;
-    res = Q328_OddEvenLinkedList();
+    // cout << endl << "Q328_OddEvenLinkedList" << endl;
+    // res = Q328_OddEvenLinkedList();
 
     return res;
 }
