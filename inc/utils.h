@@ -42,6 +42,7 @@ int quicksortTest();
 int Q326_PowerOfThree();
 int Q324_WiggleSortII();
 int Q328_OddEvenLinkedList();
+int Q329_LongestIncreasingPathInAMatrix();
 
 
 template<class T>

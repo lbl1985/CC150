@@ -2,6 +2,7 @@ set(list
 	Q324_WiggleSortII.cpp
 	Q326_PowerOfThree.cpp
 	Q328_OddEvenLinkedList.cpp
+	Q329_LongestIncreasingPathInAMatrix.cpp
 )
 
 foreach(item ${list})
