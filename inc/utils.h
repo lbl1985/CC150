@@ -32,6 +32,7 @@ int C3Q7();
 //Chapter 4 Tree
 int BinaryTreeTest();
 int C4Q1();
+int C4Q3();
 
 // Chapter 10 Sort
 int bubbleSortTest();
@@ -40,6 +41,8 @@ int quicksortTest();
 // leetCode
 int Q326_PowerOfThree();
 int Q324_WiggleSortII();
+int Q328_OddEvenLinkedList();
+int Q329_LongestIncreasingPathInAMatrix();
 
 
 template<class T>

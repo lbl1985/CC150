@@ -24,6 +24,9 @@ int main()
 	// Chapter 04 tree
     // res = BinaryTreeTest();
 	// res = C4Q1();
+    // cout << endl << "C4Q3" << endl;
+    // res = C4Q3();
+
 
 	// Chapter 10 sort
     // cout << endl << "bubbleSortTest" << endl;
@@ -35,7 +38,11 @@ int main()
     // cout << endl << "Q326_PowerOfThree" << endl;
 	// res = Q326_PowerOfThree();
     // cout << endl << "Q324_WiggleSortII" << endl;
-	res = Q324_WiggleSortII();
+	// res = Q324_WiggleSortII();
+    // cout << endl << "Q328_OddEvenLinkedList" << endl;
+    // res = Q328_OddEvenLinkedList();
+    cout << endl << "Q329_LongestIncreasingPathInAMatrix" << endl;
+    res = Q329_LongestIncreasingPathInAMatrix();
 
     return res;
 }
