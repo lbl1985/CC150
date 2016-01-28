@@ -10,3 +10,9 @@
 //         
 //     }
 // };
+
+#include "..\inc\utils.h"
+#include <vector>
+int findPeakElement(vector<int>& nums){
+	
+}
