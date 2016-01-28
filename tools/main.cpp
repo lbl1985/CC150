@@ -24,6 +24,8 @@ int main()
 	// Chapter 04 tree
     // res = BinaryTreeTest();
 	// res = C4Q1();
+    cout << endl << "C4Q2" << endl;
+    res = C4Q2();
     // cout << endl << "C4Q3" << endl;
     // res = C4Q3();
 
@@ -41,8 +43,8 @@ int main()
 	// res = Q324_WiggleSortII();
     // cout << endl << "Q328_OddEvenLinkedList" << endl;
     // res = Q328_OddEvenLinkedList();
-    cout << endl << "Q329_LongestIncreasingPathInAMatrix" << endl;
-    res = Q329_LongestIncreasingPathInAMatrix();
+    // cout << endl << "Q329_LongestIncreasingPathInAMatrix" << endl;
+    // res = Q329_LongestIncreasingPathInAMatrix();
 
     return res;
 }

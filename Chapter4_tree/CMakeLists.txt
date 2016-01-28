@@ -1,6 +1,7 @@
 set(list
 	BinaryTreeTest.cpp
 	C4Q1.cpp	
+	C4Q2.cpp
 	C4Q3.CPP
 )
 
