@@ -5,6 +5,7 @@
 
 #include <iostream>
 #include <vector>
+#include <stack>
 using namespace std;
 
 enum State{
@@ -14,11 +15,11 @@ enum State{
 };
 
 struct Node{
-	Node():data(0), s(Unvisited){}
-	Node(int d):data(d), s(Unvisited){}
+	Node():data(0), status(Unvisited){}
+	Node(int d):data(d), status(Unvisited){}
 
 	int data;
-	State s;
+	State status;
 	vector<Node*> vNext;
 };
 
@@ -47,8 +48,45 @@ Node* createGraph(){
 	return head;
 }
 
+// find all paths from head node
+// save the results in vPath vector
+void FindAllPaths(Node* head, vector<vector<Node*>> &vPaths){
+	stack<Node*> s;
+	s.push(head);
+	head->status = visiting;
+	while(!s.empty()){
+	}	
+}
+
+bool search(Node* head, Node* start, Node* end){
+	stack<Node*> s;
+	s.push(start);
+	start->status = visiting;
+	while(!s.empty()){
+		Node* u = s.top();
+		s.pop();
+		for(size_t i = 0; i < u->vNext.size(); i++){
+			Node* v = u->vNext[i];
+			if(v == end){
+				return true;
+			} else if(v->status != visited){
+				v->status = visiting;
+				s.push(v);
+			}
+		}
+		u->status = visited;
+	}
+	return false;
+}
+
+void test(Node* head, Node* start, Node* end){
+	cout << start->data << " and " << end->data << " is connect:" << (search(head, start, end) ? " ture" : " false") << endl;
+}
+
 int C4Q2(){
-	Node* head = createGraph();
+	Node* head = createGraph();	
 	cout << "inside C4Q2" << endl;
+	test(head, head->vNext[0], head->vNext[1]->vNext[0]);
+	test(head, head->vNext[1], head->vNext[0]->vNext[0]->vNext[0]);
 	return 0;
 }
