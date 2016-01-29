@@ -1,4 +1,5 @@
 set(list
+	Q162_FindPeakElement.cpp
 	Q324_WiggleSortII.cpp
 	Q326_PowerOfThree.cpp
 	Q328_OddEvenLinkedList.cpp

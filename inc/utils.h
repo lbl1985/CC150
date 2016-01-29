@@ -40,6 +40,7 @@ int bubbleSortTest();
 int quicksortTest();
 
 // leetCode
+int Q162_FindPeakElement();
 int Q326_PowerOfThree();
 int Q324_WiggleSortII();
 int Q328_OddEvenLinkedList();

@@ -13,6 +13,42 @@
 
 #include "..\inc\utils.h"
 #include <vector>
-int findPeakElement(vector<int>& nums){
-	
+#include <climits>
+
+using namespace std;
+
+int findPeakElement(vector<int>& nums){	
+	if(nums.size() == 1){
+		return 0;
+	} else if(nums.size() == 2){
+		return nums[0] > nums[1] ? 0 : 1;		
+	} else{
+		int s = (int)nums.size();
+		// special care for i = 0;
+		if(nums[0] > nums[1]){
+			return 0;
+		}
+		int prev = nums[0];
+		int next = nums[2];
+		for(int i = 1; i < s - 1; i++ ){
+			
+			if(nums[i] > nums[i - 1] && nums[i] > nums[i+1])	{
+				return i;
+			}
+		}
+		// special care for i = s - 1;
+		if(nums[s-1] > nums[s-2]){
+			return s - 1;
+		}
+		return -1;
+	}
+}
+
+
+int Q162_FindPeakElement(){
+	cout << endl << "internal Q162_FindPeakElement" << endl;
+	vector<int> arr{1, 2, 3, 1};
+	cout << "The peak element index is: " << findPeakElement(arr);
+	 
+	return 0;
 }

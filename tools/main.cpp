@@ -24,8 +24,8 @@ int main()
 	// Chapter 04 tree
     // res = BinaryTreeTest();
 	// res = C4Q1();
-    cout << endl << "C4Q2" << endl;
-    res = C4Q2();
+    //  cout << endl << "C4Q2" << endl;
+    // res = C4Q2();
     // cout << endl << "C4Q3" << endl;
     // res = C4Q3();
 
@@ -37,6 +37,8 @@ int main()
     // res = quicksortTest();
 
 	// leetCode
+    cout << endl << "Q162_FindPeakElement" << endl;
+    res = Q162_FindPeakElement();
     // cout << endl << "Q326_PowerOfThree" << endl;
 	// res = Q326_PowerOfThree();
     // cout << endl << "Q324_WiggleSortII" << endl;
