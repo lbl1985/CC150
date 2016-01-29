@@ -29,12 +29,14 @@ int findPeakElement(vector<int>& nums){
 			return 0;
 		}
 		int prev = nums[0];
-		int next = nums[2];
-		for(int i = 1; i < s - 1; i++ ){
-			
-			if(nums[i] > nums[i - 1] && nums[i] > nums[i+1])	{
+		int cur = nums[1], next;
+		for(int i = 1; i < s - 1; i++ ){			
+			next = nums[i+1];
+			if(cur > prev && cur > next)	{
 				return i;
 			}
+			prev = cur;
+			cur = next;			
 		}
 		// special care for i = s - 1;
 		if(nums[s-1] > nums[s-2]){
