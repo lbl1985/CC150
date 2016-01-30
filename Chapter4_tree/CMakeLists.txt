@@ -2,7 +2,8 @@ set(list
 	BinaryTreeTest.cpp
 	C4Q1.cpp	
 	C4Q2.cpp
-	C4Q3.CPP
+	C4Q3.cpp
+	C4Q4.cpp
 )
 
 foreach(item ${list})

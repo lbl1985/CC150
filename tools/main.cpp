@@ -22,12 +22,14 @@ int main()
     // res = C3Q7();
 
 	// Chapter 04 tree
-    res = BinaryTreeTest();
+    // res = BinaryTreeTest();
 	// res = C4Q1();
-    cout << endl << "C4Q2" << endl;
-    res = C4Q2();
+    // cout << endl << "C4Q2" << endl;
+    // res = C4Q2();
     // cout << endl << "C4Q3" << endl;
     // res = C4Q3();
+    cout << endl << "C4Q4" << endl;
+    res = C4Q4();
 
 
 	// Chapter 10 sort

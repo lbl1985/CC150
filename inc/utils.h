@@ -34,6 +34,7 @@ int BinaryTreeTest();
 int C4Q1();
 int C4Q2();
 int C4Q3();
+int C4Q4();
 
 // Chapter 10 Sort
 int bubbleSortTest();
