@@ -4,6 +4,11 @@ set(list
 	C4Q2.cpp
 	C4Q3.cpp
 	C4Q4.cpp
+	C4Q5.cpp
+	C4Q6.cpp
+	C4Q7.cpp
+	C4Q8.cpp
+	C4Q9.cpp
 )
 
 foreach(item ${list})
