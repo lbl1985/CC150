@@ -28,8 +28,10 @@ int main()
     // res = C4Q2();
     // cout << endl << "C4Q3" << endl;
     // res = C4Q3();
-    cout << endl << "C4Q4" << endl;
-    res = C4Q4();
+    // cout << endl << "C4Q4" << endl;
+    // res = C4Q4();
+    cout << endl << "C4Q5" << endl;
+    res = C4Q5();
 
 
 	// Chapter 10 sort

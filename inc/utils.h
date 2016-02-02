@@ -35,6 +35,7 @@ int C4Q1();
 int C4Q2();
 int C4Q3();
 int C4Q4();
+int C4Q5();
 
 // Chapter 10 Sort
 int bubbleSortTest();
