@@ -28,6 +28,30 @@ void DFSWithoutSt(const BinaryTreeNode<int>* head, vector<const BinaryTreeNode<i
 	}
 }
 
+void InOrderTraverse(const BinaryTreeNode<int>* root, vector<int> *val){
+	if(root == nullptr) return;
+
+	if(root->left != nullptr){
+		InOrderTraverse(root->left, val);
+	}
+
+	val->push_back(root->data);
+
+	if(root->right != nullptr){
+		InOrderTraverse(root->right, val);
+	}
+}
+
+bool isBinarySearchTree2(const vector<int> &val)
+{
+	for(size_t i = 0; i < val.size() - 1; i++ ){
+		if(val[i] > val[i+1]){
+			return false;
+		}
+	}
+	return true;
+}
+
 bool isBinarySearchTree(const BinaryTreeNode<int>* head){
 	// Use DFS to traverse the tree
 	if(nullptr == head){
@@ -73,7 +97,18 @@ int C4Q5()
 
 	cout << endl;
 
-	cout << "This tree is Binary search tree: " << (isBinarySearchTree(head) ? " true" : " false");
+	cout << "This tree is Binary search tree: " << (isBinarySearchTree(head) ? " true" : " false") << endl;
+
+	vector<int> vecInOrder;
+	InOrderTraverse(head, &vecInOrder);
+
+	cout << endl;
+	for(size_t i = 0; i < vecInOrder.size(); i++){
+		cout << vecInOrder[i] << " ";
+	}
+	cout << endl;
+
+	cout << "This tree is Binary search tree for in order traverse: " << (isBinarySearchTree2(vecInOrder) ? " true" : " false") << endl;
 
 	return 0;
 }
