@@ -39,10 +39,20 @@
 #include <vector>
 using namespace std;
 
-void printd2DVec(const vector<vector<int>> &vec){
+void print2DVec(const vector<vector<int>> &vec){
 	for(size_t i = 0; i < vec.size(); i++){
 		for(size_t j = 0; j < vec[0].size(); j++){
 			printf("%d ", vec[i][j]);
+		}
+		printf("\n");
+	}
+}
+
+void print2DVec(int** arr, const int height, const int width)
+{
+	for(int i = 0; i < height; i++){
+		for(int j = 0; j < width; j++){
+			printf("%d ", arr[i][j]);
 		}
 		printf("\n");
 	}
@@ -55,18 +65,22 @@ int longestIncreasingPath(vector<vector<int>>& matrix)
 
 	uint height = matrix.size();
 	uint width = matrix[0].size();
-	vector< vector<int> > arr;
+	// vector< vector<int> > arr;
 
+	int ** st = new int *[height];
 	for(uint i = 0; i < height; i++){
-		vector<int> tmp;
-		for(uint j = 0; j < width; j++){
-			tmp.push_back(0);
-		}
-		arr.push_back(tmp);
+		st[i] = new int[width];
+		memset(st[i], 0, width * sizeof(int));
 	}
 
-	printd2DVec(arr);
+	print2DVec(st, height, width);
 
+	for(uint i = 0; i < height; i++){
+		delete [] st[i];
+		st[i] = nullptr;
+	}
+	delete [] st;
+	st = nullptr;
 
 	return 0;
 }
@@ -82,7 +96,7 @@ int Q329_LongestIncreasingPathInAMatrix()
 	matrix.push_back(tmp03);
 
 
-	printd2DVec(matrix);
+	print2DVec(matrix);
 
 	longestIncreasingPath(matrix);
 
