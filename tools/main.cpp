@@ -30,8 +30,8 @@ int main()
     // res = C4Q3();
     // cout << endl << "C4Q4" << endl;
     // res = C4Q4();
-    cout << endl << "C4Q5" << endl;
-    res = C4Q5();
+    // cout << endl << "C4Q5" << endl;
+    // res = C4Q5();
 
 
 	// Chapter 10 sort
@@ -49,8 +49,8 @@ int main()
 	// res = Q324_WiggleSortII();
     // cout << endl << "Q328_OddEvenLinkedList" << endl;
     // res = Q328_OddEvenLinkedList();
-    // cout << endl << "Q329_LongestIncreasingPathInAMatrix" << endl;
-    // res = Q329_LongestIncreasingPathInAMatrix();
+    cout << endl << "Q329_LongestIncreasingPathInAMatrix" << endl;
+    res = Q329_LongestIncreasingPathInAMatrix();
 
     return res;
 }
