@@ -37,6 +37,7 @@
 
 #include "..\inc\utils.h"
 #include <vector>
+#include <stack>
 using namespace std;
 
 void print2DVec(const vector<vector<int>> &vec){
@@ -58,6 +59,44 @@ void print2DVec(int** arr, const int height, const int width)
 	}
 }
 
+struct pos{
+	pos(uint xp, uint yp):x(xp), y(yp) {}
+	uint x;
+	uint y;
+};
+
+struct element{
+	element(int valp, pos pp):val(valp), p(pp) {}
+	int val;
+	pos p;
+};
+
+// get neighbors need to check 
+vector<element> getNeighbor(const pos p, const int height, const int width, const stack<element>& st, const vector<vector<int>> & matrix){
+	vector<pos> neighbor;		
+	// top	
+	if(p.x > 0 && st[p.x-1][p.y] != 0){
+		pos tmp(p.x-1, p.y);		
+		neighbor.push( element(matrix[p.x-1][p.y], tmp) );
+	}
+	// bottom
+	if(p.x < height - 1 && st[p.x+1][p.y] != 0){
+		pos tmp(p.x+1, p.y);
+		neighbor.push( element(matrix[p.x+1][p.y]) );
+	}
+	// left
+	if(p.y > 0 && st[p.x][p.y-1] != 0){
+		pos tmp(p.x, p.y-1);
+		neighbor.push( element(matrix[p.x][p.y-1]) );
+	}
+	// right
+	if(p.y < width - 1 && st[p.x][p.y+1] != 0){
+		pos tmp(p.x, p.y+1);
+		neighbor.push( element(matrix[p.x][p.y+1]) );
+	}
+	return neighbor;
+}
+
 int longestIncreasingPath(vector<vector<int>>& matrix)
 {	
 	if(matrix.size() == 0)
@@ -65,13 +104,37 @@ int longestIncreasingPath(vector<vector<int>>& matrix)
 
 	uint height = matrix.size();
 	uint width = matrix[0].size();
-	// vector< vector<int> > arr;
-
+	
 	int ** st = new int *[height];
 	for(uint i = 0; i < height; i++){
 		st[i] = new int[width];
 		memset(st[i], 0, width * sizeof(int));
 	}
+
+	stack<element> curStack;
+
+	for(uint i = 0; i< height; i++){
+		for(uint j = 0; j < width; j++){
+			if(st[i][j] != 0){
+				pos p(i, j);
+				element cur(matrix[i][j], p);				
+				curStack.push(cur);
+				neighbor = getNeighbor(p, height, width, st, matrix);
+
+				while(!neighbor.empty()){
+					for(size_t k = 0; k < neighbor.size(); k++){
+						element tE = neighbor[k];						
+						if(cur.val < tE.val){
+							curStack.push(tE);
+						}
+					}
+				}
+
+				
+			}
+		}
+	}
+
 
 	print2DVec(st, height, width);
 
