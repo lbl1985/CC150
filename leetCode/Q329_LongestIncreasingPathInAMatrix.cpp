@@ -73,26 +73,26 @@ struct element{
 
 // get neighbors need to check 
 vector<element> getNeighbor(const pos p, const int height, const int width, const vector<vector<int>> & matrix){
-	vector<pos> neighbor;		
+	vector<element> neighbor;		
 	// top	
 	if(p.x > 0){
 		pos tmp(p.x-1, p.y);		
-		neighbor.push( element(matrix[p.x-1][p.y], tmp) );
+		neighbor.push_back( element(matrix[p.x-1][p.y], tmp) );
 	}
 	// bottom
-	if(p.x < height - 1){
+	if(p.x < (uint) (height - 1)){
 		pos tmp(p.x+1, p.y);
-		neighbor.push( element(matrix[p.x+1][p.y]) );
+		neighbor.push_back( element(matrix[p.x+1][p.y], tmp) );
 	}
 	// left
 	if(p.y > 0 ){
 		pos tmp(p.x, p.y-1);
-		neighbor.push( element(matrix[p.x][p.y-1]) );
+		neighbor.push_back( element(matrix[p.x][p.y-1], tmp) );
 	}
 	// right
-	if(p.y < width - 1){
+	if(p.y < (uint) (width - 1)){
 		pos tmp(p.x, p.y+1);
-		neighbor.push( element(matrix[p.x][p.y+1]) );
+		neighbor.push_back( element(matrix[p.x][p.y+1], tmp) );
 	}
 	return neighbor;
 }
@@ -119,7 +119,7 @@ int longestIncreasingPath(vector<vector<int>>& matrix)
 				pos p(i, j);
 				element cur(matrix[i][j], p);				
 				curStack.push(cur);
-				neighbor = getNeighbor(p, height, width, st, matrix);
+				vector<element> neighbor = getNeighbor(p, height, width, matrix);
 
 				while(!neighbor.empty()){
 					for(size_t k = 0; k < neighbor.size(); k++){
