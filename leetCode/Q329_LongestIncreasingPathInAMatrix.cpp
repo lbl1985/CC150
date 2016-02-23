@@ -72,25 +72,25 @@ struct element{
 };
 
 // get neighbors need to check 
-vector<element> getNeighbor(const pos p, const int height, const int width, const stack<element>& st, const vector<vector<int>> & matrix){
+vector<element> getNeighbor(const pos p, const int height, const int width, const vector<vector<int>> & matrix){
 	vector<pos> neighbor;		
 	// top	
-	if(p.x > 0 && st[p.x-1][p.y] != 0){
+	if(p.x > 0){
 		pos tmp(p.x-1, p.y);		
 		neighbor.push( element(matrix[p.x-1][p.y], tmp) );
 	}
 	// bottom
-	if(p.x < height - 1 && st[p.x+1][p.y] != 0){
+	if(p.x < height - 1){
 		pos tmp(p.x+1, p.y);
 		neighbor.push( element(matrix[p.x+1][p.y]) );
 	}
 	// left
-	if(p.y > 0 && st[p.x][p.y-1] != 0){
+	if(p.y > 0 ){
 		pos tmp(p.x, p.y-1);
 		neighbor.push( element(matrix[p.x][p.y-1]) );
 	}
 	// right
-	if(p.y < width - 1 && st[p.x][p.y+1] != 0){
+	if(p.y < width - 1){
 		pos tmp(p.x, p.y+1);
 		neighbor.push( element(matrix[p.x][p.y+1]) );
 	}
