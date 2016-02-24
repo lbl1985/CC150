@@ -39,7 +39,9 @@
 #include <vector>
 #include <stack>
 using namespace std;
+#define DEBUG 0
 
+#if DEBUG
 void print2DVec(const vector<vector<int>> &vec){
 	for(size_t i = 0; i < vec.size(); i++){
 		for(size_t j = 0; j < vec[0].size(); j++){
@@ -58,6 +60,7 @@ void print2DVec(int** arr, const int height, const int width)
 		printf("\n");
 	}
 }
+#endif
 
 struct pos{
 	pos(uint xp, uint yp):x(xp), y(yp) {}
@@ -66,35 +69,75 @@ struct pos{
 };
 
 struct element{
-	element(int valp, pos pp):val(valp), p(pp) {}
+	element(pos pp, int valp):val(valp), p(pp) {}
 	int val;
 	pos p;
 };
 
 // get neighbors need to check 
-vector<element> getNeighbor(const pos p, const int height, const int width, const vector<vector<int>> & matrix){
+vector<element> getQualifiedNeighbor(const size_t& x, const size_t& y, const vector<vector<int>> & matrix){
 	vector<element> neighbor;		
+	int curVal = matrix[x][y];
+	int height = (int)matrix.size();
+	int width = (int)matrix[0].size();
 	// top	
-	if(p.x > 0){
-		pos tmp(p.x-1, p.y);		
-		neighbor.push_back( element(matrix[p.x-1][p.y], tmp) );
+	if(x > 0 && curVal < matrix[x - 1][y]){
+		pos tmp(x - 1, y);
+		neighbor.push_back(element(tmp, matrix[x - 1][y]) );
 	}
 	// bottom
-	if(p.x < (uint) (height - 1)){
-		pos tmp(p.x+1, p.y);
-		neighbor.push_back( element(matrix[p.x+1][p.y], tmp) );
+	if(x < (uint) (height - 1) && curVal < matrix[x + 1][y]){
+		pos tmp(x+1, y);
+		neighbor.push_back(element(tmp, matrix[x+1][y]));
 	}
 	// left
-	if(p.y > 0 ){
-		pos tmp(p.x, p.y-1);
-		neighbor.push_back( element(matrix[p.x][p.y-1], tmp) );
+	if(y > 0 && curVal < matrix[x][y - 1]){
+		pos tmp(x, y-1);
+		neighbor.push_back(element(tmp, matrix[x][y-1]));
 	}
 	// right
-	if(p.y < (uint) (width - 1)){
-		pos tmp(p.x, p.y+1);
-		neighbor.push_back( element(matrix[p.x][p.y+1], tmp) );
+	if(y < (uint) (width - 1) && curVal < matrix[x][y+1]){
+		pos tmp(x, y+1);
+		neighbor.push_back(element(tmp, matrix[x][y+1]));
 	}
 	return neighbor;
+}
+
+int getNodeLength(const size_t& x, const size_t& y, const vector<vector<int>>& matrix, int** st)
+{		
+	vector<element> neighbor = getQualifiedNeighbor(x, y, matrix);
+	if(neighbor.empty()){
+#if DEBUG
+			printf("pos (%d, %d), len %d\n", x, y, 1);
+#endif
+		return 1;
+
+	} else {				
+		size_t n = (size_t)neighbor.size();
+		int tmplen = 0;
+
+		for(size_t i = 0; i < n; i++){
+			int nx = neighbor[i].p.x;
+			int ny = neighbor[i].p.y;
+			int tmpNLen = st[nx][ny];
+			if(tmpNLen){
+				if(tmpNLen + 1> tmplen){
+					tmplen = tmpNLen + 1;	
+				}				
+			} else {
+				st[nx][ny] = getNodeLength(nx, ny, matrix, st);
+				if(st[nx][ny]){
+					if(st[nx][ny] + 1 > tmplen){
+						tmplen = st[nx][ny] + 1;
+					}
+				}
+			}
+		}
+#if DEBUG
+			printf("pos (%d, %d), len %d\n", x, y, tmplen);
+#endif
+		return tmplen;
+	}
 }
 
 int longestIncreasingPath(vector<vector<int>>& matrix)
@@ -105,47 +148,37 @@ int longestIncreasingPath(vector<vector<int>>& matrix)
 	uint height = matrix.size();
 	uint width = matrix[0].size();
 	
+	int longest = 0;
+
+	// st recode the length for each node
 	int ** st = new int *[height];
 	for(uint i = 0; i < height; i++){
 		st[i] = new int[width];
 		memset(st[i], 0, width * sizeof(int));
 	}
 
-	stack<element> curStack;
-
-	for(uint i = 0; i< height; i++){
-		for(uint j = 0; j < width; j++){
-			if(st[i][j] != 0){
-				pos p(i, j);
-				element cur(matrix[i][j], p);				
-				curStack.push(cur);
-				vector<element> neighbor = getNeighbor(p, height, width, matrix);
-
-				while(!neighbor.empty()){
-					for(size_t k = 0; k < neighbor.size(); k++){
-						element tE = neighbor[k];						
-						if(cur.val < tE.val){
-							curStack.push(tE);
-						}
-					}
-				}
-
-				
+	for(size_t i = 0; i < height; i++){
+		for(size_t j = 0; j < width; j++){
+			st[i][j] = getNodeLength(i, j, matrix, st);
+			if(longest < st[i][j]){
+				longest = st[i][j];
 			}
 		}
 	}
 
+#if DEBUG
+        printf("longest of the matrix is %d\n", longest);
+        print2DVec(st, height, width);
+#endif
 
-	print2DVec(st, height, width);
+    for (uint i = 0; i < height; i++) {
+        delete[] st[i];
+        st[i] = nullptr;
+    }
+    delete[] st;
+    st = nullptr;
 
-	for(uint i = 0; i < height; i++){
-		delete [] st[i];
-		st[i] = nullptr;
-	}
-	delete [] st;
-	st = nullptr;
-
-	return 0;
+	return longest;
 }
 
 int Q329_LongestIncreasingPathInAMatrix()
@@ -158,8 +191,9 @@ int Q329_LongestIncreasingPathInAMatrix()
 	matrix.push_back(tmp02);
 	matrix.push_back(tmp03);
 
-
+#if DEBUG
 	print2DVec(matrix);
+#endif
 
 	longestIncreasingPath(matrix);
 
