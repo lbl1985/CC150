@@ -7,6 +7,9 @@
 #include <time.h>       // time
 #include <stdlib.h>     // srand, rand
 #include "CLinkedList.h"
+#include <vector>
+
+using namespace std;
 
 typedef unsigned int uint;
 
@@ -58,6 +61,18 @@ void print2DMat(T** mat, uint rows, uint cols)
             printf("%4d ", mat[i][j]);
         }
         printf("\n");
+    }
+}
+
+template<class T>
+void print2DMat(const vector< vector<T> >& mat){
+    size_t height = mat.size();
+    size_t width  = mat[0].size();
+    for(size_t i = 0; i < height; i++ ){
+        for(size_t j = 0; j < width; j++){           
+            cout << mat[i][j] << " ";
+        }
+        cout << endl;
     }
 }
 

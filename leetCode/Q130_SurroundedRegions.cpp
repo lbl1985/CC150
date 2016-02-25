@@ -40,8 +40,34 @@
 // Author: Binlong Li
 // Date: 02/24/2016
 #include "..\inc\utils.h"
+#include <vector>
+using namespace std;
 
-int Q130_SurroundedRegions(){
-	printf("inside Q130_SurroundedRegions\n");
+vector<vector<char>> createExample1()
+{	
+	char x='x';
+	char o='o';	
+	char example[6][6]={{x, x, x, x, x, x}, {x, o, o, o, x, o}, {x, o, o, o, o, x}, 
+					{x, x, x, o, x, o}, {x, o, o, x, o, x}, {x, x, o, x, o, x}};
+	vector<vector<char>> board;
+	for(int i = 0; i < 6; i++){
+		vector<char> tmp(example[i], example[i] + 6);
+		board.push_back(tmp);
+	}
+	return board;
+}
+
+int Q130_SurroundedRegions(){		
+	vector<vector<char>> board;
+	board = createExample1();
+	print2DMat<char>(board);
 	return 0;
 }
+
+class Solution {
+public:
+    void solve(vector<vector<char>>& board)
+    {
+
+    }
+};
