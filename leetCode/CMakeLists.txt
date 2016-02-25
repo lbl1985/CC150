@@ -4,6 +4,7 @@ set(list
 	Q326_PowerOfThree.cpp
 	Q328_OddEvenLinkedList.cpp
 	Q329_LongestIncreasingPathInAMatrix.cpp
+	Q130_SurroundedRegions.cpp
 )
 
 foreach(item ${list})
