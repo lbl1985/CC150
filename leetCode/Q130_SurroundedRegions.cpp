@@ -41,6 +41,8 @@
 // Date: 02/24/2016
 #include "..\inc\utils.h"
 #include <vector>
+#include <stack>
+
 using namespace std;
 
 vector<vector<char>> createExample1()
@@ -57,11 +59,60 @@ vector<vector<char>> createExample1()
 	return board;
 }
 
-int Q130_SurroundedRegions(){		
+int Q130_SurroundedRegions()
+{
 	vector<vector<char>> board;
 	board = createExample1();
 	print2DMat<char>(board);
 	return 0;
+}
+
+struct pos{
+	pos(int xi, int yi):x(xi), y(yi){}
+	int x;
+	int y;
+};
+
+vector<pos> getConnectArea(int x, int y, const vector<vector<char>>& board, int **st)
+{
+	vector<pos> list;
+	stack<pos> s;	
+	s.push(pos(x,y));
+
+	while(!s.empty()){
+		pos p = s.top();
+		s.pop();
+		if(!st[p.x][p.y]){
+			list.push_back(p);
+		}
+		// check all neighborhood
+
+	}
+	return list;
+}
+
+void solve(vector<vector<char>>& board)
+{
+	int height = (int)board.size();
+	int width = (int)board[0].size();
+	int **st = new int*[height];
+	for(int i = 0; i < height; i++){
+		st[i] = new int [width];
+		memset(st[i], 0, width * sizeof(int));
+	}
+
+	for(int x = 0; x < height; x++){
+		for(int y = 0; y < width; y++){
+			// 
+			if(board[x][y] == 'o' && !st[x][y]){
+				vector<pos> list = getConnectArea(x, y, board, st);
+			}
+		}
+	}
+
+	for(int i = 0; i < height; i++){
+		delete [] st[i];
+	}
 }
 
 class Solution {

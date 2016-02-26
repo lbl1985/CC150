@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"szi",
+				"size_t"
+			],
+			[
 				"line",
 				"lineChartData"
 			],
@@ -99,17 +103,50 @@
 			"file": "leetCode/Q329_LongestIncreasingPathInAMatrix.cpp",
 			"settings":
 			{
-				"buffer_size": 3218,
+				"buffer_size": 5179,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/c/Experiment/powershell/pstoolbox/envd.bat",
+			"settings":
+			{
+				"buffer_size": 3604,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "tools/main.cpp",
+			"settings":
+			{
+				"buffer_size": 1441,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "inc/utils.h",
+			"settings":
+			{
+				"buffer_size": 2618,
 				"line_ending": "Windows"
 			}
 		}
 	],
 	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
 	"command_palette":
 	{
-		"height": 392.0,
+		"height": 288.0,
+		"last_filter": "package ins",
 		"selected_items":
 		[
+			[
+				"package ins",
+				"Package Control: List Packages"
+			],
 			[
 				"jason",
 				"Pretty JSON: Format (Pretty Print) JSON"
@@ -187,11 +224,21 @@
 				"Preferences: Settings - User"
 			]
 		],
-		"width": 400.0
+		"width": 464.0
 	},
 	"console":
 	{
-		"height": 146.0
+		"height": 146.0,
+		"history":
+		[
+			"sublime.installed_packages_path()",
+			"os",
+			"ver",
+			"import urllib2",
+			"import os",
+			"import urllib2,os;pfOnly='PackageControl';pf='Package Control.sublime-package';ipp='C:\\\\Users\\\\bil\\\\AppData\\\\Roaming\\\\Sublime Text 3\\\\Packages\\\\Package Control';open(os.path.join(ipp,pf),'wb').write(urllib2.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read())",
+			"1.import urllib2,os;pf='Package Control.sublime-package';ipp=sublime.installed_packages_path();os.makedirs(ipp) if not os.path.exists(ipp) else None;open(os.path.join(ipp,pf),'wb').write(urllib2.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read())"
+		]
 	},
 	"distraction_free":
 	{
@@ -202,9 +249,16 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
+	"expanded_folders":
+	[
+		"/C/Experiment/CPP/cc150"
+	],
 	"file_history":
 	[
+		"/C/Experiment/CPP/cc150/leetCode/Q130_SurroundedRegions.cpp",
+		"/C/Experiment/CPP/cc150/leetCode/CMakeLists.txt",
 		"/c/Experiment/powershell/pstoolbox/envd.bat",
+		"/C/Experiment/CPP/cc150/README.txt",
 		"/c/Experiment/powershell/pstoolbox/startup/run_vnext_daily_update.bat",
 		"/C/source/rig/razzle_root/src/test/media/platform/Tests/BVTs/MediaComBVT/src/Common/CommonBVT.cpp",
 		"/C/source/rig/razzle_root/src/test/media/platform/TestLibs/Common/idl/IRtpTestFramework.idl",
@@ -328,10 +382,7 @@
 		"/C/source/rig_root/razzle_root/src/dev/media/common/codegen/qoeblob/QoEReport.qoe",
 		"/C/source/rig_root/razzle_root/src/dev/media/sliq/sliq_platform/x86_masm/CMakeLists.txt",
 		"/C/source/rig_root/razzle_root/src/dev/media/sliq/sliq_platform/CMakeLists.txt",
-		"/C/source/rig_root/razzle_root/src/dev/media/sliq/buildrig_description/cmake_support/masm/enable_masm_support.cmake",
-		"/C/source/rig_root/razzle_root/src/dev/media/sliq/CMakeLists.txt",
-		"/C/source/rig_root/razzle_root/src/dev/media/common/codegen/qoeblob/QoEBlob.qoe",
-		"/C/source/rig_root/razzle_root/src/dev/media/sliq/buildrig_description/cmake_support/nasm/enable_nasm_support.cmake"
+		"/C/source/rig_root/razzle_root/src/dev/media/sliq/buildrig_description/cmake_support/masm/enable_masm_support.cmake"
 	],
 	"find":
 	{
@@ -363,6 +414,16 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			",",
+			" ",
+			"solve",
+			"//",
+			"\n//",
+			"tmp, ",
+			"x-1",
+			"p.",
+			"element",
+			"cma",
 			"Received",
 			"loss",
 			"local",
@@ -480,17 +541,7 @@
 			"CMAKE_*_COMPILER",
 			"CMAKE_SOURCE_DIR",
 			"DEPENDS",
-			"SLIQ_NODEP_LIBNAME",
-			"        float? MediaLine_InboundStream_Payload_Video_v5_RecvAdaptiveVideoBufferMetrics { get; }\n        float? MediaLine_InboundStream_Payload_Video_v5_RecvAdaptiveVideoBufferMetrics { get; }\n        float? MediaLine_InboundStream_Payload_Video_v5_RecvAdaptiveVideoBufferMetrics { get; }\n",
-			"dBaseLayerQPSum",
-			"v5:RecvBaseLayerQpAvg",
-			"wCFD",
-			"wLKG",
-			"mldprocessinput",
-			"processinput",
-			"pullframesvc",
-			"ProcessInputFrame",
-			"satd_x86_sse4"
+			"SLIQ_NODEP_LIBNAME"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -509,35 +560,364 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
 					"file": "leetCode/Q329_LongestIncreasingPathInAMatrix.cpp",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3218,
+						"buffer_size": 5179,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								335,
-								335
+								2640,
+								2640
 							]
 						],
 						"settings":
 						{
-							"function_name_status_row": -1,
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"function_name_status_row": 114,
 							"syntax": "Packages/C++/C++.tmLanguage",
 							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1993.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/c/Experiment/powershell/pstoolbox/envd.bat",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3604,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								796,
+								796
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"function_name_status_row": 25,
+							"syntax": "Packages/Batch File/Batch File.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "tools/main.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1441,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								900,
+								900
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"function_name_status_row": 43,
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "inc/utils.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2618,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								277,
+								277
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"function_name_status_row": 11,
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
 					"type": "text"
 				}
 			]
@@ -545,7 +925,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 34.0
+		"height": 35.0
 	},
 	"input":
 	{
@@ -586,6 +966,8 @@
 	{
 		"height": 118.0
 	},
+	"pinned_build_system": "",
+	"project": "cc150.sublime-project",
 	"replace":
 	{
 		"height": 48.0
@@ -594,8 +976,25 @@
 	"select_file":
 	{
 		"height": 0.0,
+		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"leetcode/cmake",
+				"leetCode\\CMakeLists.txt"
+			],
+			[
+				"util",
+				"inc\\utils.h"
+			],
+			[
+				"main",
+				"tools\\main.cpp"
+			],
+			[
+				"q130",
+				"leetCode\\Q130_SurroundedRegions.cpp"
+			],
 			[
 				"leng",
 				"leetCode/Q329_LongestIncreasingPathInAMatrix.cpp"
@@ -818,6 +1217,7 @@
 	"select_project":
 	{
 		"height": 500.0,
+		"last_filter": "",
 		"selected_items":
 		[
 			[
@@ -847,10 +1247,26 @@
 		],
 		"width": 380.0
 	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
 	"show_minimap": true,
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": false,
 	"side_bar_width": 213.0,
-	"status_bar_visible": true
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
 }
