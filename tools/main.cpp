@@ -41,8 +41,10 @@ int main()
     // res = quicksortTest();
 
 	// leetCode
-    cout << endl << "Q130_LongestIncreasingPathInAMatrix:" << endl;
-    res = Q130_SurroundedRegions();
+    cout << endl << "Q001_TwoSum:" << endl;
+    res = Q001_TwoSum();
+    // cout << endl << "Q130_LongestIncreasingPathInAMatrix:" << endl;
+    // res = Q130_SurroundedRegions();
     // cout << endl << "Q162_FindPeakElement" << endl;
     // res = Q162_FindPeakElement();
     // cout << endl << "Q326_PowerOfThree" << endl;

@@ -15,3 +15,10 @@
 //  The return format had been changed to zero-based indices. Please read the above updated description carefully. 
 // Author: Binlong Li
 // Date: 02/26/2016
+
+#include "..\inc\utils.h"
+#include <iostream>
+int Q001_TwoSum(){
+	printf("inside of 001_TwoSum\n");
+	return 0;
+}

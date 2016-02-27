@@ -1,4 +1,6 @@
 set(list
+	Q001_TwoSum.cpp
+	Q116_PopulatingNextRightPointersinEachNode.cpp
 	Q162_FindPeakElement.cpp
 	Q324_WiggleSortII.cpp
 	Q326_PowerOfThree.cpp

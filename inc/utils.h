@@ -45,6 +45,7 @@ int bubbleSortTest();
 int quicksortTest();
 
 // leetCode
+int Q001_TwoSum();
 int Q130_SurroundedRegions();
 int Q162_FindPeakElement();
 int Q326_PowerOfThree();
