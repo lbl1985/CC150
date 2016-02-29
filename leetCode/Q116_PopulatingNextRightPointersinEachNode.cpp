@@ -35,5 +35,41 @@
 //      / \  / \
 //     4->5->6->7 -> NULL
 // 
+/**
+ * Definition for binary tree with next pointer.
+ * struct TreeLinkNode {
+ *  int val;
+ *  TreeLinkNode *left, *right, *next;
+ *  TreeLinkNode(int x) : val(x), left(NULL), right(NULL), next(NULL) {}
+ * };
+ */
+// class Solution {
+// public:
+//     void connect(TreeLinkNode *root) {
+        
+//     }
+// };
 // Author: Binlong Li
 // Date: 02/26/2016
+
+#include "..\inc\utils.h"
+
+struct TreeLinkNode {
+ int val;
+ TreeLinkNode *left, *right, *next;
+ TreeLinkNode(int x) : val(x), left(NULL), right(NULL), next(NULL) {}
+};
+
+
+
+class Solution {
+public:
+    void connect(TreeLinkNode *root) {
+        
+    }
+};
+int Q116_PopulatingNextRightPointersinEachNode()
+{
+	printf("inside of function Q116_PopulatingNextRightPointersinEachNode\n");
+	return 0;
+}
