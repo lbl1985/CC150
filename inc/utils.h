@@ -46,6 +46,7 @@ int quicksortTest();
 
 // leetCode
 int Q001_TwoSum();
+int Q051_N_Queens();
 int Q116_PopulatingNextRightPointersinEachNode();
 int Q130_SurroundedRegions();
 int Q162_FindPeakElement();

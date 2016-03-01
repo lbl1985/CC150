@@ -1,5 +1,6 @@
 set(list
 	Q001_TwoSum.cpp
+	Q051_N_Queens.cpp;
 	Q116_PopulatingNextRightPointersinEachNode.cpp
 	Q162_FindPeakElement.cpp
 	Q324_WiggleSortII.cpp
