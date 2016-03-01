@@ -57,14 +57,19 @@ vector<QueenNode*> getPossibleChild(const unordered_set<int>& fullSet, const vec
 		removeItem(neighbor, curSeq[i]);
 	}
 
-	int curId = curSeq[curSeq.size() - 1];
-	if(curId == 0){
-		removeItem(neighbor, curId + 1);
-	} else if(curId == n - 1){
-		removeItem(neighbor, curId - 1);
-	} else {
-		removeItem(neighbor, curId - 1);
-		removeItem(neighbor, curId + 1);
+	int x = curSeq.size() - 1;
+	int y = curSeq[curSeq.size() - 1];
+
+	int iter = 1;
+	while(x + iter < n && y + iter < n){
+		removeItem(neighbor, y + iter);
+		iter++;
+	}
+
+	iter = 1;
+	while(x + iter <n && y - iter >= 0){
+		removeItem(neighbor, y - iter);
+		iter++;
 	}
 
 	vector<QueenNode*> neighborList;
