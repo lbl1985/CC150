@@ -44,6 +44,7 @@ vector<int> twoSum(vector<int>& nums, int target)
 		}
 		search.push_back(target - num);
 	}
+	return res;
 }
 
 int Q001_TwoSum(){
