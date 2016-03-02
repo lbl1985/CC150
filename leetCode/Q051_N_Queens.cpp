@@ -57,17 +57,19 @@ vector<QueenNode*> getPossibleChild(const unordered_set<int>& fullSet, const vec
 		removeItem(neighbor, curSeq[i]);
 	}
 
-	int x = curSeq.size() - 1;
-	int y = curSeq[curSeq.size() - 1];
+	for(int iter = 1; iter <= (int)curSeq.size(); iter++ ){
+		int x = curSeq.size() - iter;
+		int y = curSeq[curSeq.size() - iter];
 
+		if(x + iter < n && y + iter < n){
+			removeItem(neighbor, y + iter);
+		}
+
+		if(x + iter < n && y - iter >= 0){
+			removeItem(neighbor, y - iter);
+		}	
+	}
 	
-	for(int iter = 1; x + iter < n && y + iter < n; iter++){
-		removeItem(neighbor, y + iter);
-	}
-
-	for(int iter = 1; x + iter < n && y - iter >= 0; iter ++){
-		removeItem(neighbor, y - iter);
-	}
 	
 	vector<QueenNode*> neighborList;
 	if(!neighbor.empty()){
@@ -95,10 +97,18 @@ void createNext(QueenNode* root, const unordered_set<int>& fullSet, const vector
 }
 
 vector<vector<string>> solveNQueens(int n) 
-{
+{	
 	vector<vector<string>> res;
 	vector<vector<int>> idx;
 	unordered_set<int> fullSet;
+
+	if(n == 1){
+		sting s = "Q";
+		vector<string> tmpString; tmpString.push_back(s);
+		res.push_back(tmpString);
+		return res;
+	}
+
 	for(int i = 0; i < n; i++){
 		fullSet.insert(i);
 	}
@@ -124,8 +134,8 @@ int Q051_N_Queens(){
 	printf("inside of Q051_N_Queens();\n");
 	solveNQueens(4);
 	solveNQueens(5);
-	// solveNQueens(6);
-	// solveNQueens(7);
+	solveNQueens(6);
+	solveNQueens(7);
 	// solveNQueens(8);
 	return 0;
 }
