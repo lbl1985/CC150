@@ -26,6 +26,7 @@
 // };
 // Author: Binlong Li
 // Date: 02/29/2016
+// Finish: 03/02/2016
 
 #include "..\inc\utils.h"
 
@@ -33,6 +34,8 @@
 #include <unordered_set>
 #include <string>
 using namespace std;
+
+#define DEBUG 0
 
 struct QueenNode{
 	QueenNode(int v):val(v){}
@@ -96,17 +99,93 @@ void createNext(QueenNode* root, const unordered_set<int>& fullSet, const vector
 	}
 }
 
+vector<string> rowTemplate(int n)
+{
+	vector<string> tem;
+	string str = "";
+	for(int i = 0; i < n; i++){
+		str += ".";
+	}
+	for(int i = 0; i < n; i++){
+		string cur(str);
+		cur[i] = 'Q';
+		tem.push_back(cur);
+	}
+	return tem;
+}
+
+#if DEBUG
+void printConfig(vector<string> vStr)
+{
+	int n = (int)vStr.size();
+	for(int i = 0; i < n; i ++){
+		for(int j = 0; j < n; j++){
+			printf("%c ", vStr[i][j]);
+		}
+		cout << endl;
+	}
+}
+#endif
+
 vector<vector<string>> solveNQueens(int n) 
 {	
 	vector<vector<string>> res;
 	vector<vector<int>> idx;
 	unordered_set<int> fullSet;
 
+	vector<string> tem = rowTemplate(n);
+#if DEBUG
+	printConfig(tem);
+#endif
+
 	if(n == 1){
-		sting s = "Q";
+		string s = "Q";
 		vector<string> tmpString; tmpString.push_back(s);
 		res.push_back(tmpString);
 		return res;
+	}
+
+	for(int i = 0; i < n; i++){
+		fullSet.insert(i);
+	}
+	// for each number to be as root
+	for(int i = 0; i < n; i++){		
+		vector<int> curSeq;
+		curSeq.push_back(i);
+		QueenNode* root = new QueenNode(i);
+		createNext(root, fullSet, curSeq, idx);
+	}
+
+	
+	for(size_t i = 0; i < idx.size(); i++ ){
+		vector<string> temRes;
+		for(int j = 0; j < n; j++){
+			temRes.push_back(tem[idx[i][j]]);
+		}		
+		res.push_back(temRes);
+#if DEBUG
+		printf("Solution %d\n", i);
+		printConfig(temRes);
+#endif
+	}
+
+	return res;	
+}
+
+int TotalNum(int n)
+{
+	vector<vector<string>> res;
+	vector<vector<int>> idx;
+	unordered_set<int> fullSet;
+
+	vector<string> tem = rowTemplate(n);
+	printConfig(tem);
+
+	if(n == 1){
+		string s = "Q";
+		vector<string> tmpString; tmpString.push_back(s);
+		res.push_back(tmpString);
+		return 1;
 	}
 
 	for(int i = 0; i < n; i++){
@@ -127,7 +206,7 @@ vector<vector<string>> solveNQueens(int n)
 		}
 		printf("\n");
 	}
-	return res;
+	return (int)res.size();
 }
 
 int Q051_N_Queens(){
