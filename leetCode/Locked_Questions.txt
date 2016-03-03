@@ -1,0 +1,54 @@
+308 Range Sum Query 2D - Mutable   21.3% Hard 
+269 Alien Dictionary   22.0% Hard 
+158 Read N Characters Given Read4 II - Call multiple times   23.1% Hard 
+248 Strobogrammatic Number III   25.5% Hard 
+317 Shortest Distance from All Buildings   30.2% Hard 
+272 Closest Binary Search Tree Value II   32.1% Hard 
+305 Number of Islands II   33.3% Hard 
+291 Word Pattern II   33.7% Hard 
+159 Longest Substring with At Most Two Distinct Characters   33.8% Hard 
+265 Paint House II   35.0% Hard 
+302 Smallest Rectangle Enclosing Black Pixels   38.2% Hard 
+296 Best Meeting Point   45.7% Hard 
+333 Largest BST Subtree   26.2% Medium 
+271 Encode and Decode Strings   26.9% Medium 
+267 Palindrome Permutation II   27.0% Medium 
+161 One Edit Distance   27.9% Medium 
+163 Missing Ranges   28.6% Medium 
+186 Reverse Words in a String II   29.4% Medium 
+314 Binary Tree Vertical Order Traversal   30.7% Medium 
+261 Graph Valid Tree   31.6% Medium 
+251 Flatten 2D Vector   33.0% Medium 
+247 Strobogrammatic Number II   33.3% Medium 
+253 Meeting Rooms II   34.0% Medium 
+254 Factor Combinations   34.3% Medium 
+277 Find the Celebrity   34.8% Medium 
+244 Shortest Word Distance II   34.9% Medium 
+285 Inorder Successor in BST   35.1% Medium 
+298 Binary Tree Longest Consecutive Sequence   35.7% Medium 
+250 Count Univalue Subtrees   35.7% Medium 
+286 Walls and Gates   36.2% Medium 
+255 Verify Preorder Sequence in Binary Search Tree   36.4% Medium 
+156 Binary Tree Upside Down   37.4% Medium 
+259 3Sum Smaller   37.9% Medium 
+320 Generalized Abbreviation   39.6% Medium 
+294 Flip Game II   40.5% Medium 
+281 Zigzag Iterator   41.5% Medium 
+256 Paint House   41.8% Medium 
+323 Number of Connected Components in an Undirected Graph   42.3% Medium 
+245 Shortest Word Distance III   45.7% Medium 
+311 Sparse Matrix Multiplication   47.0% Medium 
+167 Two Sum II - Input array is sorted   47.2% Medium 
+280 Wiggle Sort   49.4% Medium 
+288 Unique Word Abbreviation   15.5% Easy 
+170 Two Sum III - Data structure design   24.2% Easy 
+157 Read N Characters Given Read4   29.4% Easy 
+276 Paint Fence   30.4% Easy 
+249 Group Shifted Strings   31.0% Easy 
+270 Closest Binary Search Tree Value   33.5% Easy 
+246 Strobogrammatic Number   35.8% Easy 
+325 Maximum Size Subarray Sum Equals k   39.1% Easy 
+252 Meeting Rooms   41.2% Easy 
+243 Shortest Word Distance   45.7% Easy 
+293 Flip Game   49.1% Easy 
+266 Palindrome Permutation   50.0% Easy 
