@@ -43,8 +43,12 @@ int main()
 	// leetCode
     // cout << endl << "Q001_TwoSum:" << endl;
     // res = Q001_TwoSum();
-    cout << endl << "Q051_N_Queens()" << endl;
-    res = Q051_N_Queens();
+    cout << endl << "Q045_JumpGameII:" << endl;
+    res = Q045_JumpGameII();
+    // cout << endl << "Q051_N_Queens()" << endl;
+    // res = Q051_N_Queens();
+    cout << endl << "Q055_JumpGame:" << endl;
+    res = Q055_JumpGame();
     // cout << endl << "Q116_PopulatingNextRightPointersinEachNode" << endl;
     // res = Q116_PopulatingNextRightPointersinEachNode();
     // cout << endl << "Q130_LongestIncreasingPathInAMatrix:" << endl;

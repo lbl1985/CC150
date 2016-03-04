@@ -35,7 +35,7 @@
 #include <string>
 using namespace std;
 
-#define DEBUG 0
+#define DEBUG 1
 
 struct QueenNode{
 	QueenNode(int v):val(v){}
