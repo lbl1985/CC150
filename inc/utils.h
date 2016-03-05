@@ -58,6 +58,17 @@ int Q328_OddEvenLinkedList();
 int Q329_LongestIncreasingPathInAMatrix();
 
 
+
+template<class T>
+void printVector(const vector<T>& vec){
+    size_t len = vec.size();
+    for(size_t i = 0; i < len; i++){
+        cout << vec[i] << " ";
+    }
+    cout << endl;
+}
+
+
 template<class T>
 void print2DMat(T** mat, uint rows, uint cols)
 {

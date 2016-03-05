@@ -72,17 +72,11 @@ void quicksort_leetCode(vector<int> &arr, int low, int high, const int origMiddl
 	}
 }
 
-void printVector(const vector<int> &v) {
-	for (size_t i = 0; i < v.size(); i++) {
-		printf("%d ", v[i]);
-	}
-}
-
 void wiggleSort(vector<int>& num) {
 	quicksort_leetCode(num, 0, num.size()-1, (num.size()>>1)-1);
 	
 	printf("\n printf vector before final step\n");
-	printVector(num);
+	printVector<int>(num);
 
 	size_t sz = num.size();
 	int midIndex = (((int)sz + 1) >> 1) - 1;
@@ -107,10 +101,10 @@ int Q324_WiggleSortII()
 	vector<vector<int> > tests{ { 1, 5, 1, 1, 6, 4 }, { 1, 3, 2, 2, 3, 1} , {1,1,2,1,2,2,1}, {4, 5, 5, 6}, {3,2,1,1,3,2}};
 	for (size_t i = 0; i < tests.size(); i++) {
 		printf("test set %d: \n", i);
-		printVector(tests[i]);
+		printVector<int>(tests[i]);
 		wiggleSort(tests[i]);
 		printf("after wiggle sort: \n");
-		printVector(tests[i]);
+		printVector<int>(tests[i]);
 		printf("\n");
 	}
 	
