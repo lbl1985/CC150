@@ -21,12 +21,19 @@
 #include "..\inc\utils.h"
 #include <vector>
 
-class Solution {
-public:
-    bool canJump(vector<int>& nums) {
-        
+
+bool canJump(vector<int>& nums) {
+    size_t len = nums.size();
+    if(len == 1){
+    	return true;
     }
-};
+    for(size_t i = 0; i < len - 1; i++){
+    	if(nums[i] >= (int)(len - i - 1)){
+    		return true;
+    	}
+    }
+    return false;
+}
 
 int Q055_JumpGame()
 {
@@ -42,6 +49,7 @@ int Q055_JumpGame()
 
 	for(size_t i = 0; i < test.size(); i++){
 		printVector<int>(test[i]);
+		printf("result is: %s\n", canJump(test[i]) ? "true" : "false");
 	}
 
 	return 0;
