@@ -135,7 +135,7 @@
 			"file": "leetCode/Q055_JumpGame.cpp",
 			"settings":
 			{
-				"buffer_size": 570,
+				"buffer_size": 1251,
 				"line_ending": "Windows"
 			}
 		},
@@ -159,20 +159,23 @@
 			"file": "inc/utils.h",
 			"settings":
 			{
-				"buffer_size": 2752,
+				"buffer_size": 2936,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "leetCode/Q324_WiggleSortII.cpp",
+			"settings":
+			{
+				"buffer_size": 2567,
 				"line_ending": "Windows"
 			}
 		}
 	],
 	"build_system": "",
-	"build_system_choices":
-	[
-	],
-	"build_varint": "",
 	"command_palette":
 	{
 		"height": 392.0,
-		"last_filter": "rena",
 		"selected_items":
 		[
 			[
@@ -268,17 +271,7 @@
 	},
 	"console":
 	{
-		"height": 146.0,
-		"history":
-		[
-			"sublime.installed_packages_path()",
-			"os",
-			"ver",
-			"import urllib2",
-			"import os",
-			"import urllib2,os;pfOnly='PackageControl';pf='Package Control.sublime-package';ipp='C:\\\\Users\\\\bil\\\\AppData\\\\Roaming\\\\Sublime Text 3\\\\Packages\\\\Package Control';open(os.path.join(ipp,pf),'wb').write(urllib2.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read())",
-			"1.import urllib2,os;pf='Package Control.sublime-package';ipp=sublime.installed_packages_path();os.makedirs(ipp) if not os.path.exists(ipp) else None;open(os.path.join(ipp,pf),'wb').write(urllib2.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read())"
-		]
+		"height": 146.0
 	},
 	"distraction_free":
 	{
@@ -289,12 +282,9 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
-	"expanded_folders":
-	[
-		"/C/Experiment/CPP/cc150"
-	],
 	"file_history":
 	[
+		"/C/Experiment/CPP/cc150/leetCode/Q162_FindPeakElement.cpp",
 		"/C/Experiment/CPP/cc150/leetCode/Q051_N_Queens.cpp",
 		"/c/Experiment/powershell/pstoolbox/envd.bat",
 		"/C/Experiment/CPP/cc150/leetCode/Q001_TwoSum.cpp",
@@ -421,8 +411,7 @@
 		"/C/Experiment/powershell/pstoolbox/startup/run_windoworg.bat",
 		"/C/Experiment/powershell/pstoolbox/startup/run_myscript.bat",
 		"/C/Experiment/powershell/pstoolbox/startup/myscript.bat",
-		"/C/source/rig_root/razzle_root/src/dev/media/videodsp/vsca/enc/VscaErcBase.cpp",
-		"/C/source/rig_root/razzle_root/src/dev/media/videodsp/codecs/common/MLE/mle_interface.cpp"
+		"/C/source/rig_root/razzle_root/src/dev/media/videodsp/vsca/enc/VscaErcBase.cpp"
 	],
 	"find":
 	{
@@ -454,6 +443,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"printVector",
+			"printvector",
 			">>",
 			"Queens",
 			"Hard",
@@ -579,9 +570,7 @@
 			"VCFG_ADAPTIVE_PLAYOUT_BUFFER",
 			".ullTimeStamp",
 			"ullTimeStamp",
-			"s_SupportedConfig",
-			"uicfgidc",
-			"uic"
+			"s_SupportedConfig"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -607,7 +596,6 @@
 				{
 					"buffer": 0,
 					"file": "leetCode/Q045_JumpGameII.cpp",
-					"semi_transient": false,
 					"settings":
 					{
 						"buffer_size": 780,
@@ -627,61 +615,50 @@
 							"_anf_new": "",
 							"bh_regions":
 							[
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
 								"bh_regex",
 								"bh_regex_center",
 								"bh_regex_open",
 								"bh_regex_close",
-								"bh_regex_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
 								"bh_square_close",
-								"bh_square_content"
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
 							],
 							"function_name_status_row": 30,
 							"syntax": "Packages/C++/C++.tmLanguage"
@@ -690,24 +667,22 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
 					"file": "leetCode/Q055_JumpGame.cpp",
-					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 570,
+						"buffer_size": 1251,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								507,
-								507
+								1096,
+								1096
 							]
 						],
 						"settings":
@@ -716,76 +691,63 @@
 							"_anf_new": "",
 							"bh_regions":
 							[
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
 								"bh_regex",
 								"bh_regex_center",
 								"bh_regex_open",
 								"bh_regex_close",
-								"bh_regex_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
 								"bh_square_close",
-								"bh_square_content"
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
 							],
-							"function_name_status_row": 21,
+							"function_name_status_row": 50,
 							"syntax": "Packages/C++/C++.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 120.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
 					"file": "tools/main.cpp",
-					"semi_transient": false,
 					"settings":
 					{
 						"buffer_size": 1888,
@@ -860,7 +822,7 @@
 								"bh_square_close",
 								"bh_square_content"
 							],
-							"function_name_status_row": 50,
+							"function_name_status_row": 0,
 							"syntax": "Packages/C++/C++.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
@@ -869,13 +831,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
 					"type": "text"
 				},
 				{
 					"buffer": 3,
 					"file": "leetCode/CMakeLists.txt",
-					"semi_transient": false,
 					"settings":
 					{
 						"buffer_size": 473,
@@ -951,30 +911,29 @@
 								"bh_square_content"
 							],
 							"function_name_status_row": 4,
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 4,
 					"file": "inc/utils.h",
-					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2752,
+						"buffer_size": 2936,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								849,
-								849
+								1118,
+								1118
 							]
 						],
 						"settings":
@@ -982,72 +941,140 @@
 							"BracketHighlighterBusy": false,
 							"bh_regions":
 							[
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
 								"bh_regex",
 								"bh_regex_center",
 								"bh_regex_open",
 								"bh_regex_close",
-								"bh_regex_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
 								"bh_square_close",
-								"bh_square_content"
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
 							],
-							"function_name_status_row": 50,
+							"function_name_status_row": 62,
 							"syntax": "Packages/C++/C++.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 531.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "leetCode/Q324_WiggleSortII.cpp",
+					"settings":
+					{
+						"buffer_size": 2567,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2433,
+								2433
+							],
+							[
+								2522,
+								2522
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"function_name_status_row": 103,
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1154.0,
+						"zoom_level": 1.0
+					},
 					"type": "text"
 				}
 			]
@@ -1096,8 +1123,6 @@
 	{
 		"height": 118.0
 	},
-	"pinned_build_system": "",
-	"project": "cc150.sublime-project",
 	"replace":
 	{
 		"height": 48.0
@@ -1106,9 +1131,16 @@
 	"select_file":
 	{
 		"height": 0.0,
-		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"q162",
+				"leetCode/Q162_FindPeakElement.cpp"
+			],
+			[
+				"q324",
+				"leetCode/Q324_WiggleSortII.cpp"
+			],
 			[
 				"q05",
 				"leetCode\\Q051_N_Queens.cpp"
@@ -1375,7 +1407,6 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "",
 		"selected_items":
 		[
 			[
@@ -1405,26 +1436,10 @@
 		],
 		"width": 380.0
 	},
-	"select_symbol":
-	{
-		"height": 0.0,
-		"last_filter": "",
-		"selected_items":
-		[
-		],
-		"width": 0.0
-	},
-	"selected_group": 0,
-	"settings":
-	{
-	},
 	"show_minimap": true,
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": false,
 	"side_bar_width": 213.0,
-	"status_bar_visible": true,
-	"template_settings":
-	{
-	}
+	"status_bar_visible": true
 }
