@@ -30,7 +30,7 @@
   327 Count of Range Sum  24.3% Hard 
   37 Sudoku Solver  24.3% Hard 
   56 Merge Intervals  24.7% Hard 
-  45 Jump Game II  25.0% Hard   
+  ? 45 Jump Game II  25.0% Hard   
   123 Best Time to Buy and Sell Stock III  25.8% Hard 
   138 Copy List with Random Pointer  25.9% Hard 
   99 Recover Binary Search Tree  25.9% Hard 
@@ -116,7 +116,7 @@
   47 Permutations II  27.5% Medium   
   113 Path Sum II  27.9% Medium 
   50 Pow(x, n)  27.9% Medium 
-  55 Jump Game  28.0% Medium 
+  >>>>>> 55 Jump Game  28.0% Medium 
   17 Letter Combinations of a Phone Number  28.0% Medium 
   105 Construct Binary Tree from Preorder and Inorder Traversal  28.1% Medium 
   103 Binary Tree Zigzag Level Order Traversal  28.1% Medium 
@@ -214,7 +214,7 @@
   290 Word Pattern  28.3% Easy 
   299 Bulls and Cows  28.7% Easy 
   205 Isomorphic Strings  28.8% Easy 
-  58 Length of Last Word  28.8% Easy 
+  ? 58 Length of Last Word  28.8% Easy 
   20 Valid Parentheses  28.8% Easy 
   19 Remove Nth Node From End of List  28.8% Easy 
   190 Reverse Bits  29.1% Easy 
