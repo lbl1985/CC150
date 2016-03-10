@@ -27,10 +27,19 @@ bool canJump(vector<int>& nums) {
     if(len == 1){
     	return true;
     }
-    for(size_t i = 0; i < len - 1; i++){
-    	if(nums[i] >= (int)(len - i - 1)){
-    		return true;
-    	}
+
+    size_t currPosReach = 0;
+    size_t furthesetCanIdx = nums[0];
+    if(furthesetCanIdx >= len - 1){
+    	return true;
+    }
+    
+    for(size_t i = 1; i <= furthesetCanIdx; i++){    	
+		currPosReach = i + nums[i];
+		furthesetCanIdx = (currPosReach > furthesetCanIdx) ? currPosReach : furthesetCanIdx;
+		if(furthesetCanIdx >= len - 1){
+			return true;
+		}    	
     }
     return false;
 }
