@@ -1,8 +1,9 @@
 set(list
 	Q001_TwoSum.cpp
-	Q045_JumpGameII.cpp;
-	Q051_N_Queens.cpp;
+	Q045_JumpGameII.cpp
+	Q051_N_Queens.cpp
 	Q055_JumpGame.cpp
+	Q058_LengthOfLastWord.cpp
 	Q116_PopulatingNextRightPointersinEachNode.cpp
 	Q162_FindPeakElement.cpp
 	Q324_WiggleSortII.cpp

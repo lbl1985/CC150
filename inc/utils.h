@@ -48,6 +48,7 @@ int quicksortTest();
 int Q001_TwoSum();
 int Q045_JumpGameII();
 int Q051_N_Queens();
+int Q058_LengthOfLastWord();
 int Q055_JumpGame();
 int Q116_PopulatingNextRightPointersinEachNode();
 int Q130_SurroundedRegions();
