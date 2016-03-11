@@ -1,5 +1,6 @@
 set(list
 	Q001_TwoSum.cpp
+	Q021_Merge_Two_Sorted_Lists.cpp
 	Q045_JumpGameII.cpp
 	Q051_N_Queens.cpp
 	Q055_JumpGame.cpp
