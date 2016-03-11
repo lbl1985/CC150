@@ -30,7 +30,7 @@
   327 Count of Range Sum  24.3% Hard 
   37 Sudoku Solver  24.3% Hard 
   56 Merge Intervals  24.7% Hard 
-  ? 45 Jump Game II  25.0% Hard   
+  >>>>>> 45 Jump Game II  25.0% Hard   
   123 Best Time to Buy and Sell Stock III  25.8% Hard 
   138 Copy List with Random Pointer  25.9% Hard 
   99 Recover Binary Search Tree  25.9% Hard 
