@@ -48,8 +48,8 @@ int main()
     // cout << endl << "Q051_N_Queens()" << endl;
     // res = Q051_N_Queens();
     // cout << endl << "Q055_JumpGame:" << endl;
-    cout << endl << "Q058_LengthOfLastWord" << endl;
-    res = Q058_LengthOfLastWord();
+    // cout << endl << "Q058_LengthOfLastWord" << endl;
+    // res = Q058_LengthOfLastWord();
     // res = Q055_JumpGame();
     // cout << endl << "Q116_PopulatingNextRightPointersinEachNode" << endl;
     // res = Q116_PopulatingNextRightPointersinEachNode();

@@ -24,8 +24,58 @@
 
 #include "..\inc\utils.h"
 
+#include <vector>
+using namespace std;
+
+int jump(vector<int>& nums)
+{
+	size_t sz = nums.size();
+	if(sz <= 1){
+		return 0;
+	}
+	vector<int> idxQueue;
+
+	bool reach = false;		
+	int curIdx =0;	
+
+	while(!reach){
+		idxQueue.push_back(curIdx);
+		int maxV = -1;
+		int maxIdx = -1;
+		for(int i = 0; i < nums[curIdx]; i++){
+			int curV = nums[curIdx + i + 1];
+			if(curV > maxV){
+				maxV = curV;
+				maxIdx = curIdx + i + 1;
+			}
+		}
+		if(maxIdx + maxV >= (int)(sz - 1)){
+			idxQueue.push_back(maxIdx);
+			reach = true;
+		} else {
+			curIdx = maxIdx;
+		}
+	}	
+	
+	cout << "Need " << idxQueue.size() << " steps: " << endl;
+	printVector<int>(idxQueue);
+	cout << endl;
+	return (int)idxQueue.size();
+}
+
 int Q045_JumpGameII()
 {
 	printf("inside of Q045_JumpGameII\n");
+	vector<int> exp1{2, 3, 1, 1, 4};
+	vector<int> exp2{0};
+
+	cout << "test case 1: " << endl;
+	printVector<int>(exp1);
+	jump(exp1);
+
+	cout << "test case 2: " << endl;
+	printVector<int>(exp2);
+	jump(exp2);
+
 	return 0;
 }

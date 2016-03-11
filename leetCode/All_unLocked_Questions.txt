@@ -214,7 +214,7 @@
   290 Word Pattern  28.3% Easy 
   299 Bulls and Cows  28.7% Easy 
   205 Isomorphic Strings  28.8% Easy 
-  ? 58 Length of Last Word  28.8% Easy 
+  >>>>>> 58 Length of Last Word  28.8% Easy 
   20 Valid Parentheses  28.8% Easy 
   19 Remove Nth Node From End of List  28.8% Easy 
   190 Reverse Bits  29.1% Easy 
