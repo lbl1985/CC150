@@ -15,43 +15,38 @@
 // };
 // Author: Binlong Li
 // Date:   03/10/2016
+// Finish: 03/10/2016
 
 #include "..\inc\utils.h"
 #include <string>
 
 using namespace std;
-const int max_int = 65536;
 
 int lengthOfLastWord(string s) {
 	size_t sz = s.size();
-	if(sz == 0){
-		return 0;
+	int lolw = 0;
+	int init = true;
+	char preCha = s[0];
+	char curCha;
+	for(size_t i = 0; i < sz; i++ ){
+		curCha = s[i];
+		if(curCha != ' '){
+			if(preCha == ' '){
+				lolw = 1;				
+			} else {
+				lolw++;
+			}
+		} 
+		preCha = curCha;
 	}
-	int prevSpace = -1;
-	int lastSpace = max_int;
-	for(size_t i = 0; i < sz; i++){
-		if(s[i] == ' '){
-			if(lastSpace != max_int){
-				prevSpace = lastSpace;	
-			}			
-			lastSpace = (int)i;
-		}
-	}
-	if(lastSpace != max_int){
-		if(lastSpace == sz - 1){
-			return (lastSpace - 1) - prevSpace;
-		} else {
-			return sz - 1 - lastSpace;	
-		}		
-	} else {
-		return sz;
-	}
+	return lolw;
 }
 
 int Q058_LengthOfLastWord(){
 	printf("inside of Q058_LengthOfLastWord()\n");
-	cout << "a:" << lengthOfLastWord("a") << endl;
-	cout << "a :" << lengthOfLastWord("a ") << endl;
+	cout << "a:" << lengthOfLastWord("a") << endl; // expected 1
+	cout << "a :" << lengthOfLastWord("a ") << endl; // expected 1
+	cout <<  "b   a    :" << lengthOfLastWord( "b   a    ") << endl; // expected 1
 
 	return 0;
 }
