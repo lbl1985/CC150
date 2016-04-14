@@ -59,6 +59,15 @@ int Q324_WiggleSortII();
 int Q328_OddEvenLinkedList();
 int Q329_LongestIncreasingPathInAMatrix();
 
+struct ListNode {
+    int val;
+    ListNode *next;
+    ListNode(int x) : val(x), next(NULL) {}
+};
+
+ListNode* createList(const vector<int>& arr);
+void releaseList(ListNode* root);
+void printListNodes(const ListNode* root);
 
 
 template<class T>

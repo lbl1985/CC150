@@ -44,8 +44,8 @@ int main()
     // cout << endl << "Q001_TwoSum:" << endl;
     // res = Q001_TwoSum();
     // cout << endl << "Q045_JumpGameII:" << endl;
-    res = Q021_Merge_Two_Sorted_Lists();
-    cout << endl << "Q021_Merge_Two_Sorted_Lists" << endl;
+    // res = Q021_Merge_Two_Sorted_Lists();
+    // cout << endl << "Q021_Merge_Two_Sorted_Lists" << endl;
     // res = Q045_JumpGameII();
     // cout << endl << "Q051_N_Queens()" << endl;
     // res = Q051_N_Queens();

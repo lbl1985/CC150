@@ -32,12 +32,6 @@
 
 #include "..\inc\utils.h"
 
-struct ListNode {
-    int val;
-    ListNode *next;
-    ListNode(int x) : val(x), next(NULL) {}
-};
-
 ListNode* oddEvenList(ListNode* head)
 {
     if (nullptr == head) {

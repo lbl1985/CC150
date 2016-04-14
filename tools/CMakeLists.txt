@@ -1,5 +1,6 @@
 set(list
 	main.cpp
+	utils.cpp
 )
 
 foreach(item ${list})
