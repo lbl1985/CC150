@@ -38,7 +38,7 @@
   - 164 Maximum Gap  26.2% Hard
   - ~~51 N-Queens  26.2% Hard~~
   - 239 Sliding Window Maximum  26.4% Hard
-  - 25 Reverse Nodes in k-Group  27.0% Hard
+  - **?25 Reverse Nodes in k-Group  27.0% Hard**
   - 72 Edit Distance  28.1% Hard
   - 115 Distinct Subsequences  28.4% Hard
   - 315 Count of Smaller Numbers After Self  29.0% Hard
@@ -141,7 +141,7 @@
   - 78 Subsets  30.7% Medium
   - 279 Perfect Squares  31.5% Medium
   - 142 Linked List Cycle II  31.5% Medium
-  - **?331 Verify Preorder Serialization of a Binary Tree  31.6% Medium**
+  - ~~331 Verify Preorder Serialization of a Binary Tree  31.6% Medium~~
   - 81 Search in Rotated Sorted Array II  31.8% Medium
   - 215 Kth Largest Element in an Array  32.1% Medium
   - 129 Sum Root to Leaf Numbers  32.1% Medium
