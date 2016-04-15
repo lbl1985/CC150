@@ -6,12 +6,13 @@ set(list
 	Q055_JumpGame.cpp
 	Q058_LengthOfLastWord.cpp
 	Q116_PopulatingNextRightPointersinEachNode.cpp
+	Q130_SurroundedRegions.cpp
 	Q162_FindPeakElement.cpp
 	Q324_WiggleSortII.cpp
 	Q326_PowerOfThree.cpp
 	Q328_OddEvenLinkedList.cpp
 	Q329_LongestIncreasingPathInAMatrix.cpp
-	Q130_SurroundedRegions.cpp
+	Q331_verify_preorder_serialization_of_a_binary_tree.cpp
 )
 
 foreach(item ${list})
