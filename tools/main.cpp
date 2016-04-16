@@ -46,6 +46,8 @@ int main()
     // cout << endl << "Q045_JumpGameII:" << endl;
     // res = Q021_Merge_Two_Sorted_Lists();
     // cout << endl << "Q021_Merge_Two_Sorted_Lists" << endl;
+    res = Q025_Reverse_Nodes_in_k_group();
+    cout << endl << "Q025_Reverse_Nodes_in_k_group" << endl;
     // res = Q045_JumpGameII();
     // cout << endl << "Q051_N_Queens()" << endl;
     // res = Q051_N_Queens();
@@ -67,8 +69,8 @@ int main()
     // res = Q328_OddEvenLinkedList();
     // cout << endl << "Q329_LongestIncreasingPathInAMatrix" << endl;
     // res = Q329_LongestIncreasingPathInAMatrix();
-    cout << endl << "Q331_verify_preorder_serialization_of_a_binary_tree" << endl;
-    res = Q331_verify_preorder_serialization_of_a_binary_tree();
+    // cout << endl << "Q331_verify_preorder_serialization_of_a_binary_tree" << endl;
+    // res = Q331_verify_preorder_serialization_of_a_binary_tree();
 
 
     return res;

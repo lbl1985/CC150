@@ -31,3 +31,10 @@
 // Author: Binlong Li
 // Date: 04/14/2016
 
+#include "..\inc\utils.h"
+
+int Q025_Reverse_Nodes_in_k_group()
+{
+	printf ("print Q025_Reverse_Nodes_in_k_group from inside");
+	return 0;
+}
