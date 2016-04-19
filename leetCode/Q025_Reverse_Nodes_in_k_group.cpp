@@ -33,8 +33,26 @@
 
 #include "..\inc\utils.h"
 
+ListNode* reverseKGroup(ListNode* head, int k)
+{
+	return head;
+}
+
 int Q025_Reverse_Nodes_in_k_group()
 {
-	printf ("print Q025_Reverse_Nodes_in_k_group from inside");
+	printf ("print Q025_Reverse_Nodes_in_k_group from inside\n");
+	printf("test case 1\n");
+	vector<int> vt1{1, 2, 3, 4, 5};
+	ListNode* lt1 = createList(vt1);
+	lt1 = reverseKGroup(lt1, 2);
+	printListNodes(lt1);
+	releaseList(lt1);
+
+	printf("\ntest case 2\n");
+	ListNode* lt2 = createList(vt1);
+	lt2 = reverseKGroup(lt2, 3);
+	printListNodes(lt2);
+	releaseList(lt2);
+
 	return 0;
 }
