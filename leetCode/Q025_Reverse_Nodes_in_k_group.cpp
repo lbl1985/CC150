@@ -30,12 +30,68 @@
 // 
 // Author: Binlong Li
 // Date: 04/14/2016
+// Finish: 04/18/2016 2.34%
 
 #include "..\inc\utils.h"
 
+// return Kth element from anchor
+ListNode* KthElement(ListNode* anchor, int k)
+{
+	for(int i = 0; i < k; i++){
+		anchor = anchor->next;
+	}
+	return anchor;
+}
+
 ListNode* reverseKGroup(ListNode* head, int k)
 {
-	return head;
+	if(k <= 1 || head == NULL){
+		return head;
+	}
+
+	ListNode* tmpHead = head;
+	ListNode* anchor = head;
+	ListNode* runner = head;
+	bool firstGroup = true;
+
+	while(runner != NULL) {
+		int i = 0;
+		for(i = 0; i < k - 1 && runner != NULL; i++){
+			runner = runner -> next;
+		}
+
+		// run out of the queue before K element
+		if (runner == NULL){
+			return tmpHead;
+		}
+
+		// for first group, anchor pointed to first member of K group
+		// for other group, anchor pointed to last element before K group
+		if (firstGroup){
+			tmpHead = runner;			
+		}
+		ListNode* runnerBk = runner;
+		ListNode* reverseRunner = runner;
+		if(runner != NULL){
+			runner = runner->next;
+		}
+		for(int t = k - 2; t >= 0; t--) {
+			int realt = firstGroup ? t : t + 1;
+			reverseRunner->next = KthElement(anchor, realt);
+			reverseRunner = reverseRunner->next;
+		}
+		reverseRunner->next = runner;
+		if (!firstGroup){
+			anchor->next = runnerBk;
+		} else {
+			firstGroup = false;
+		}
+		anchor = reverseRunner;
+		// printListNodes(tmpHead);
+	}
+
+	
+	return tmpHead;
 }
 
 int Q025_Reverse_Nodes_in_k_group()
