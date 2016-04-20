@@ -54,6 +54,7 @@ int Q058_LengthOfLastWord();
 int Q055_JumpGame();
 int Q116_PopulatingNextRightPointersinEachNode();
 int Q130_SurroundedRegions();
+int Q149_Max_Points_on_aline();
 int Q162_FindPeakElement();
 int Q326_PowerOfThree();
 int Q324_WiggleSortII();

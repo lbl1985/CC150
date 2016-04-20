@@ -46,8 +46,8 @@ int main()
     // cout << endl << "Q045_JumpGameII:" << endl;
     // res = Q021_Merge_Two_Sorted_Lists();
     // cout << endl << "Q021_Merge_Two_Sorted_Lists" << endl;
-    cout << endl << "Q025_Reverse_Nodes_in_k_group" << endl;
-    res = Q025_Reverse_Nodes_in_k_group();
+    // cout << endl << "Q025_Reverse_Nodes_in_k_group" << endl;
+    // res = Q025_Reverse_Nodes_in_k_group();
     // res = Q045_JumpGameII();
     // cout << endl << "Q051_N_Queens()" << endl;
     // res = Q051_N_Queens();
@@ -59,6 +59,8 @@ int main()
     // res = Q116_PopulatingNextRightPointersinEachNode();
     // cout << endl << "Q130_LongestIncreasingPathInAMatrix:" << endl;
     // res = Q130_SurroundedRegions();
+    cout << endl << "Q149_Max_Points_on_aline" << endl;
+    res = Q149_Max_Points_on_aline();
     // cout << endl << "Q162_FindPeakElement" << endl;
     // res = Q162_FindPeakElement();
     // cout << endl << "Q326_PowerOfThree" << endl;
