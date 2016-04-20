@@ -72,6 +72,13 @@ ListNode* createList(const vector<int>& arr);
 void releaseList(ListNode* root);
 void printListNodes(const ListNode* root);
 
+struct Point {
+    int x;
+    int y;
+    Point() : x(0), y(0) {}
+    Point(int a, int b) : x(a), y(b) {}
+};
+
 
 template<class T>
 void printVector(const vector<T>& vec){
