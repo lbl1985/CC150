@@ -25,33 +25,58 @@ using namespace std;
 
 struct line{
 	double k;
-	double b;
+	int b;
 	line():k(0), b(0) {}
-	line(double ki, double bi):k(ki), b(bi){}
+	line(double ki, int bi):k(ki), b(bi){}
 };
 
 int maxPoints(vector<Point>& points)
 {
-	map<line, vector<Point>> lines; // non-vertical line
-	map<int, vector<Point>> ver; // vertical line
+	map<line, int> lines; // non-vertical line
+	map<int, int> ver; // vertical line
 
 	int sz = points.size();
 	if(sz == 0 || sz == 1){
 		return 0;
 	}
 
-	for(int i = 1; i < sz; i++){
+	// The first point will be saved in ver
+	int max = 0;
+	for(int i = 0; i < sz; i++){
 		Point p1 = points[i];
+		map<int, int>::iterator v_iter = ver.find(p1.x);
+		if(v_iter != ver.end()){
+			v_iter->second++;
+			if(v_iter->second > max) {
+				max = v_iter->second;
+			}
+		} else {
+			ver[p1.x] = 1;
+			if(1 > max) {
+				max = 1;
+			}
+		}
+
+
+
 		for(int j = 0; j < i; j++){
 			Point p2 = points[j];
-			if(p1.x == p2.x){
-				if(ver.count(p1.x) > 0){
-
+			line tmpLine(double(p2.y - p1.y) / double(p2.x - p1.x), p1.y - p2.y);
+			map<line, int>::iterator l_iter = lines.find(tmpLine);
+			if(l_iter == lines.end()) {
+				// lines.insert(pair<line, int>(tmpLine, 1));
+				if(1 > max) {
+					max = 1;
+				}
+			} else {
+				l_iter->second++;
+				if(l_iter->second > max) {
+					max = l_iter->second;
 				}
 			}
 		}
 	}
-	return 0;
+	return max;
 }
 
 vector<Point> createTestCase1()
@@ -87,6 +112,7 @@ int Q149_Max_Points_on_aline()
 
 	// vector<int> tmpv3 = testMap[1];
 	printVector<int>(testMap[1]);
+	printVector<int>(tmpv);
 
 	return 0;
 }
