@@ -62,18 +62,18 @@ int maxPoints(vector<Point>& points)
 		for(int j = 0; j < i; j++){
 			Point p2 = points[j];
 			line tmpLine(double(p2.y - p1.y) / double(p2.x - p1.x), p1.y - p2.y);
-			map<line, int>::iterator l_iter = lines.find(tmpLine);
-			if(l_iter == lines.end()) {
-				// lines.insert(pair<line, int>(tmpLine, 1));
-				if(1 > max) {
-					max = 1;
-				}
-			} else {
-				l_iter->second++;
-				if(l_iter->second > max) {
-					max = l_iter->second;
-				}
-			}
+			// map<line, int>::iterator l_iter = lines.find(tmpLine);
+			// if(l_iter == lines.end()) {
+			// 	// lines.insert(pair<line, int>(tmpLine, 1));
+			// 	if(1 > max) {
+			// 		max = 1;
+			// 	}
+			// } else {
+			// 	l_iter->second++;
+			// 	if(l_iter->second > max) {
+			// 		max = l_iter->second;
+			// 	}
+			// }
 		}
 	}
 	return max;
