@@ -62,6 +62,9 @@ int Q328_OddEvenLinkedList();
 int Q329_LongestIncreasingPathInAMatrix();
 int Q331_verify_preorder_serialization_of_a_binary_tree();
 
+// Exp
+int constructChar();
+
 struct ListNode {
     int val;
     ListNode *next;
