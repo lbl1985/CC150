@@ -4,8 +4,36 @@
 		"selected_items":
 		[
 			[
+				"max",
+				"maxPoints"
+			],
+			[
+				"runne",
+				"runnerBk"
+			],
+			[
+				"next",
+				"nextRunner"
+			],
+			[
+				"revers",
+				"reverseRunner"
+			],
+			[
+				"first",
+				"firstGroup"
+			],
+			[
+				"Kth",
+				"KthElement"
+			],
+			[
+				"rever",
+				"reverseRunner"
+			],
+			[
 				"print",
-				"printConfig"
+				"printListNodes"
 			],
 			[
 				"depth",
@@ -124,34 +152,10 @@
 	"buffers":
 	[
 		{
-			"file": "leetCode/Q045_JumpGameII.cpp",
+			"file": "leetCode/All_unLocked_Questions.txt",
 			"settings":
 			{
-				"buffer_size": 780,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "leetCode/Q055_JumpGame.cpp",
-			"settings":
-			{
-				"buffer_size": 1251,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "tools/main.cpp",
-			"settings":
-			{
-				"buffer_size": 1888,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "leetCode/CMakeLists.txt",
-			"settings":
-			{
-				"buffer_size": 473,
+				"buffer_size": 11275,
 				"line_ending": "Windows"
 			}
 		},
@@ -159,25 +163,41 @@
 			"file": "inc/utils.h",
 			"settings":
 			{
-				"buffer_size": 2936,
+				"buffer_size": 3459,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "leetCode/Q324_WiggleSortII.cpp",
+			"file": "tools/main.cpp",
 			"settings":
 			{
-				"buffer_size": 2567,
+				"buffer_size": 2459,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "leetCode/CMakeLists.txt",
+			"settings":
+			{
+				"buffer_size": 654,
 				"line_ending": "Windows"
 			}
 		}
 	],
-	"build_system": "",
+	"build_system": "Packages/User/ccBuild.sublime-build",
 	"command_palette":
 	{
-		"height": 392.0,
+		"height": 196.0,
 		"selected_items":
 		[
+			[
+				"key",
+				"Preferences: Key Bindings - User"
+			],
+			[
+				"keyb",
+				"Preferences: Key Bindings - User"
+			],
 			[
 				"rena",
 				"ANF: Rename File"
@@ -231,10 +251,6 @@
 				"Package Control: List Packages"
 			],
 			[
-				"key",
-				"Preferences: Key Bindings - User"
-			],
-			[
 				"git diff",
 				"Git: Diff All Files"
 			],
@@ -284,6 +300,19 @@
 	},
 	"file_history":
 	[
+		"/C/Experiment/CPP/cc150/leetCode/Q149_Max_Points_on_a_line.cpp",
+		"/C/Experiment/CPP/cc150/debt.txt",
+		"/C/Experiment/CPP/cc150/leetCode/Q025_Reverse_Nodes_in_k_group.cpp",
+		"/C/Users/minji/AppData/Roaming/Sublime Text 2/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Experiment/powershell/pstoolbox/sublime/Default (Windows).sublime-keymap",
+		"/C/Experiment/powershell/pstoolbox/sublime/ccBuild.sublime-build",
+		"/C/Users/minji/AppData/Roaming/Sublime Text 2/Packages/User/ccBuild.sublime-build",
+		"/C/Experiment/CPP/cc150/leetCode/Q324_WiggleSortII.cpp",
+		"/C/Experiment/CPP/cc150/inc/utils.h",
+		"/C/Experiment/CPP/cc150/leetCode/CMakeLists.txt",
+		"/C/Experiment/CPP/cc150/tools/main.cpp",
+		"/C/Experiment/CPP/cc150/leetCode/Q045_JumpGameII.cpp",
+		"/C/Experiment/CPP/cc150/leetCode/Q055_JumpGame.cpp",
 		"/C/Experiment/CPP/cc150/leetCode/Q162_FindPeakElement.cpp",
 		"/C/Experiment/CPP/cc150/leetCode/Q051_N_Queens.cpp",
 		"/c/Experiment/powershell/pstoolbox/envd.bat",
@@ -301,7 +330,6 @@
 		"/C/Experiment/CPP/cc150/Q001_TwoSum.cpp",
 		"/C/Experiment/CPP/cc150/Q116_PopulatingNextRightPointersinEachNode.cpp",
 		"/C/Experiment/CPP/cc150/leetCode/001_TwoSum.cpp",
-		"/C/Experiment/CPP/cc150/leetCode/CMakeLists.txt",
 		"/C/Experiment/CPP/cc150/README.txt",
 		"/c/Experiment/powershell/pstoolbox/startup/run_vnext_daily_update.bat",
 		"/C/source/rig/razzle_root/src/test/media/platform/Tests/BVTs/MediaComBVT/src/Common/CommonBVT.cpp",
@@ -399,19 +427,7 @@
 		"/C/Experiment/CPP/cc150/.gitattributes",
 		"/C/source/rig_root/razzle_root/src/dev/media/inc/PublicEnum.h",
 		"/C/source/rig_root/razzle_root/src/dev/media/stream/engine/VideoConfigReceiver.cpp",
-		"/C/source/rig_root/razzle_root/src/dev/media/stream/engine/Engine.cpp",
-		"/C/source/rig_root/razzle_root/src/dev/media/stream/engine/VideoConfigReceiver.h",
-		"/C/source/rig_root/razzle_root/src/dev/media/videodsp/vsca/dec/VscaDecoderBase.cpp",
-		"/C/Experiment/powershell/pstoolbox/copy-lync-dll-toLync.bat",
-		"/C/Experiment/powershell/pstoolbox/copy-lync-dlls.bat",
-		"/C/Experiment/powershell/pstoolbox/copy-lync-dll-bk.bat",
-		"/C/Experiment/powershell/pstoolbox/copy-local-ngc.bat",
-		"/C/Experiment/powershell/pstoolbox/copy-vdsp-bvt-unit-test.bat",
-		"/C/Experiment/powershell/pstoolbox/startup/autohotkey_startup.bat",
-		"/C/Experiment/powershell/pstoolbox/startup/run_windoworg.bat",
-		"/C/Experiment/powershell/pstoolbox/startup/run_myscript.bat",
-		"/C/Experiment/powershell/pstoolbox/startup/myscript.bat",
-		"/C/source/rig_root/razzle_root/src/dev/media/videodsp/vsca/enc/VscaErcBase.cpp"
+		"/C/source/rig_root/razzle_root/src/dev/media/stream/engine/Engine.cpp"
 	],
 	"find":
 	{
@@ -443,6 +459,12 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"2016",
+			"17",
+			"tmpV",
+			"struct Point",
+			"point",
+			"  ",
 			"printVector",
 			"printvector",
 			">>",
@@ -564,13 +586,7 @@
 			"ca",
 			"dst",
 			"dll",
-			"bRenderjitter",
-			"bRenderJitter",
-			"render",
-			"VCFG_ADAPTIVE_PLAYOUT_BUFFER",
-			".ullTimeStamp",
-			"ullTimeStamp",
-			"s_SupportedConfig"
+			"bRenderjitter"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -590,29 +606,28 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "leetCode/Q045_JumpGameII.cpp",
+					"file": "leetCode/All_unLocked_Questions.txt",
 					"settings":
 					{
-						"buffer_size": 780,
+						"buffer_size": 11275,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								780,
-								780
+								67,
+								113
 							]
 						],
 						"settings":
 						{
 							"BracketHighlighterBusy": false,
-							"_anf_new": "",
 							"bh_regions":
 							[
 								"bh_regex",
@@ -660,8 +675,10 @@
 								"bh_single_quote_open",
 								"bh_single_quote_close"
 							],
-							"function_name_status_row": 30,
-							"syntax": "Packages/C++/C++.tmLanguage"
+							"function_name_status_row": 2,
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -671,24 +688,23 @@
 				},
 				{
 					"buffer": 1,
-					"file": "leetCode/Q055_JumpGame.cpp",
+					"file": "inc/utils.h",
 					"settings":
 					{
-						"buffer_size": 1251,
+						"buffer_size": 3459,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1096,
-								1096
+								1497,
+								1497
 							]
 						],
 						"settings":
 						{
 							"BracketHighlighterBusy": false,
-							"_anf_new": "",
 							"bh_regions":
 							[
 								"bh_regex",
@@ -736,11 +752,13 @@
 								"bh_single_quote_open",
 								"bh_single_quote_close"
 							],
-							"function_name_status_row": 50,
-							"syntax": "Packages/C++/C++.tmLanguage"
+							"function_name_status_row": 0,
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 120.0,
+						"translation.y": 675.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -750,15 +768,15 @@
 					"file": "tools/main.cpp",
 					"settings":
 					{
-						"buffer_size": 1888,
+						"buffer_size": 2459,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1147,
-								1147
+								1759,
+								1759
 							]
 						],
 						"settings":
@@ -766,61 +784,50 @@
 							"BracketHighlighterBusy": false,
 							"bh_regions":
 							[
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
 								"bh_regex",
 								"bh_regex_center",
 								"bh_regex_open",
 								"bh_regex_close",
-								"bh_regex_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
 								"bh_square_close",
-								"bh_square_content"
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
 							],
 							"function_name_status_row": 0,
 							"syntax": "Packages/C++/C++.tmLanguage",
@@ -828,7 +835,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 375.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -838,15 +845,15 @@
 					"file": "leetCode/CMakeLists.txt",
 					"settings":
 					{
-						"buffer_size": 473,
+						"buffer_size": 654,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								86,
-								86
+								286,
+								286
 							]
 						],
 						"settings":
@@ -854,225 +861,57 @@
 							"BracketHighlighterBusy": false,
 							"bh_regions":
 							[
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
 								"bh_regex",
 								"bh_regex_center",
 								"bh_regex_open",
 								"bh_regex_close",
-								"bh_regex_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
 								"bh_square_close",
-								"bh_square_content"
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
 							],
-							"function_name_status_row": 4,
-							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"function_name_status_row": 0,
+							"syntax": "Packages/CMake/CMake.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "inc/utils.h",
-					"settings":
-					{
-						"buffer_size": 2936,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1118,
-								1118
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close"
-							],
-							"function_name_status_row": 62,
-							"syntax": "Packages/C++/C++.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 531.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "leetCode/Q324_WiggleSortII.cpp",
-					"settings":
-					{
-						"buffer_size": 2567,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2433,
-								2433
-							],
-							[
-								2522,
-								2522
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close"
-							],
-							"function_name_status_row": 103,
-							"syntax": "Packages/C++/C++.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1154.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1113,7 +952,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 118.0
+		"height": 31.0
 	},
 	"output.find_results":
 	{
@@ -1133,6 +972,34 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"debt",
+				"debt.txt"
+			],
+			[
+				"leetcode/cmake",
+				"leetCode/CMakeLists.txt"
+			],
+			[
+				"un",
+				"leetCode/All_unLocked_Questions.txt"
+			],
+			[
+				"main",
+				"tools/main.cpp"
+			],
+			[
+				"util",
+				"inc/utils.h"
+			],
+			[
+				"rever",
+				"leetCode/Q025_Reverse_Nodes_in_k_group.cpp"
+			],
+			[
+				"unlock",
+				"leetCode/All_unLocked_Questions.txt"
+			],
 			[
 				"q162",
 				"leetCode/Q162_FindPeakElement.cpp"
@@ -1166,24 +1033,12 @@
 				"leetCode\\CMakeLists.txt"
 			],
 			[
-				"util",
-				"inc\\utils.h"
-			],
-			[
 				"lones",
 				"leetCode\\Q329_LongestIncreasingPathInAMatrix.cpp"
 			],
 			[
 				"q130",
 				"leetCode\\Q130_SurroundedRegions.cpp"
-			],
-			[
-				"leetcode/cmake",
-				"leetCode\\CMakeLists.txt"
-			],
-			[
-				"main",
-				"tools\\main.cpp"
 			],
 			[
 				"leng",
