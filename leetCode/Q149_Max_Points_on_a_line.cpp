@@ -31,8 +31,9 @@ struct line{
 	double k;
 	int b;
 	int count;
+	double key;
 	line():k(0), b(0) {}
-	line(double ki, int bi):k(ki), b(bi), count(1){}
+	line(double ki, int bi):k(ki), b(bi), count(1){ key = k * 1000 + b;}
 	bool operator == (const line &rhs) const { return this->k == rhs.k && this->b == rhs.b;}
 
 };
@@ -42,18 +43,28 @@ class line_man{
 public:
 	void checkline(const line &il, int& max);
 private: 
-	vector<line> lines;
+	// vector<line> lines;
+	map<double, int> lines;
 };
 
 void line_man::checkline(const line & il, int& max)
 {
 	// Go over all the lines in the vector
-	vector<line>::iterator it = find(lines.begin(), lines.end(), il);
+	// vector<line>::iterator it = find(lines.begin(), lines.end(), il);
+	// if(it != lines.end()) {
+	// 	(*it).count++;
+	// 	max = (*it).count > max ? (*it).count : max;
+	// } else {
+	// 	lines.push_back(il);
+	// }
+	map<double, int>::iterator it = lines.find(il.key);
 	if(it != lines.end()) {
-		(*it).count++;
-		max = (*it).count > max ? (*it).count : max;
+		it->second++;
+		int count = it->second;
+		max = count > max ? count : max;
 	} else {
-		lines.push_back(il);
+		lines.insert(pair<double, int>(il.key, 2));
+		max = 2 > max ? 2 : max;
 	}
 
 }
@@ -65,8 +76,11 @@ int maxPoints(vector<Point>& points)
 
 	line_man lm;
 	int sz = points.size();
-	if(sz == 0 || sz == 1){
+
+	if(sz == 0){
 		return 0;
+	} else if(sz == 1) {
+		return 1;
 	}
 
 	// The first point will be saved in ver
