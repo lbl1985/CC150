@@ -192,6 +192,7 @@
   - 238 Product of Array Except Self  41.7% Medium
   - 260 Single Number III  42.8% Medium
   - 136 Single Number  48.8% Medium
+  - ~~347 Top K Frequent Elements 43.9% Median~~
   - 8 String to Integer (atoi)  13.4% Easy
   - 165 Compare Version Numbers  17.0% Easy
   - 189 Rotate Array  20.6% Easy
@@ -262,6 +263,6 @@
   - 104 Maximum Depth of Binary Tree  47.3% Easy
   - 258 Add Digits  48.1% Easy
   - 292 Nim Game  51.6% Easy
-  - 345 Reverse Vowels of a String 35.1% Easy
+  - ~~345 Reverse Vowels of a String 35.1% Easy~~
 
 (15 / 264)

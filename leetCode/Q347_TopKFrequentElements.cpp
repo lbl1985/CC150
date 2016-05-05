@@ -13,11 +13,12 @@
 //     }
 // Author: Binlong Li
 // Date: 05/04/2016
-// 
+// Finish: 05/04/2016
 
 #include "..\inc\utils.h"
 #include <vector>
 #include <map>
+#include <algorithm>
 using namespace std;
 
 vector<int> topKFrequent(vector<int>& nums, int k)
@@ -26,43 +27,40 @@ vector<int> topKFrequent(vector<int>& nums, int k)
 	map<int, int> dict;
 	map<int, int>::iterator it;
 	
-	int* freqValue = new int[k];
-	int* freqCount = new int[k];
-	memset(freqValue, 0, k * sizeof(int));
-	memset(freqCount, 0, k * sizeof(int));
-
-	int minCount = k > 1 ? 0 : 1;
-	int minCountId = k > 1 ? 1 : 0;
-	freqValue[0] = nums[0];
-	freqCount[0] = 1;
-
-	for(int i = 1; i < sz; i++) {
+	for(int i = 0; i < sz; i++) {
 		it = dict.find(nums[i]);
 		// unique value
 		if(it == dict.end()) {
-			dict.insert(pair<int, int>(nums[i], 1));
-			if(!minCount) {
-				freqValue[minCountId] = nums[i];
-				freqCount[minCountId] = 1;
-				if (minCountId < k - 1) {
-					minCountId++;
-				} else {
-					minCount = 1;
-				}
-			}
+			dict.insert(pair<int, int>(nums[i], 1));			
 		} else {
 			// duplicate value
 			it->second++;
-			if(it->second > minCount) {
-				
-			}
 		}
 	}
-	delete [] buffer;
+	vector<pair<int, int> >  pairs;
+	for(auto iter = dict.begin(); iter != dict.end(); iter++) {
+		pairs.push_back(*iter);
+	}
+
+	sort(pairs.begin(), pairs.end(), [=](pair<int, int>&a, pair<int, int>&b)
+	{
+		return a.second > b.second;
+	});
+
+	vector<int> res;
+	auto iter = pairs.begin();
+	for(int i = 0; i < k; i++) {
+		res.push_back(iter->first);
+		iter++;
+	}
+	return res;
 }
 
 int Q347_TopKFrequentElements()
 {
-	printf("inside of Q347_TopKFrequentElements\n");
+	vector<int> v1{1,1,1,2,2,3};
+	printf("test case 1: 1,1,1,2,2,3, k = 2 expect[1,2], res:");
+	printVector<int>(topKFrequent(v1, 2));
+
 	return 0;
 }
