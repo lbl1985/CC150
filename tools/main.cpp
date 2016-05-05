@@ -73,8 +73,10 @@ int main()
     // res = Q329_LongestIncreasingPathInAMatrix();
     // cout << endl << "Q331_verify_preorder_serialization_of_a_binary_tree" << endl;
     // res = Q331_verify_preorder_serialization_of_a_binary_tree();
-    cout << endl << "Q345_Reverse_vowels_of_a_string" << endl;
-    res = Q345_Reverse_vowels_of_a_string();
+    cout << endl << "Q347_TopKFrequentElements" << endl;
+    res = Q347_TopKFrequentElements();
+    // cout << endl << "Q345_Reverse_vowels_of_a_string" << endl;
+    // res = Q345_Reverse_vowels_of_a_string();
 
     // Exp
     // cout << endl << "constructChar" << endl;
