@@ -15,6 +15,7 @@ set(list
 	Q328_OddEvenLinkedList.cpp
 	Q329_LongestIncreasingPathInAMatrix.cpp
 	Q331_verify_preorder_serialization_of_a_binary_tree.cpp
+	Q345_ReverseVowelsOfAString.cpp
 )
 
 foreach(item ${list})

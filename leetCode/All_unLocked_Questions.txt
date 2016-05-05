@@ -262,5 +262,6 @@
   - 104 Maximum Depth of Binary Tree  47.3% Easy
   - 258 Add Digits  48.1% Easy
   - 292 Nim Game  51.6% Easy
+  - 345 Reverse Vowels of a String 35.1% Easy
 
 (15 / 264)

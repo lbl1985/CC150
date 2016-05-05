@@ -61,6 +61,7 @@ int Q324_WiggleSortII();
 int Q328_OddEvenLinkedList();
 int Q329_LongestIncreasingPathInAMatrix();
 int Q331_verify_preorder_serialization_of_a_binary_tree();
+int Q345_Reverse_vowels_of_a_string();
 
 // Exp
 int constructChar();

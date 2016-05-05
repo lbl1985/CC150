@@ -59,8 +59,8 @@ int main()
     // res = Q116_PopulatingNextRightPointersinEachNode();
     // cout << endl << "Q130_LongestIncreasingPathInAMatrix:" << endl;
     // res = Q130_SurroundedRegions();
-    cout << endl << "Q149_Max_Points_on_aline" << endl;
-    res = Q149_Max_Points_on_aline();
+    // cout << endl << "Q149_Max_Points_on_aline" << endl;
+    // res = Q149_Max_Points_on_aline();
     // cout << endl << "Q162_FindPeakElement" << endl;
     // res = Q162_FindPeakElement();
     // cout << endl << "Q326_PowerOfThree" << endl;
@@ -73,6 +73,8 @@ int main()
     // res = Q329_LongestIncreasingPathInAMatrix();
     // cout << endl << "Q331_verify_preorder_serialization_of_a_binary_tree" << endl;
     // res = Q331_verify_preorder_serialization_of_a_binary_tree();
+    cout << endl << "Q345_Reverse_vowels_of_a_string" << endl;
+    res = Q345_Reverse_vowels_of_a_string();
 
     // Exp
     // cout << endl << "constructChar" << endl;
