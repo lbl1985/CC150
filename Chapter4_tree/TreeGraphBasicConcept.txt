@@ -1,0 +1,45 @@
+# Tree and Graph Basic Concepts:
+## Binary Tree Traverse
+	### PreOrder Traverse
+	```c++
+	void preOrderTraverse(TreeNode* root) {
+		if(NULL == root) {return;}
+		visit(root);
+		if(NULL != root->left) {
+			preOrderTraverse(root->left);
+		}
+		if(NULL != root->right) {
+			preOrderTraverse(root->right);
+		}
+	}
+	```
+	### InOrder Traverse
+	```c++
+	void InOrderTraverse(TreeNode* root) {
+		if(NULL == root) return;
+		if(NULL != root->left) {
+			InOrderTraverse(root->left);
+		}
+		visit(root);
+		if(NULL != root->right) {
+			InOrderTraverse(root->right);
+		}
+
+	}
+	```
+	### PostOrder Traverse
+	```c++
+	void PostOrderTraverse(TreeNode* root) {
+		if(NULL == root) return;
+		if(NULL != root->left) {
+			PostOrderTraverse(root->left);
+		}
+		if(NULL != root->right) {
+			PostOrderTraverse(root->right);
+		}
+		visit(root);
+	}
+	```
+## Graph Traverse
+	### DFS (Depth First Search)
+	### BFS (Breath First Search)
