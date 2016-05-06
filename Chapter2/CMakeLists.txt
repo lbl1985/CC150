@@ -1,0 +1,9 @@
+set(list
+	 C2Q7.cpp
+)
+
+foreach(item ${list})
+	list(APPEND CC150_CHAPTER2_LINKED_LIST ${CMAKE_CURRENT_SOURCE_DIR}/${item})
+endforeach()
+
+set(CC150_CHAPTER2_LINKED_LIST ${CC150_CHAPTER2_LINKED_LIST} PARENT_SCOPE)

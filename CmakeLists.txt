@@ -7,6 +7,7 @@ include_directories ("${PROJECT_SOURCE_DIR}/tools")
 add_subdirectory(inc)
 add_subdirectory(tools)
 add_subdirectory(leetCode)
+add_subdirectory(Chapter2)
 add_subdirectory(Chapter4_tree)
 add_subdirectory(Chapter10_sort)
 add_subdirectory(exp)
@@ -15,11 +16,13 @@ add_executable(cc150 ${CC150_TOOLS_SRCS}
 	${CC150_INC_SRC}
 	${CC150_LEETCODE_SRCS}
 	${CC150_CHAPTER10_SORT_SRCS}
+	${CC150_CHAPTER2_LINKED_LIST}
 	${CC150_CHAPTER4_TREE}
 	${CC150_EXP_SRCS}
 	)
 
 source_group(inc FILES ${CC150_INC_SRC})
+source_group(Chapter2_linked_list FILES ${CC150_CHAPTER2_LINKED_LIST})
 source_group(Chapter4_tree FILES ${CC150_CHAPTER4_TREE})
 source_group(Chapter10_sort FILES ${CC150_CHAPTER10_SORT_SRCS})
 source_group(leetCode FILES ${CC150_LEETCODE_SRCS})
