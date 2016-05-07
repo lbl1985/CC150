@@ -27,7 +27,7 @@ vector<int> topKFrequent(vector<int>& nums, int k)
 	map<int, int> dict;
 	map<int, int>::iterator it;
 	
-	for(int i = 0; i < sz; i++) {
+	for(size_t i = 0; i < sz; i++) {
 		it = dict.find(nums[i]);
 		// unique value
 		if(it == dict.end()) {

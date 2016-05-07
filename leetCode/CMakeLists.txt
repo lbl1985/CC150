@@ -10,6 +10,7 @@ set(list
 	Q130_SurroundedRegions.cpp
 	Q149_Max_Points_on_a_line.cpp
 	Q162_FindPeakElement.cpp
+	Q179_LargestNumber.cpp
 	Q324_WiggleSortII.cpp
 	Q326_PowerOfThree.cpp
 	Q328_OddEvenLinkedList.cpp
