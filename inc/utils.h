@@ -43,6 +43,7 @@ int C4Q5();
 // Chapter 10 Sort
 int bubbleSortTest();
 int quicksortTest();
+int mergesortTest();
 
 // leetCode
 int Q001_TwoSum();

@@ -39,7 +39,7 @@ string largestNumber(vector<int>& nums) {
 	vector<string> strs;
 	size_t sz = nums.size();
 	if (sz == 1) {
-		return nums[0];
+		// return nums[0];
 	}
 	
 	for(size_t i = 0; i < sz; i++) {
@@ -50,7 +50,7 @@ string largestNumber(vector<int>& nums) {
 		
 	}
 
-	return str;
+	return res;
 }
 
 int Q179_LargestNumber()
