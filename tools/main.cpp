@@ -35,12 +35,12 @@ int main()
 
 
 	// Chapter 10 sort
-    // cout << endl << "bubbleSortTest" << endl;
-	// res = bubbleSortTest();
+    cout << endl << "bubbleSortTest" << endl;
+	res = bubbleSortTest();
 	// cout << endl << "quicksort" << endl;
     // res = quicksortTest();
-    cout << endl << "mergesort test"<< endl;
-    res = mergesortTest();
+    // cout << endl << "mergesort test"<< endl;
+    // res = mergesortTest();
 
 	// leetCode
     // cout << endl << "Q001_TwoSum:" << endl;
