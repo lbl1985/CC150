@@ -35,8 +35,8 @@ int main()
 
 
 	// Chapter 10 sort
-    cout << endl << "bubbleSortTest" << endl;
-	res = bubbleSortTest();
+ //    cout << endl << "bubbleSortTest" << endl;
+	// res = bubbleSortTest();
 	// cout << endl << "quicksort" << endl;
     // res = quicksortTest();
     // cout << endl << "mergesort test"<< endl;
@@ -65,8 +65,8 @@ int main()
     // res = Q149_Max_Points_on_aline();
     // cout << endl << "Q162_FindPeakElement" << endl;
     // res = Q162_FindPeakElement();
-    // cout << endl << "Q179_LargestNumber" << endl;
-    // res = Q179_LargestNumber();
+    cout << endl << "Q179_LargestNumber" << endl;
+    res = Q179_LargestNumber();
     // cout << endl << "Q326_PowerOfThree" << endl;
 	// res = Q326_PowerOfThree();
     // cout << endl << "Q324_WiggleSortII" << endl;
