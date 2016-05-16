@@ -3,7 +3,7 @@
 
 #include "..\inc\utils.h"
 #include <vector>
-
+using namespace std;
 void swap(int& a, int&b){
 	int temp;
 	temp = a;
@@ -11,29 +11,31 @@ void swap(int& a, int&b){
 	b = temp;
 }
 
-int partition(vector<int> &arr, size_t low, size_t high){
-	int p = arr[high];
-	size_t smallIndex = low;
-	int tmp = 0;
-	for(size_t i = low; i < high; i++){
-		if(arr[i] <= p){
-			swap(arr[i], arr[smallIndex]);			
-			smallIndex++;
-		}		
+int partition(vector<int>& data, int left, int right)
+{
+	int pivot = data[(left + right) / 2];
+	while(left <= right) {
+		while(data[left] < pivot) left++;
+		while(data[right] > pivot) right--;
+		if(left <= right) {
+			swap(data[left], data[right]);
+			left++;
+			right--;
+		}
 	}
-
-	swap(arr[smallIndex], arr[high]);	
-	return smallIndex;
+	return left;
 }
 
-void quicksort(vector<int> &arr, int low, int high){
-	if(low < high){
-		int middle = partition(arr, low, high);
-		quicksort(arr, low, middle - 1);
-		quicksort(arr, middle + 1, high);
+void quicksort(vector<int>& data, int left, int right)
+{
+	int index = partition(data, left, right);
+	if (left < index - 1) {
+		quicksort(data, left, index - 1);
+	}
+	if(index < right) {
+		quicksort(data, index, right);
 	}
 }
-
 
 int quicksortTest(){
 	cout << "This is quicksortTest" << endl;
