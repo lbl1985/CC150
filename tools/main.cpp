@@ -37,8 +37,8 @@ int main()
 	// Chapter 10 sort
  //    cout << endl << "bubbleSortTest" << endl;
 	// res = bubbleSortTest();
-	cout << endl << "quicksort" << endl;
-    res = quicksortTest();
+	// cout << endl << "quicksort" << endl;
+ //    res = quicksortTest();
     // cout << endl << "mergesort test"<< endl;
     // res = mergesortTest();
 
@@ -51,6 +51,8 @@ int main()
     // cout << endl << "Q025_Reverse_Nodes_in_k_group" << endl;
     // res = Q025_Reverse_Nodes_in_k_group();
     // res = Q045_JumpGameII();
+    cout << endl << "Q050_Pow_x_n" << endl;
+    res = Q050_Pow_x_n();
     // cout << endl << "Q051_N_Queens()" << endl;
     // res = Q051_N_Queens();
     // cout << endl << "Q055_JumpGame:" << endl;

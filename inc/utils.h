@@ -50,6 +50,7 @@ int Q001_TwoSum();
 int Q021_Merge_Two_Sorted_Lists();
 int Q025_Reverse_Nodes_in_k_group();
 int Q045_JumpGameII();
+int Q050_Pow_x_n();
 int Q051_N_Queens();
 int Q058_LengthOfLastWord();
 int Q055_JumpGame();

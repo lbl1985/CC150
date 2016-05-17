@@ -3,6 +3,7 @@ set(list
 	Q021_Merge_Two_Sorted_Lists.cpp
 	Q025_Reverse_Nodes_in_k_group.cpp
 	Q045_JumpGameII.cpp
+	Q50_pow.cpp
 	Q051_N_Queens.cpp
 	Q055_JumpGame.cpp
 	Q058_LengthOfLastWord.cpp
