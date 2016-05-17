@@ -47,6 +47,7 @@ int mergesortTest();
 
 // leetCode
 int Q001_TwoSum();
+int Q005_longest_palindromic_substring();
 int Q021_Merge_Two_Sorted_Lists();
 int Q025_Reverse_Nodes_in_k_group();
 int Q045_JumpGameII();

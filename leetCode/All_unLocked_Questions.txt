@@ -79,7 +79,7 @@
   - 79 Word Search  22.4% Medium
   - 2 Add Two Numbers  22.4% Medium
   - 61 Rotate List  22.6% Medium
-  - 5 Longest Palindromic Substring  22.6% Medium
+  - *?5 Longest Palindromic Substring  22.6% Medium?*
   - 93 Restore IP Addresses  22.9% Medium
   - 43 Multiply Strings  22.9% Medium
   - 332 Reconstruct Itinerary  23.0% Medium
@@ -115,7 +115,7 @@
   - 131 Palindrome Partitioning  27.5% Medium
   - 47 Permutations II  27.5% Medium
   - 113 Path Sum II  27.9% Medium
-  - *?50 Pow(x, n)  27.9% Medium?*
+  - ~~50 Pow(x, n)  27.9% Medium~~
   - ~~55 Jump Game  28.0% Medium~~
   - 17 Letter Combinations of a Phone Number  28.0% Medium
   - 105 Construct Binary Tree from Preorder and Inorder Traversal  28.1% Medium

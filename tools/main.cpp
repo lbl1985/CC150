@@ -45,14 +45,16 @@ int main()
 	// leetCode
     // cout << endl << "Q001_TwoSum:" << endl;
     // res = Q001_TwoSum();
+    cout << endl << "Q005_longest_palindromic_substring" << endl;
+    res = Q005_longest_palindromic_substring();
     // cout << endl << "Q045_JumpGameII:" << endl;
     // res = Q021_Merge_Two_Sorted_Lists();
     // cout << endl << "Q021_Merge_Two_Sorted_Lists" << endl;
     // cout << endl << "Q025_Reverse_Nodes_in_k_group" << endl;
     // res = Q025_Reverse_Nodes_in_k_group();
     // res = Q045_JumpGameII();
-    cout << endl << "Q050_Pow_x_n" << endl;
-    res = Q050_Pow_x_n();
+    // cout << endl << "Q050_Pow_x_n" << endl;
+    // res = Q050_Pow_x_n();
     // cout << endl << "Q051_N_Queens()" << endl;
     // res = Q051_N_Queens();
     // cout << endl << "Q055_JumpGame:" << endl;
