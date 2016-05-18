@@ -67,6 +67,7 @@ int Q329_LongestIncreasingPathInAMatrix();
 int Q331_verify_preorder_serialization_of_a_binary_tree();
 int Q345_Reverse_vowels_of_a_string();
 int Q347_TopKFrequentElements();
+int Q349_IntersectionOfTwoArrays();
 
 // Exp
 int constructChar();

@@ -45,8 +45,8 @@ int main()
 	// leetCode
     // cout << endl << "Q001_TwoSum:" << endl;
     // res = Q001_TwoSum();
-    cout << endl << "Q005_longest_palindromic_substring" << endl;
-    res = Q005_longest_palindromic_substring();
+    // cout << endl << "Q005_longest_palindromic_substring" << endl;
+    // res = Q005_longest_palindromic_substring();
     // cout << endl << "Q045_JumpGameII:" << endl;
     // res = Q021_Merge_Two_Sorted_Lists();
     // cout << endl << "Q021_Merge_Two_Sorted_Lists" << endl;
@@ -85,7 +85,8 @@ int main()
     // res = Q347_TopKFrequentElements();
     // cout << endl << "Q345_Reverse_vowels_of_a_string" << endl;
     // res = Q345_Reverse_vowels_of_a_string();
-
+    cout << endl << "Q349_IntersectionOfTwoArrays" << endl;
+    res = Q349_IntersectionOfTwoArrays();
     // Exp
     // cout << endl << "constructChar" << endl;
     // res = constructChar();

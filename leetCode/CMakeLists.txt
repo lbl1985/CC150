@@ -20,6 +20,7 @@ set(list
 	Q331_verify_preorder_serialization_of_a_binary_tree.cpp
 	Q345_ReverseVowelsOfAString.cpp
 	Q347_TopKFrequentElements.cpp
+	Q349_IntersectionOfTwoArrays.cpp
 )
 
 foreach(item ${list})
