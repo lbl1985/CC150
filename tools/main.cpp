@@ -81,8 +81,10 @@ int main()
     // res = Q329_LongestIncreasingPathInAMatrix();
     // cout << endl << "Q331_verify_preorder_serialization_of_a_binary_tree" << endl;
     // res = Q331_verify_preorder_serialization_of_a_binary_tree();
-    cout << endl << "Q342_PowerOfFour" << endl;
-    res = Q342_PowerOfFour();
+    cout << endl << "Q338_CountingBits" << endl;
+    res = Q338_CountingBits();
+    // cout << endl << "Q342_PowerOfFour" << endl;
+    // res = Q342_PowerOfFour();
     // cout << endl << "Q343_IntegerBreak" << endl;
     // res = Q343_IntegerBreak();
     // cout << endl << "Q344_ReverseString" << endl;

@@ -65,6 +65,7 @@ int Q324_WiggleSortII();
 int Q328_OddEvenLinkedList();
 int Q329_LongestIncreasingPathInAMatrix();
 int Q331_verify_preorder_serialization_of_a_binary_tree();
+int Q338_CountingBits();
 int Q342_PowerOfFour();
 int Q343_IntegerBreak();
 int Q344_ReverseString();
