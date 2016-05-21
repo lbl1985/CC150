@@ -26,6 +26,7 @@ set(list
 	Q347_TopKFrequentElements.cpp
 	Q349_IntersectionOfTwoArrays.cpp
 	Q337_HouseRobberIII.cpp
+	Q336_Palindrome_pairs.cpp
 )
 
 foreach(item ${list})

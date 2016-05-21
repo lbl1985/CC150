@@ -74,6 +74,7 @@ int Q347_TopKFrequentElements();
 int Q349_IntersectionOfTwoArrays();
 
 int Q337_HouseRobberIII();
+int Q336_Palindrome_pairs();
 
 // Exp
 int constructChar();

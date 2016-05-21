@@ -95,8 +95,11 @@ int main()
     // res = Q345_Reverse_vowels_of_a_string();
     // cout << endl << "Q349_IntersectionOfTwoArrays" << endl;
     // res = Q349_IntersectionOfTwoArrays();
-    cout << endl << "Q337_HouseRobberIII" << endl;
-    res = Q337_HouseRobberIII();
+    
+    // cout << endl << "Q337_HouseRobberIII" << endl;
+    // res = Q337_HouseRobberIII();
+    cout << endl << "Q336_Palindrome_pairs" << endl;
+    res = Q336_Palindrome_pairs();
     
     // Exp
     // cout << endl << "constructChar" << endl;
