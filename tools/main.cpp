@@ -98,9 +98,10 @@ int main()
     
     // cout << endl << "Q337_HouseRobberIII" << endl;
     // res = Q337_HouseRobberIII();
-    cout << endl << "Q336_Palindrome_pairs" << endl;
-    res = Q336_Palindrome_pairs();
-    
+    // cout << endl << "Q336_Palindrome_pairs" << endl;
+    // res = Q336_Palindrome_pairs();
+    cout << endl << "Q335_Self_Crossing" << endl;
+    res = Q335_Self_Crossing();
     // Exp
     // cout << endl << "constructChar" << endl;
     // res = constructChar();
