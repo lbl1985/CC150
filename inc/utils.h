@@ -73,6 +73,8 @@ int Q345_Reverse_vowels_of_a_string();
 int Q347_TopKFrequentElements();
 int Q349_IntersectionOfTwoArrays();
 
+int Q337_HouseRobberIII();
+
 // Exp
 int constructChar();
 

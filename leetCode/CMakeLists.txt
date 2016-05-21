@@ -25,6 +25,7 @@ set(list
 	Q345_ReverseVowelsOfAString.cpp
 	Q347_TopKFrequentElements.cpp
 	Q349_IntersectionOfTwoArrays.cpp
+	Q337_HouseRobberIII.cpp
 )
 
 foreach(item ${list})
