@@ -43,67 +43,27 @@
 // Author: Binlong Li  
 
 #include "..\inc\utils.h"
-#include <utility>
 #include <vector>
 
-struct point
-{
-	int x, y;
-	point(int x_i, int y_i):x(x_i), y(y_i){}
-	point():x(0), y(0){}
-};
 
-// boundary line
-// b save the boundary value, y for horiz, x for veritcal
-// range save the line span,  x span for hor, y span for vertical
-struct bLine
-{
-	pair<int, int> range;
-	int b;
-	hline(int x1, int x2, int y_i):b(y_i){ 
-		if (x1 < x2) {
-			range = pair<int, int>{x1, x2};
-		} else {
-			range = pair<int, int>{x2, x1};
-		}
-	}
-	hline():range(pair<int,int>(0,0)), b(0){}
-	bool isCrossHLine(const point& start, const point& end) {
-		assert(start.x == end.x);
-		if(start.x < range.first || start.x > range.second) {
-			return false;
-		}
-		if( (start.y <= b && b <= end.y) || (end.y <= b && b <= start.y) ) {
-			return true;
-		}
-		return false;
-	}
-	bool isCrossVLine(const point& start, const point& end) {
-		assert(start.y == end.y);
-		if(start.y < range.first || start.y > range.second) {
-			return false;
-		}
-		if( (start.x <= b && b <= end.x) || (end.x <= b && b <= start.x)) {
-			return true;
-		}
-		return false;
-	}
-};
 bool isSelfCrossing(vector<int>& x) {
-	bool res;
 	int sz = (int)x.size();
 	if(sz <= 3) {
 		return false;
 	}
-
-	// vertial Left, vertical Right, hor top, hor bottom
-	bLine arr[4];
-	bLine holder;
-	point prev;
-	point curr;
-	for (int i = 0; i < 3; i++) {
-		
+	int i = 2; 
+	// keep expanding
+	for(i = 2; i < sz && x[i] > x[i - 2]; i++);
+	// In transition stage from expanding to shrinking
+	// Consider whether transition steip step over previous queued up distance
+	// if so, we need to modify the data for collition detection
+	if(i < sz && i > 2 && x[i] >= x[i - 2] - ((i >= 4) ? x[i-4] : 0)) {
+		x[i - 1] -= x[i - 3];
 	}
+	// keep shrinking
+	for(i++; i < sz && x[i] < x[i-2] ; i++);
+
+	return i < sz;
 
 
 }
@@ -111,5 +71,17 @@ bool isSelfCrossing(vector<int>& x) {
 int Q335_Self_Crossing()
 {
 	printf("inside of Q335_Self_Crossing\n");
+	vector<int> test1{2, 1, 1, 2};
+	printf("test 1 [2, 1, 1, 2] expect: true, result: %s\n", isSelfCrossing(test1) ? "true" : "false");
+	vector<int> test2{1, 2, 3, 4};
+	printf("test 2 [1, 2, 3, 4] expect: false, result: %s\n", isSelfCrossing(test2) ? "true" : "false");
+	vector<int> test3{1, 1, 1, 1};
+	printf("test 3 [1, 1, 1, 1] expect: true, result: %s\n", isSelfCrossing(test3) ? "true" : "false");
+	vector<int> test4{1, 1, 2, 2, 1, 1};
+	printf("test 4 [1, 1, 2, 2, 1, 1] expect: true, result: %s\n", isSelfCrossing(test4) ? "true" : "false");
+	vector<int> test5{3,3,3,2,1,1};
+	printf("test 5 [3,3,3,2,1,1] expect false, result: %s\n", isSelfCrossing(test5) ? "true" : "false");
+	vector<int> test6{1,1,2,1,1};
+	printf("test 6  [1,1,2,1,1] expect true, result: %s\n", isSelfCrossing(test6) ? "true" : "false");
 	return 0;
 }
