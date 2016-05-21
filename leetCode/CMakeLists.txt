@@ -27,6 +27,7 @@ set(list
 	Q349_IntersectionOfTwoArrays.cpp
 	Q337_HouseRobberIII.cpp
 	Q336_Palindrome_pairs.cpp
+	Q335_Self_Crossing.cpp
 )
 
 foreach(item ${list})

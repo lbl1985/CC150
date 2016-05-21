@@ -11,6 +11,8 @@
 
 using namespace std;
 
+#pragma warning( disable : 4819 )
+
 typedef unsigned int uint;
 
 #define S_OK 0
@@ -75,6 +77,7 @@ int Q349_IntersectionOfTwoArrays();
 
 int Q337_HouseRobberIII();
 int Q336_Palindrome_pairs();
+int Q335_Self_Crossing();
 
 // Exp
 int constructChar();
