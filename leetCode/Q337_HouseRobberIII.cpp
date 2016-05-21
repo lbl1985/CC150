@@ -39,8 +39,43 @@
 // };
 // Authoer: Binlong Li
 // Date: 05/20/2016
-// int rob(TreeNode* root)
+// Finish: 05/20/2016
+// This is a good question. I have finished it through discussion from leetcode...
 
+#include "..\inc\utils.h"
+
+#include <utility>
+#include <algorithm>
+using namespace std;
+
+struct TreeNode {
+    int val;
+    TreeNode *left;
+    TreeNode *right;
+    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+};
+
+pair<int, int> help(TreeNode* root)
+{
+	if(NULL == root) {
+		return {0, 0};
+	}
+
+	auto leftMoney = help(root->left);
+	auto rightMoney = help(root->right);
+
+	return {root->val + leftMoney.second + rightMoney.second, 
+			max(leftMoney.first, leftMoney.second) + 
+			max(rightMoney.first, rightMoney.second)
+			};
+
+}
+
+int rob(TreeNode* root)
+{
+	pair<int, int> h = help(root);
+	return max(h.first, h.second);
+}
 
 int Q337_HouseRobberIII()
 {
