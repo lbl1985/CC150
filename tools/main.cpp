@@ -102,8 +102,11 @@ int main()
     // res = Q336_Palindrome_pairs();
     // cout << endl << "Q335_Self_Crossing" << endl;
     // res = Q335_Self_Crossing();
-    cout << endl << "Q334_Increasing_Triplet_Subsequence" << endl;
-    res = Q334_Increasing_Triplet_Subsequence();
+    // cout << endl << "Q334_Increasing_Triplet_Subsequence" << endl;
+    // res = Q334_Increasing_Triplet_Subsequence();
+    cout << endl << "Q332_Reconstruct_Itinerary" << endl;
+    res = Q332_Reconstruct_Itinerary();
+
     // Exp
     // cout << endl << "constructChar" << endl;
     // res = constructChar();

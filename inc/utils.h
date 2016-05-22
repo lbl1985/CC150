@@ -81,6 +81,7 @@ int Q337_HouseRobberIII();
 int Q336_Palindrome_pairs();
 int Q335_Self_Crossing();
 int Q334_Increasing_Triplet_Subsequence();
+int Q332_Reconstruct_Itinerary();
 
 // Exp
 int constructChar();
