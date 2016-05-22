@@ -28,6 +28,7 @@ set(list
 	Q337_HouseRobberIII.cpp
 	Q336_Palindrome_pairs.cpp
 	Q335_Self_Crossing.cpp
+	Q334_Increasing_Triplet_Subsequence.cpp
 )
 
 foreach(item ${list})

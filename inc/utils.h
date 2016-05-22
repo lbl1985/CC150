@@ -8,6 +8,7 @@
 #include <stdlib.h>     // srand, rand
 #include "CLinkedList.h"
 #include <vector>
+#include <string>
 
 using namespace std;
 
@@ -20,6 +21,7 @@ typedef unsigned int uint;
 #define S_Invalid -2
 #define S_Res int
 
+#define JUDGE_RESULT(FUNC, INPUT) FUNC(INPUT) ? "true" : "false"
 // List of major entries for each question
 // Chapter 2
 int C2Q5();
@@ -78,6 +80,7 @@ int Q349_IntersectionOfTwoArrays();
 int Q337_HouseRobberIII();
 int Q336_Palindrome_pairs();
 int Q335_Self_Crossing();
+int Q334_Increasing_Triplet_Subsequence();
 
 // Exp
 int constructChar();

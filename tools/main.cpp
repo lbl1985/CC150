@@ -100,8 +100,10 @@ int main()
     // res = Q337_HouseRobberIII();
     // cout << endl << "Q336_Palindrome_pairs" << endl;
     // res = Q336_Palindrome_pairs();
-    cout << endl << "Q335_Self_Crossing" << endl;
-    res = Q335_Self_Crossing();
+    // cout << endl << "Q335_Self_Crossing" << endl;
+    // res = Q335_Self_Crossing();
+    cout << endl << "Q334_Increasing_Triplet_Subsequence" << endl;
+    res = Q334_Increasing_Triplet_Subsequence();
     // Exp
     // cout << endl << "constructChar" << endl;
     // res = constructChar();
