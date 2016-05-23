@@ -33,21 +33,23 @@ using namespace std;
 int getIndex(const vector<pair<string, string>>& vec, const vector<int>& validIndex)
 {	
 	int res = validIndex[0];
+	int realIndex = 0;
 	int sz = (int)validIndex.size();
 	if(sz == 1) {
-		return res;
+		return 0;
 	}
 	for(int i = 0; i < sz; i++) {
 		if(vec[res].second.compare(vec[validIndex[i]].second) > 0) {
 			res = validIndex[i];
+			realIndex = i;
 		}
 	}
 
-	return res;
+	return realIndex;
 }
 
 // recursive call based on arr info, 
-bool getIter(unordered_map<string, vector<pair<string, string>>> dict, vector<string>& res) {
+bool getIter(unordered_map<string, vector<pair<string, string>>>& dict, vector<string>& res) {
 	while(!dict.empty()) {
 		string cur = *(res.end() - 1);
 		if(dict.count(cur)) {
@@ -58,6 +60,8 @@ bool getIter(unordered_map<string, vector<pair<string, string>>> dict, vector<st
 				dict.erase(cur);
 			} else {
 				vector<int> validIndex;
+				// vector<unordered_map<string, vector<pair<string, string>>>> validDict;
+				vector<vector<string>> validRes;
 				for(int i = 0; i < sz; i++) {
 					vector<string> tmpStr(res);
 					tmpStr.push_back(vec[i].second);
@@ -66,11 +70,13 @@ bool getIter(unordered_map<string, vector<pair<string, string>>> dict, vector<st
 					tmpVec.erase(tmpVec.begin() + i);
 					if(getIter(tmpDict, tmpStr)) {
 						validIndex.push_back(i);
+						// validDict.push_back(tmpDict);
+						validRes.push_back(tmpStr);
 					}
 				}
 				int index = getIndex(vec, validIndex);
-				res.push_back(vec[index].second);
-				vec.erase(vec.begin() + index);
+				res = validRes[index];
+				return true;
 			}
 		} else {
 			return false;
@@ -138,5 +144,16 @@ int Q332_Reconstruct_Itinerary()
 	printVectorPair(test3); cout << endl;
 	printf("expect: [JFK NRT JFK KUL ]\nresult:");
 	printVector<string>(res3); cout << endl;
+
+	//[["EZE","TIA"],["EZE","HBA"],["AXA","TIA"],["JFK","AXA"],["ANU","JFK"],["ADL","ANU"],["TIA","AUA"],["ANU","AUA"],["ADL","EZE"],["ADL","EZE"],["EZE","ADL"],["AXA","EZE"],["AUA","AXA"],["JFK","AXA"],["AXA","AUA"],["AUA","ADL"],["ANU","EZE"],["TIA","ADL"],["EZE","ANU"],["AUA","ANU"]]
+	cout << endl  << "test4 " << endl;
+	vector<pair<string, string>> test4{CONS_PAIR("EZE","TIA"),CONS_PAIR("EZE","HBA"),CONS_PAIR("AXA","TIA"),CONS_PAIR("JFK","AXA"),CONS_PAIR("ANU","JFK"),
+										CONS_PAIR("ADL","ANU"),CONS_PAIR("TIA","AUA"),CONS_PAIR("ANU","AUA"),CONS_PAIR("ADL","EZE"),CONS_PAIR("ADL","EZE"),
+										CONS_PAIR("EZE","ADL"),CONS_PAIR("AXA","EZE"),CONS_PAIR("AUA","AXA"),CONS_PAIR("JFK","AXA"),CONS_PAIR("AXA","AUA"),
+										CONS_PAIR("AUA","ADL"),CONS_PAIR("ANU","EZE"),CONS_PAIR("TIA","ADL"),CONS_PAIR("EZE","ANU"),CONS_PAIR("AUA","ANU")};
+	vector<string> res4 = findItinerary(test4);
+	printVectorPair(test4); cout << endl;
+	printf("expect: ");
+	
 	return 0;
 }
