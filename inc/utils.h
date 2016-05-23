@@ -107,10 +107,21 @@ struct Point {
 template<class T>
 void printVector(const vector<T>& vec){
     size_t len = vec.size();
+    cout << " [";
     for(size_t i = 0; i < len; i++){
         cout << vec[i] << " ";
     }
-    cout << endl;
+    cout << "] ";
+}
+
+template<class T>
+void printVector(const vector<vector<T>>& vec){
+    int len = (int)vec.size();
+    cout << " [";
+    for(int i = 0; i < len; i++) {
+        printVector<T>(vec[i]);
+    }
+    cout << "] ";
 }
 
 

@@ -54,6 +54,7 @@ int getIndex(const vector<pair<string, string>>& vec, const unordered_map<string
 vector<string> findItinerary(vector<pair<string, string>> tickets) {
     unordered_map<string, vector<pair<string, string>> >  dict;
     int sz = (int)tickets.size();
+    unordered_map<string, int> dup;
     vector<string> res;
     res.push_back(string{"JFK"});
     for(int i = 0; i < sz; i++) {
@@ -75,34 +76,56 @@ vector<string> findItinerary(vector<pair<string, string>> tickets) {
     			res.push_back(vec[0].second);
     			dict.erase(cur);
     		} else {
+    			dup[cur] = res.size() - 1;
     			int ind = getIndex(vec, dict);
     			res.push_back(vec[ind].second);
     			vec.erase(vec.begin() + ind);
     		}
     	} else {
-    		return res;
+    		// reason we have let over, it's because we have made a bad choice for duplicate cases
+
+
     	}
     }
     return res;
+}
+
+void printVectorPair(const vector<pair<string, string>>& vec)
+{
+	cout << " [";
+	int sz = (int)vec.size();
+	for(int i = 0; i < sz; i++) {
+		cout << "[" << vec[i].first << ", " << vec[i].second << "],";
+	}
+
+	cout << "] " << endl;
 }
 
 #define CONS_PAIR(IN1, IN2) pair<string, string>{(IN1), (IN2)}
 int Q332_Reconstruct_Itinerary()
 {
 	printf("inside of Q332_Reconstruct_Itinerary\n");
+	cout << "test1 " << endl;
 	vector<pair<string, string>> test1{CONS_PAIR("MUC", "LHR"), CONS_PAIR("JFK", "MUC"), CONS_PAIR("SFO", "SJC"), CONS_PAIR("LHR", "SFO")};
 	vector<string> res1 = findItinerary(test1);
-	printf("test1 [[MUC, LHR], [JFK, MUC], [SFO, SJC], [LHR, SFO]], expect: [JFK, MUC, LHR, SFO, SJC], result:\n");
-	printVector<string>(res1); 
+	printVectorPair(test1); cout << endl;
+	printf("expect: [JFK MUC LHR SFO SJC ]\nresult:");
+	printVector<string>(res1); cout << endl;
+	
 	// [["JFK","SFO"],["JFK","ATL"],["SFO","ATL"],["ATL","JFK"],["ATL","SFO"]]
+	cout << endl << "test2 " << endl;
 	vector<pair<string, string>> test2{CONS_PAIR("JFK","SFO"), CONS_PAIR("JFK","ATL"), CONS_PAIR("SFO","ATL"), CONS_PAIR("ATL","JFK"), CONS_PAIR("ATL","SFO")};
 	vector<string> res2 = findItinerary(test2);
-	printf("test2 [[JFK,SFO],[JFK,ATL],[SFO,ATL],[ATL,JFK],[ATL,SFO]], expect: [JFK,ATL,JFK,SFO,ATL,SFO], result:\n");
-	printVector<string>(res2);
+	printVectorPair(test2); cout << endl;
+	printf("expect: [JFK ATL JFK SFO ATL SFO ]\nresult:");
+	printVector<string>(res2); cout << endl;
+	
 	// [["JFK","KUL"],["JFK","NRT"],["NRT","JFK"]]
+	cout << endl << "test3 " << endl;
 	vector<pair<string, string>> test3{CONS_PAIR("JFK","KUL"), CONS_PAIR("JFK","NRT"), CONS_PAIR("NRT","JFK")};
 	vector<string> res3 = findItinerary(test3);
-	printf("test3 [[JFK,KUL],[JFK,NRT],[NRT,JFK]], expect: [JFK,NRT,JFK,KUL], result:\n");
-	printVector<string>(res3);
+	printVectorPair(test3); cout << endl;
+	printf("expect: [JFK NRT JFK KUL ]\nresult:");
+	printVector<string>(res3); cout << endl;
 	return 0;
 }
