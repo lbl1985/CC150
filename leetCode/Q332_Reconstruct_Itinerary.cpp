@@ -30,18 +30,13 @@
 #include <unordered_map>
 using namespace std;
 
-int getIndex(const vector<pair<string, string>>& vec, const unordered_map<string, vector<pair<string, string>>>& dict)
-{
-	int sz = (int)vec.size();
-	int res = -1;
-	vector<int> validIndex;
-	for(int i = 0; i < sz; i++) {
-		if(dict.count(vec[i].second) ) {
-			validIndex.push_back(i);
-		}
+int getIndex(const vector<pair<string, string>>& vec, const vector<int>& validIndex)
+{	
+	int res = validIndex[0];
+	int sz = (int)validIndex.size();
+	if(sz == 1) {
+		return res;
 	}
-	res = validIndex[0];
-	sz = (int)validIndex.size();
 	for(int i = 0; i < sz; i++) {
 		if(vec[res].second.compare(vec[validIndex[i]].second) > 0) {
 			res = validIndex[i];
@@ -49,6 +44,39 @@ int getIndex(const vector<pair<string, string>>& vec, const unordered_map<string
 	}
 
 	return res;
+}
+
+// recursive call based on arr info, 
+bool getIter(unordered_map<string, vector<pair<string, string>>> dict, vector<string>& res) {
+	while(!dict.empty()) {
+		string cur = *(res.end() - 1);
+		if(dict.count(cur)) {
+			vector<pair<string, string>>& vec = dict[cur];
+			int sz = (int)vec.size();
+			if(sz == 1) {
+				res.push_back(vec[0].second);
+				dict.erase(cur);
+			} else {
+				vector<int> validIndex;
+				for(int i = 0; i < sz; i++) {
+					vector<string> tmpStr(res);
+					tmpStr.push_back(vec[i].second);
+					unordered_map<string, vector<pair<string, string>>> tmpDict(dict);
+					vector<pair<string, string>>& tmpVec = tmpDict[cur];
+					tmpVec.erase(tmpVec.begin() + i);
+					if(getIter(tmpDict, tmpStr)) {
+						validIndex.push_back(i);
+					}
+				}
+				int index = getIndex(vec, validIndex);
+				res.push_back(vec[index].second);
+				vec.erase(vec.begin() + index);
+			}
+		} else {
+			return false;
+		}
+	}
+	return true;
 }
 
 vector<string> findItinerary(vector<pair<string, string>> tickets) {
@@ -68,25 +96,8 @@ vector<string> findItinerary(vector<pair<string, string>> tickets) {
     	}
     }
 
-    while(!dict.empty()) {
-    	string cur = *(res.end() - 1);
-    	if(dict.count(cur)) {
-    		vector<pair<string, string>>& vec = dict[cur];
-    		if(vec.size() == 1) {
-    			res.push_back(vec[0].second);
-    			dict.erase(cur);
-    		} else {
-    			dup[cur] = res.size() - 1;
-    			int ind = getIndex(vec, dict);
-    			res.push_back(vec[ind].second);
-    			vec.erase(vec.begin() + ind);
-    		}
-    	} else {
-    		// reason we have let over, it's because we have made a bad choice for duplicate cases
+    getIter(dict, res);
 
-
-    	}
-    }
     return res;
 }
 
