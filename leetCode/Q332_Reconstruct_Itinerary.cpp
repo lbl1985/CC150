@@ -30,24 +30,6 @@
 #include <unordered_map>
 using namespace std;
 
-int getIndex(const vector<pair<string, string>>& vec, const vector<int>& validIndex)
-{	
-	int res = validIndex[0];
-	int realIndex = 0;
-	int sz = (int)validIndex.size();
-	if(sz == 1) {
-		return 0;
-	}
-	for(int i = 0; i < sz; i++) {
-		if(vec[res].second.compare(vec[validIndex[i]].second) > 0) {
-			res = validIndex[i];
-			realIndex = i;
-		}
-	}
-
-	return realIndex;
-}
-
 // recursive call based on arr info, 
 bool getIter(unordered_map<string, vector<pair<string, string>>>& dict, vector<string>& res) {
 	while(!dict.empty()) {
@@ -59,9 +41,9 @@ bool getIter(unordered_map<string, vector<pair<string, string>>>& dict, vector<s
 				res.push_back(vec[0].second);
 				dict.erase(cur);
 			} else {
-				vector<int> validIndex;
-				// vector<unordered_map<string, vector<pair<string, string>>>> validDict;
-				vector<vector<string>> validRes;
+				// because the vector of pari<string, string> is in order, 
+				// once we find the first qualified result, it's already the 
+				// shortest literate distance
 				for(int i = 0; i < sz; i++) {
 					vector<string> tmpStr(res);
 					tmpStr.push_back(vec[i].second);
@@ -69,18 +51,9 @@ bool getIter(unordered_map<string, vector<pair<string, string>>>& dict, vector<s
 					vector<pair<string, string>>& tmpVec = tmpDict[cur];
 					tmpVec.erase(tmpVec.begin() + i);
 					if(getIter(tmpDict, tmpStr)) {
-						validIndex.push_back(i);
-						// validDict.push_back(tmpDict);
-						validRes.push_back(tmpStr);
+						res = tmpStr;
+						return true;
 					}
-				}
-
-				if (!validIndex.empty()) {
-					int index = getIndex(vec, validIndex);
-					res = validRes[index];
-					return true;
-				} else {
-					return false;
 				}
 			}
 		} else {
@@ -97,13 +70,25 @@ vector<string> findItinerary(vector<pair<string, string>> tickets) {
     vector<string> res;
     res.push_back(string{"JFK"});
     for(int i = 0; i < sz; i++) {
-    	auto it = dict.find(tickets[i].first);
-    	if(dict.count(tickets[i].first) == 0) {
+    	const pair<string, string>& curPair = tickets[i];
+    	if(dict.count(curPair.first) == 0) {
     		vector<pair<string, string>> tmp;
     		tmp.push_back(tickets[i]);
     		dict[tickets[i].first] = tmp;
     	} else {
-    		dict[tickets[i].first].push_back(tickets[i]);
+    		vector<pair<string, string>>& vec = dict[curPair.first];
+    		int vecSz = (int)vec.size();
+    		bool isInsert = false;
+    		// keep the vector<pair<string, string>> in order
+    		for(int j = 0; false == isInsert && j < vecSz; j++) {
+    			if(curPair.second.compare(vec[j].second) < 0){
+    				vec.insert(vec.begin() + j, tickets[i]);
+    				isInsert = true;
+    			} 
+    		}
+    		if(false == isInsert) {
+    			vec.push_back(tickets[i]);
+    		}
     	}
     }
 
@@ -161,6 +146,22 @@ int Q332_Reconstruct_Itinerary()
 	printf("expect: ");
 	printf("result: ");
 	printVector<string>(res4); cout << endl;
-	
+
+	//["CBR","JFK"],["TIA","EZE"],["AUA","TIA"],["JFK","EZE"],["BNE","CBR"],["JFK","CBR"],["CBR","AUA"],["EZE","HBA"],["AXA","ANU"],["BNE","EZE"],["AXA","EZE"],["AUA","ADL"],["OOL","JFK"],["BNE","AXA"],["OOL","EZE"],["EZE","ADL"],["TIA","BNE"],["EZE","TIA"],["JFK","AUA"],["AUA","EZE"],["ANU","ADL"],["TIA","BNE"],["EZE","OOL"],["ANU","BNE"],["EZE","ANU"],["ANU","AUA"],["BNE","ANU"],["CNS","JFK"],["TIA","ADL"],["ADL","AXA"],["JFK","OOL"],["AUA","ADL"],["ADL","TIA"],["ADL","ANU"],["ADL","JFK"],["BNE","EZE"],["ANU","BNE"],["JFK","BNE"],["EZE","AUA"],["EZE","AXA"],["AUA","TIA"],["ADL","CNS"],["AXA","AUA"]
+	cout << endl << "test5 " << endl;
+	vector<pair<string, string>> test5{CONS_PAIR("CBR","JFK"), CONS_PAIR("TIA","EZE"), CONS_PAIR("AUA","TIA"), CONS_PAIR("JFK","EZE"), CONS_PAIR("BNE","CBR"), 
+										CONS_PAIR("JFK","CBR"), CONS_PAIR("CBR","AUA"), CONS_PAIR("EZE","HBA"), CONS_PAIR("AXA","ANU"), CONS_PAIR("BNE","EZE"), 
+										CONS_PAIR("AXA","EZE"), CONS_PAIR("AUA","ADL"), CONS_PAIR("OOL","JFK"), CONS_PAIR("BNE","AXA"), CONS_PAIR("OOL","EZE"), 
+										CONS_PAIR("EZE","ADL"), CONS_PAIR("TIA","BNE"), CONS_PAIR("EZE","TIA"), CONS_PAIR("JFK","AUA"), CONS_PAIR("AUA","EZE"), 
+										CONS_PAIR("ANU","ADL"), CONS_PAIR("TIA","BNE"), CONS_PAIR("EZE","OOL"), CONS_PAIR("ANU","BNE"), CONS_PAIR("EZE","ANU"), 
+										CONS_PAIR("ANU","AUA"), CONS_PAIR("BNE","ANU"), CONS_PAIR("CNS","JFK"), CONS_PAIR("TIA","ADL"), CONS_PAIR("ADL","AXA"), 
+										CONS_PAIR("JFK","OOL"), CONS_PAIR("AUA","ADL"), CONS_PAIR("ADL","TIA"), CONS_PAIR("ADL","ANU"), CONS_PAIR("ADL","JFK"), 
+										CONS_PAIR("BNE","EZE"), CONS_PAIR("ANU","BNE"), CONS_PAIR("JFK","BNE"), CONS_PAIR("EZE","AUA"), CONS_PAIR("EZE","AXA"), 
+										CONS_PAIR("AUA","TIA"), CONS_PAIR("ADL","CNS"), CONS_PAIR("AXA","AUA")};
+	vector<string> res5 = findItinerary(test5);
+	printVectorPair(test5); cout << endl;
+	printf("expect: ");
+	printf("result: ");
+	printVector<string>(res5); cout << endl;
 	return 0;
 }
