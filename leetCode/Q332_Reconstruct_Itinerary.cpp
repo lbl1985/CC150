@@ -74,9 +74,14 @@ bool getIter(unordered_map<string, vector<pair<string, string>>>& dict, vector<s
 						validRes.push_back(tmpStr);
 					}
 				}
-				int index = getIndex(vec, validIndex);
-				res = validRes[index];
-				return true;
+
+				if (!validIndex.empty()) {
+					int index = getIndex(vec, validIndex);
+					res = validRes[index];
+					return true;
+				} else {
+					return false;
+				}
 			}
 		} else {
 			return false;
@@ -154,6 +159,8 @@ int Q332_Reconstruct_Itinerary()
 	vector<string> res4 = findItinerary(test4);
 	printVectorPair(test4); cout << endl;
 	printf("expect: ");
+	printf("result: ");
+	printVector<string>(res4); cout << endl;
 	
 	return 0;
 }
