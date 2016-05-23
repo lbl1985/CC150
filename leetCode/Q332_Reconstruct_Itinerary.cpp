@@ -28,6 +28,7 @@
 #include <utility>
 #include <string>
 #include <unordered_map>
+#include <set>
 using namespace std;
 
 // recursive call based on arr info, 
@@ -44,17 +45,19 @@ bool getIter(unordered_map<string, vector<pair<string, string>>>& dict, vector<s
 				// because the vector of pari<string, string> is in order, 
 				// once we find the first qualified result, it's already the 
 				// shortest literate distance
-				for(int i = 0; i < sz; i++) {
-					vector<string> tmpStr(res);
-					tmpStr.push_back(vec[i].second);
-					unordered_map<string, vector<pair<string, string>>> tmpDict(dict);
-					vector<pair<string, string>>& tmpVec = tmpDict[cur];
-					tmpVec.erase(tmpVec.begin() + i);
-					if(getIter(tmpDict, tmpStr)) {
-						res = tmpStr;
-						return true;
-					}
-				}
+				res.push_back(vec[0].second);
+				vec.erase(vec.begin());
+				// for(int i = 0; i < sz; i++) {
+				// 	vector<string> tmpStr(res);
+				// 	tmpStr.push_back(vec[i].second);
+				// 	unordered_map<string, vector<pair<string, string>>> tmpDict(dict);
+				// 	vector<pair<string, string>>& tmpVec = tmpDict[cur];
+				// 	tmpVec.erase(tmpVec.begin() + i);
+				// 	if(getIter(tmpDict, tmpStr)) {
+				// 		res = tmpStr;
+				// 		return true;
+				// 	}
+				// }
 			}
 		} else {
 			return false;
@@ -97,6 +100,35 @@ vector<string> findItinerary(vector<pair<string, string>> tickets) {
     return res;
 }
 
+class Solution{
+public:
+	unordered_map<string, multiset<string>> myGraph;
+    vector<string> route;
+    void visit(string port) //DFS traversal to retrieve the route;
+    {
+        //If k does not match the key of any element in the container, the function inserts a 
+        //new element with that key and returns a reference to its mapped value. Notice that 
+        //this always increases the container size by one, even if no mapped value is assigned 
+        //to the element (the element is constructed using its default constructor).
+        while(myGraph[port].size()) //the port exists in myGraph and there are others it can reach;
+        {
+            string next = *myGraph[port].begin(); //retrieve the next from the beginning position to ensure lexical order;
+            myGraph[port].erase(myGraph[port].begin()); //once visited, erase it;
+            visit(next); //move to the next;
+        }
+        route.push_back(port); //add the destinations first and then the source;
+    }
+
+    vector<string> findItinerary(vector<pair<string, string>> tickets)
+    {
+        for(auto& ticket: tickets) //constructing the graph;
+            myGraph[ticket.first].insert(ticket.second);
+        visit("JFK"); //start from JFK;
+        return vector<string>(route.rbegin(), route.rend()); //reverse the route to the get the sequence;
+    }
+
+};
+
 void printVectorPair(const vector<pair<string, string>>& vec)
 {
 	cout << " [";
@@ -134,6 +166,9 @@ int Q332_Reconstruct_Itinerary()
 	printVectorPair(test3); cout << endl;
 	printf("expect: [JFK NRT JFK KUL ]\nresult:");
 	printVector<string>(res3); cout << endl;
+
+	Solution s1;
+	s1.findItinerary(test3);
 
 	//[["EZE","TIA"],["EZE","HBA"],["AXA","TIA"],["JFK","AXA"],["ANU","JFK"],["ADL","ANU"],["TIA","AUA"],["ANU","AUA"],["ADL","EZE"],["ADL","EZE"],["EZE","ADL"],["AXA","EZE"],["AUA","AXA"],["JFK","AXA"],["AXA","AUA"],["AUA","ADL"],["ANU","EZE"],["TIA","ADL"],["EZE","ANU"],["AUA","ANU"]]
 	cout << endl  << "test4 " << endl;
