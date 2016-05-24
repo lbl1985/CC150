@@ -30,6 +30,8 @@ set(list
 	Q335_Self_Crossing.cpp
 	Q334_Increasing_Triplet_Subsequence.cpp
 	Q332_Reconstruct_Itinerary.cpp
+	Q332_Coin_Change.cpp
+	Q189_Rotate_Array.cpp
 )
 
 foreach(item ${list})

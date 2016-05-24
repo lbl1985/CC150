@@ -82,6 +82,8 @@ int Q336_Palindrome_pairs();
 int Q335_Self_Crossing();
 int Q334_Increasing_Triplet_Subsequence();
 int Q332_Reconstruct_Itinerary();
+int Q332_Coin_Change();
+int Q189_Rotate_Array();
 
 // Exp
 int constructChar();
