@@ -32,6 +32,7 @@ set(list
 	Q332_Reconstruct_Itinerary.cpp
 	Q332_Coin_Change.cpp
 	Q189_Rotate_Array.cpp
+	Q321_Create_Maximum_Number.cpp
 )
 
 foreach(item ${list})

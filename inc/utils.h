@@ -84,6 +84,7 @@ int Q334_Increasing_Triplet_Subsequence();
 int Q332_Reconstruct_Itinerary();
 int Q332_Coin_Change();
 int Q189_Rotate_Array();
+int Q321_Create_Maximum_Number();
 
 // Exp
 int constructChar();
