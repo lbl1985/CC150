@@ -106,10 +106,10 @@ int main()
     // res = Q334_Increasing_Triplet_Subsequence();
     // cout << endl << "Q332_Reconstruct_Itinerary" << endl;
     // res = Q332_Reconstruct_Itinerary();
-    // cout << endl << "Q332_Coin_Change" << endl;
-    // res = Q332_Coin_Change();
-    cout << endl << "Q189_Rotate_Array" << endl;
-    res = Q189_Rotate_Array();
+    cout << endl << "Q332_Coin_Change" << endl;
+    res = Q332_Coin_Change();
+    // cout << endl << "Q189_Rotate_Array" << endl;
+    // res = Q189_Rotate_Array();
 
     // Exp
     // cout << endl << "constructChar" << endl;
