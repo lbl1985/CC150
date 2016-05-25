@@ -16,46 +16,36 @@
 // }
 // Author: Binlong Li
 // Date: 05/23/2016
+// Finish: 05/24/2016
 
 #include "..\inc\utils.h"
 #include <vector>
 #include <algorithm>
+#include <climits>
 using namespace std;
 
 int coinChange(vector<int>& coins, int amount) {
-	int res = -1;
+	int dp[65535];
+	memset(dp, 0x7f, sizeof(dp));
+	int j, k;
+	dp[0] = 0;
 	int sz = (int)coins.size();
-	sort(coins.begin(), coins.end());
-	if(amount == 0) {
-		return 0;
-	}
-	// amount is less than the smallest of the coins, return -1
-	if(amount < coins[0]) {
-		return -1;
-	}
 	for(int i = 0; i < sz; i++) {
-		if(amount == coins[i]) {
-			return 1;
+		for(j = 0, k = coins[i]; k <= amount; j++, k++) {
+			dp[k] = dp[j] + 1 < dp[k] ? dp[j] + 1 : dp[k];
 		}
 	}
-	for(int i = sz - 1; i >= 0; i--) {		
-		if (amount < coins[i]) {
-			continue;
-		}
-		int n = amount / coins[i];
-		int tRes = coinChange(coins, amount - n * coins[i]);
-		if (tRes == -1 && sz > 1) {
-			n = n - 1;
-			tRes = coinChange(coins, amount - n * coins[i]);
-			if(tRes != -1) {
-				return tRes + n;
-			}
-		} else if(sz > 1) {
-			return tRes + n;
-		}
-	}
-	
-	return res;
+	return dp[amount] == 0x7f7f7f7f ? -1 : dp[amount];
+}
+
+int dp[65535];
+int coinChange(vector<int>& coins, int coinsSize, int amount) {
+	memset(dp, 0x3f, sizeof(dp));
+	dp[0] = 0;
+	for (int i = 0; i < coinsSize; i++)
+		for (int j = 0, k = coins[i]; k <= amount; j++, k++)
+			dp[k] = dp[j] + 1 < dp[k] ? dp[j] + 1 : dp[k];
+	return dp[amount] == 0x3f3f3f3f ? -1 : dp[amount];
 }
 
 
@@ -85,11 +75,17 @@ int Q332_Coin_Change()
 
 	cout << "test4" << endl;
 	vector<int> test4{186,419,83,408};
-	int res4 = coinChange(test4, 2);
+	int res4 = coinChange(test4, 6249);
 	printVector(test4); cout << ", 6249" << endl;
-	cout << "expect: None" << endl;
+	cout << "expect: 20" << endl;
 	cout << "result: " << res4 << endl;
 
+	cout << "test5" << endl;
+	vector<int> test5{1};
+	int res5 = coinChange(test5, 2);
+	printVector(test5); cout << ", 2" << endl;
+	cout << "expect: 2" << endl;
+	cout << "result: " << res5 << endl;
 
 	return 0;
 }
