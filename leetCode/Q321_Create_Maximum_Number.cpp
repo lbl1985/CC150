@@ -25,9 +25,6 @@
 
 using namespace std;
 
-vector<int> maxNumber(vector<int>& nums1, vector<int>& nums2, int k) {
-	vector<int> res;
-	int range;
 	struct groupStatus{
 		int endIdx;
 		int sz;
@@ -37,36 +34,72 @@ vector<int> maxNumber(vector<int>& nums1, vector<int>& nums2, int k) {
 		groupStatus():endIdx(0), sz(0), cur(0), l(-1), li(-1){}
 		
 	};
+
+vector<int> maxNumber(vector<int>& nums1, vector<int>& nums2, int k) {
+	vector<int> res;
+	int range;
 	int endIdx[2] = {0, 0};
-	int sz{2} = {0, 0};
+	int sz[2] = {(int)nums1.size(), (int)nums2.size()};
 	int cur[2] = {0, 0};
-	int l{2} = {-1, -1};
-	int li{2} = {-1, -1};
+	int l[2] = {-1, -1};
+	int li[2] = {-1, -1};
 
 	for(int i = 0; i < k; i++) {
 		range = k - i;
-		endIdx[0] = (cur[0] + range) < sz[0] ? (cur[0] + range) : sz[0];
-		endIdx2 = (cur2 + range) < sz2 ? (cur2 + range) : sz2;
-		for(int j = cur1; j < endIdx1; j++) {
-			if(nums1[j] > l) {
-				l = nums1[j];
-				lg = 1; li = j;
+		endIdx[0] = (cur[0] + range) <= sz[0]? (cur[0] + range) : sz[0];
+		endIdx[1] = (cur[1] + range) <= sz[1]? (cur[1] + range) : sz[1];
+		for(int j = cur[0]; j < endIdx[0]; j++) {
+			if(nums1[j] > l[0]) {
+				l[0] = nums1[j];
+				li[0] = j;
 			}
 		}
-		for(int j = cur2; j< endIdx2; j++) {
-			if(nums2[j] > l) {
-				l = nums2[j];
-				lg = 2; li = j;
+		for(int j = cur[1]; j< endIdx[1]; j++) {
+			if(nums2[j] > l[1]) {
+				l[1] = nums2[j];
+				li[1] = j;
 			}
 		}
-
-
+		if (l[0] >= l[1]) {
+			res.push_back(l[0]);
+			cur[0] = li[0] + 1 <= sz[0] - 1 ?  li[0] + 1 : sz[0];
+			l[0] = -1;
+		} else if (l[0] < l[1]) {
+			res.push_back(l[1]);
+			cur[1] = li[1] + 1 <= sz[1] - 1 ?  li[1] + 1 : sz[1];
+			l[1] = -1;
+		} 
 	}
+	return res;
 
 }
 
 int Q321_Create_Maximum_Number()
 {
 	printf("inside of Q321_Create_Maximum_Number\n");
+	// nums1 = [3, 4, 6, 5]
+//  nums2 = [9, 1, 2, 5, 8, 3]
+//  k = 5
+//  return [9, 8, 6, 5, 3] 
+	cout << "test1" << endl;
+	vector<int> t1nums1{3, 4, 6, 5};
+	vector<int> t1nums2{9, 1, 2, 5, 8, 3};
+	int t1k = 5;
+	vector<int> t1res = maxNumber(t1nums1, t1nums2, t1k);
+	cout << "expect: [9 8 6 5 3]" << endl;
+	cout << "result:"; printVector(t1res);
+
+	// nums1 = [6, 7]
+	//  nums2 = [6, 0, 4]
+	//  k = 5
+	//  return [6, 7, 6, 0, 4] 
+	cout << "test2" << endl;
+	vector<int> t2nums1{6, 7};
+	vector<int> t2nums2{6, 0 , 4};
+	int t2k = 5;
+	vector<int> t2res = maxNumber(t2nums1, t2nums2, t2k);
+	cout << "expect: [6 7 6 0 4]" << endl;
+	cout << "result:"; printVector(t2res);
+
 	return 0;
 }
