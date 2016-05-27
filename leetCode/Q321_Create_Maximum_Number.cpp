@@ -74,6 +74,32 @@ vector<int> maxNumber(vector<int>& nums1, vector<int>& nums2, int k) {
 
 }
 
+
+int coinchange(const vector<int>& coins, int amount)
+{
+    int dp[65535];
+    int sz = (int)coins.size();
+    memset(dp, 0x3f, sizeof(dp));
+    dp[0] = 0;
+    int j, k;
+    for(int i = 0; i < sz; i++) {
+        for(j = 0, k = coins[i]; k<= amount; j++, k++) {
+            dp[k] = dp[j] + 1 < dp[k] ? dp[j] + 1 : dp[k];
+        }    
+    }
+    
+    return dp[amount];
+}
+int numSquares(int n) {
+    int k = (int)sqrt(n);
+    vector<int> coins;
+    for(int i = 1; i <= k; i++){
+        coins.push_back(i * i);
+    }
+    return coinchange(coins, n);
+    
+}
+
 int Q321_Create_Maximum_Number()
 {
 	printf("inside of Q321_Create_Maximum_Number\n");
@@ -100,6 +126,11 @@ int Q321_Create_Maximum_Number()
 	vector<int> t2res = maxNumber(t2nums1, t2nums2, t2k);
 	cout << "expect: [6 7 6 0 4]" << endl;
 	cout << "result:"; printVector(t2res);
+
+	int test = (int)sqrt(35);
+	printf("35 sqrt is: %d\n", test);
+
+	numSquares(1);
 
 	return 0;
 }
