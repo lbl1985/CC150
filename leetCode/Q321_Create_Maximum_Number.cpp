@@ -100,6 +100,24 @@ int numSquares(int n) {
     
 }
 
+int lengthOfLIS(vector<int>& nums) {
+        int sz = (int)nums.size();
+        if(sz == 0) return 0;
+        if(sz == 1) return 1;
+        vector<int> dist(sz, 1);
+        // memset(dist, 1, sizeof(int) * sz);
+        int max = 0;
+        for(int i = 0; i < sz; i++) {
+            for(int j = 0; j < i; j++) {
+                if(nums[j] < nums[i] && dist[i] < dist[j] + 1) {
+                    dist[i] = dist[j] + 1;
+                }
+            }
+            max = dist[i] > max ? dist[i] : max;
+        }
+        return max;
+    }
+
 int Q321_Create_Maximum_Number()
 {
 	printf("inside of Q321_Create_Maximum_Number\n");
@@ -131,6 +149,9 @@ int Q321_Create_Maximum_Number()
 	printf("35 sqrt is: %d\n", test);
 
 	numSquares(1);
+
+	vector<int> test_lis{10, 9, 2, 5, 3, 7, 101, 18};
+	cout << lengthOfLIS(test_lis);
 
 	return 0;
 }
