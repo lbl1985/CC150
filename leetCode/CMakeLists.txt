@@ -33,6 +33,7 @@ set(list
 	Q332_Coin_Change.cpp
 	Q189_Rotate_Array.cpp
 	Q321_Create_Maximum_Number.cpp
+	Q219_Contains_DuplicateII.cpp
 )
 
 foreach(item ${list})
