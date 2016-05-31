@@ -8,17 +8,18 @@ string intToRoman(int num) {
         for(int i = 0; i < 7; i++) {
             
             int d = q[i];
-            int b = (i % 2 == 0) ? q[i + 2] : q[i + 1];
+            int delta = (i % 2 == 0) ? 2 : 1;
+            int b = q[i + delta];
             if (num >= d){
                 n = num / d;
                 for(int r = 0; r < n; r++) {
-                    res.append(tmp);
+                    res.append(&c[i], 1);
                 }
                 num -= n * d;
                 break;
-            } else if (num > = d - b) {
-                res.append(c[i+2]);
-                res.append(c[i]);
+            } else if (num >= d - b) {
+                res.append(&c[i+delta], 1);
+                res.append(&c[i], 1);
                 num -= d - b;
                 break;
             }
