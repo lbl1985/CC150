@@ -37,3 +37,19 @@ vector<string> generateParenthesis(int n) {
     }
     return res;
 }
+
+vector<string> generateParenthesis(int n) {
+    vector<string> result;
+    helper(result, n, n, "");
+    return result;
+}
+void helper(vector<string>& result, int m, int n, string temp){
+    if(m == 0 && n == 0){
+        result.push_back(temp);
+        return;
+    }
+    if(m>0)
+        helper(result, m-1, n, temp+'(');
+    if(m<n)
+        helper(result, m, n-1, temp+')');
+}
