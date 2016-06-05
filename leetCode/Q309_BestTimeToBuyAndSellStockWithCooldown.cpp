@@ -25,3 +25,75 @@ int maxProfit(vector<int>& prices) {
     int endIdx = (int)prices.size() - 1;
     return maxProfitSub(prices, 0, endIdx);
 }
+
+class Solution {
+public:
+
+    int maxProfitSub(const vector<int>& prices, int startIdx, int endIdx){
+        if (startIdx >= endIdx) {
+            return 0;
+        }
+        int res = INT_MIN, seg = INT_MIN;
+        int i = startIdx, prevPrice = prices[i], basePrice = prices[startIdx];
+        while(i <= endIdx) {
+            int tmpIdx = i + 1;
+            if(prices[tmpIdx] > prevPrice){
+                prevPrice = prices[tmpIdx];
+                i = tmpIdx;
+            } else {
+                break;
+            }
+        }
+        int curPosEarning = prices[i] - basePrice + maxProfitSub(prices, i + 2, endIdx);
+        int prePosEarning = (i > 0 ? prices[i - 1] : prices[0]) - basePrice + maxProfitSub(prices, i + 1, endIdx);
+        return max(curPosEarning, prePosEarning);
+        
+    }
+    
+    int maxProfitSeg(const vector<vector<int>>& profit, int gid) 
+    {
+        int res = 0;
+        for(int i = 1; i < m_segNum; i++){
+            res += profit[gid][m_segVec[i].second];
+            gid = (gid == 0) ? 1 : 0;
+        }
+        return res;
+    }
+
+    int maxProfit(vector<int>& prices) {
+        int n = (int)prices.size();
+        if (n < 2) return 0;
+        vector<int> profitVec(n, 0);
+        vector<int> profitVec2(n, 0);
+        int start = 0, startPrice = prices[start], startPrice2 = prices[start + 1];
+        for(int i = 1; i < n; i++){
+            if (prices[i] >= prices[i - 1]) {
+                profitVec[i] = prices[i] - startPrice;
+            } else {
+                m_segVec.push_back(pair<int, int>{start, i - 1});
+                profitVec.push_back(prices[i-1] - startPrice);
+                start = i;
+                startPrice = prices[start];
+            }
+        }
+        m_segNum = (int)m_segVec.size();
+        for(int i = 0; i < m_segNum; i++){
+            if(m_segVec[i].second - m_segVec[i].first >= 2){
+                profitVec2[m_segVec[i].second] = prices[m_segVec[i].second] - prices[m_segVec[i].first + 1];
+            }
+        }
+        
+        vector<vector<int>> profit;
+        profit.push_back(profitVec);
+        profit.push_back(profitVec2);
+        
+        int pre = profitVec[m_segVec[0].second - 1] + maxProfitSeg(profit, 0);
+        int cur = profitVec[m_segVec[0].second] + maxProfitSeg(profit, 1);
+        return max();
+    }
+    
+private:
+    vector<pair<int, int>> m_segVec;
+    int m_segNum;
+    
+};
