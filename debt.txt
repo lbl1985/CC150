@@ -10,9 +10,9 @@
 02/01/2016 spend time on re-enlist company machine. 
 02/22/2016 re-start to roll the ball...
 03/05/2016 Too tired about Yard work... take one day break
-03/06/2016 Back break again.
-03/07-08/2016 Back break.
-04/16/2016 Too tired because of digging paver walkway 
+03/06/2016 Back break again. (removed on 06/05/2016 5 media)
+03/07-08/2016 Back break. (removed on 06/05/2016 5 media)
+04/16/2016 Too tired because of digging paver walkway (removed on 06/05/2016 5 media)
 04/17/2016 Too tired because of digging paver walkway  (Removed on 05/31/2016 4 media)
 04/18/2016 Too tired about Yard work... tak eone day break  (Removed on 05/31/2016 4 media)
 04/22/2016 Need to drive out to pick up things.  (Removed on 05/31/2016 4 media)
@@ -23,4 +23,4 @@
 05/08/2016 Birthday, too Tired... (Removed on 05/29/2016 6 media and 2 easy)
 05/11/2016 Mess-up (Removed on 05/26, 2 media)
 05/17/2016 Yihan is not doing well. Meanwhile, reading about longest parlindromic substring" (Removed on 05/19/2016 2 media and 1 easy)
-06/01/2016 Moving Cabnets, too tired...
+06/01/2016 Moving Cabnets, too tired...(removed on 06/05/2016 5 media)
