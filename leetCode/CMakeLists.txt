@@ -34,6 +34,7 @@ set(list
 	Q189_Rotate_Array.cpp
 	Q321_Create_Maximum_Number.cpp
 	Q219_Contains_DuplicateII.cpp
+	Q216_CombinationSumIII.cpp
 )
 
 foreach(item ${list})
