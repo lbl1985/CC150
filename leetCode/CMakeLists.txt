@@ -35,6 +35,7 @@ set(list
 	Q321_Create_Maximum_Number.cpp
 	Q219_Contains_DuplicateII.cpp
 	Q216_CombinationSumIII.cpp
+	Q054_SpiralMatrix.cpp
 )
 
 foreach(item ${list})

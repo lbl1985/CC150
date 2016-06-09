@@ -87,6 +87,7 @@ int Q189_Rotate_Array();
 int Q321_Create_Maximum_Number();
 int Q216_CombinationSumIII();
 int Q219_Contains_DuplicateII();
+int Q054_SpiralMatrix();
 
 // Exp
 int constructChar();
