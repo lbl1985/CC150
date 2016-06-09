@@ -34,3 +34,4 @@ The following list should be practise every day
 6. breath first traverse
 7. Leetcode Q241 Different Ways to Add Parentheses
 8. Leetcode Q322 Coin Change
+9. Leetcode Q059 Spiral Matrix
