@@ -5,39 +5,20 @@
 // Note:
 //  You are not suppose to use the library's sort function for this problem. 
 
-
-
 class Solution {
 public:
-    void swap(int& a, int& b){
-        int temp;
-        temp = a; 
-        a = b;
-        b = temp;
-    }
+
     void sortColors(vector<int>& nums) {
         int n = (int)nums.size();
         if(n == 0) return;
-        int zeroIdx = 0;
-        while(nums[zeroIdx] != 0 && zeroIdx < n){
-            zeroIdx++;
+        int count[3] = {0, 0, 0};
+        for(int i = 0; i < n; i++){
+            count[nums[i]]++;
         }
-        int twoIdx = n - 1;
-        while(nums[twoIdx] != 2 && twoIdx >= 0){
-            twoIdx--;
-        }
-        for(int i = 0; i < n && zeroIdx < twoIdx; i++){
-            if(nums[i] == 0){
-                swap(nums[i], nums[zeroIdx++]);
-                while(nums[zeroIdx] != 0 && zeroIdx < n && zeroIdx < twoIdx){
-                    zeroIdx++;
-                }
-            }
-            if(nums[i] == 2){
-                swap(nums[i], nums[twoIdx--]);
-                while(nums[twoIdx] != 2 && twoIdx >= 0 && zeroIdx < twoIdx){
-                    twoIdx--;
-                }
+        int c = 0;
+        for(int i = 0; i < 3; i++){
+            for(int j = 0; j < count[i]; j++){
+                nums[c++] = i;
             }
         }
     }
