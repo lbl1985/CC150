@@ -19,6 +19,39 @@
 class Solution {
 public:
     void gameOfLife(vector<vector<int>>& board) {
-        
+        int m = board.size();
+        if(m == 0) return;
+        int n = board[0].size();
+        if(n == 0) return;
+        vector<vector<int>> nei;
+        // neigh[1, 1] <=> board[0, 0]
+        for(int i = 0; i < m + 2; i++) {
+            nei.push_back(vector<int>(n + 2, 0));
+        }
+        for(int i = 0; i < m; i++){
+            for(int j = 0; j < n; j++) {
+                if(board[i][j]){
+                    for(int k = j; k <= j + 2; k++){
+                        nei[i][k]++;
+                    }
+                    nei[i][j]++;
+                    nei[i][j + 2]++;
+                    for(int k = j; k <= j + 2; k++){
+                        nei[i + 2][k]++;
+                    }
+                    
+                }
+            }
+        }
+        for(int i = 0; i < m; i++){
+            for(int j = 0; j < n; j++){
+                if(nei[i + 1][j + 1] < 2 || nei[i + 1][j + 1] > 3){
+                    board[i][j] = 0;
+                }
+                if(nei[i + 1][j + 1] == 3){
+                    board[i][j] = 1;
+                }
+            }
+        }
     }
 };
