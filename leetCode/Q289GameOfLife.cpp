@@ -34,8 +34,8 @@ public:
                     for(int k = j; k <= j + 2; k++){
                         nei[i][k]++;
                     }
-                    nei[i][j]++;
-                    nei[i][j + 2]++;
+                    nei[i + 1][j]++;
+                    nei[i + 1][j + 2]++;
                     for(int k = j; k <= j + 2; k++){
                         nei[i + 2][k]++;
                     }
