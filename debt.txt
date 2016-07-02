@@ -47,3 +47,4 @@ The following list should be practise every day
 
 Reading progress:
 06/28/2016 Reading more than 30mins Advanced Windows debugging.
+07/01/2016 Reading more than 30mins Advanced Windows debugging.
