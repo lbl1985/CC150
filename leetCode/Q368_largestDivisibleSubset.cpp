@@ -25,6 +25,7 @@ public:
     void helper(vector<vector<int>>& subsets, int n){
         auto iterSubset = subsets.begin();
         bool isNew = true;
+
         vector<vector<int>> newAdded;
         for(auto iterSubset = subsets.begin(); iterSubset != subsets.end(); iterSubset++) {
             bool isOK = (n % (*(iterSubset->rbegin())) == 0);
@@ -38,14 +39,14 @@ public:
                 isNew = false;
             }
         }
-        
-        subsets.append(newAdded.begin(), newAdded.end());
-        
-        if (isNew) {
-            vector<int> newSubset;
-            newSubset.push_back(n);
-            subsets.push_back(newSubset);
-        }
+
+        if(isNew) {
+            subsets.push_back(vector<int>{n});            
+        } else {
+            for(auto iter = newAdded.begin(); iter != newAdded.end(); iter++) {
+                subsets.push_back(*iter);
+            }                    
+        }        
     }
 
     vector<int> largestDivisibleSubset(vector<int>& nums) {
