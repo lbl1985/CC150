@@ -22,53 +22,49 @@
 
 class Solution {
 public:
-    void helper(vector<vector<int>>& subsets, int n){
-        auto iterSubset = subsets.begin();
-        bool isNew = true;
-    
-        vector<vector<int>> newAdded;
-        for(auto iterSubset = subsets.begin(); iterSubset != subsets.end(); iterSubset++) {
-            if (n % (*(iterSubset->rbegin())) == 0){
-                iterSubset->push_back(n);
-            } else if (iterSubset->size() > 1 && (n % (*(iterSubset->rbegin() + 1)) == 0) ){
-                vector<int> tempSet(iterSubset->begin(), iterSubset->end() - 2);
-                tempSet.push_back(n);
-                newAdded.push_back(tempSet);
-            }
-        }
+    vector<int> largestDivisibleSubset(vector<int>& nums) {
+        sort(nums.begin(), nums.end());
         
-        if(!newAdded.empty()) {
-            auto iterFinal = newAdded.begin();
-            for(auto iter = newAdded.begin(); iter != newAdded.end(); iter++) {
-                if(iter->size() > iterFinal->size()){
-                    iterFinal = iter;
+        vector<int> T(nums.size(), 0);
+        vector<int> parent(nums.size(), 0);
+        
+        int m = 0;
+        int mi = 0;
+        
+        // for(int i = 0; i < nums.size(); ++i) // if extending by larger elements
+        for(int i = nums.size() - 1; i >= 0; --i) // iterate from end to start since it's easier to track the answer index
+        {
+            // for(int j = i; j >=0; --j) // if extending by larger elements
+            for(int j = i; j < nums.size(); ++j)
+            {
+                // if(nums[i] % nums[j] == 0 && T[i] < 1 + T[j]) // if extending by larger elements
+                // check every a[j] that is larger than a[i]
+                if(nums[j] % nums[i] == 0 && T[i] < 1 + T[j])
+                {
+                    // if a[j] mod a[i] == 0, it means T[j] can form a larger subset by putting a[i] into T[j]
+                    T[i] = 1 + T[j];
+                    parent[i] = j;
+                    
+                    if(T[i] > m)
+                    {
+                        m = T[i];
+                        mi = i;
+                    }
                 }
             }
-            subsets.push_back(*iterFinal);
-        } else {
-            subsets.push_back(vector<int>{n});
         }
         
-    }
+        vector<int> ret;
+        
+        for(int i = 0; i < m; ++i)
+        {
+            ret.push_back(nums[mi]);
+            mi = parent[mi];
+        }
 
-    vector<int> largestDivisibleSubset(vector<int>& nums) {
-        int sz = nums.size();
-        vector<int> res;
-        if(sz == 0) return res;
+        // sort(ret.begin(), ret.end()); // if we go by extending larger ends, the largest "answer" element will come first since the candidate element we observe will become larger and larger as i increases in the outermost "for" loop above.
+       // alternatively, we can sort nums in decreasing order obviously. 
         
-        sort(nums.begin(), nums.end());
-        vector<vector<int>> subsets;
-        for(int i = 0; i < sz; i++){
-            helper(subsets, nums[i]);
-        }
-        
-        int max_size = 0;
-        for(auto iterSubset = subsets.begin(); iterSubset != subsets.end(); iterSubset++){
-            if(iterSubset->size() > max_size){
-                max_size = iterSubset->size();
-                res = *iterSubset;
-            }
-        }
-        return res;
+        return ret;
     }
 };
