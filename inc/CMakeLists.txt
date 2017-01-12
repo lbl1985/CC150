@@ -2,6 +2,7 @@ set(list
 	BinaryTree.h
 	CLinkedList.h
 	utils.h
+	BinaryTreePrac.h
 )
 
 foreach(item ${list})

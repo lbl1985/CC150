@@ -1,5 +1,9 @@
 // Utility header file for Tree data structure
 // Author: Binlong Li  Date: 01/09/2016
+#ifndef BINARYTREE_H
+#define BINARYTREE_H
+
+
 #include "utils.h"
 
 #include <queue>
@@ -183,3 +187,4 @@ template<class T> S_Res BinaryTreeNode<T>::getNodesPostOrderDFS(vector<BinaryTre
 	treeList->push_back(this);
 	return S_OK;
 }
+#endif // !BINARYTREE_H

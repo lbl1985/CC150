@@ -2,10 +2,11 @@
 
 #include "..\inc\utils.h"
 #include "..\inc\BinaryTree.h"
+#include "..\inc\BinaryTreePrac.h"
 
 int BinaryTreeTest() {
 	int arr[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};	
-	BinaryTreeNode<int> *root = createMinimalBST<int>(arr, 0, 9);
+	BinaryTreeNode<int> *root = CreateMinBinaryTree<int>(arr, 0, 9);
 	//printf ("Binary Tree data is %d\n", root->data);
 	//root->displayNodeDFS();
 	//printf("\n");
