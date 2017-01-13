@@ -10,15 +10,15 @@
 
 using namespace std;
 
-class Node{
+class Node_prac{
 public:
 	int data;
-	Node* left;
-	Node* right;
-	Node(int _v):data(_v), left(NULL), right(NULL){}
+	Node_prac* left;
+	Node_prac* right;
+	Node_prac(int _v):data(_v), left(NULL), right(NULL){}
 };
 
-Node* CreateMinBinaryTree(int* arr, int start, int end)
+Node_prac* CreateMinBinaryTree_p(int* arr, int start, int end)
 {
 	if (arr == NULL) {
 		return NULL;
@@ -29,13 +29,13 @@ Node* CreateMinBinaryTree(int* arr, int start, int end)
 	}
 
 	int mid = (start + end) / 2;
-	Node* root = new Node(arr[mid]);
-	root->left = CreateMinBinaryTree(arr, start, mid - 1);
-	root->right = CreateMinBinaryTree(arr, mid + 1, end);
+	Node_prac* root = new Node_prac(arr[mid]);
+	root->left = CreateMinBinaryTree_p(arr, start, mid - 1);
+	root->right = CreateMinBinaryTree_p(arr, mid + 1, end);
 	return root;
 }
 
-void inOrderTraverse(Node* root){
+void inOrderTraverse(Node_prac* root){
 	if(root != NULL){
 		inOrderTraverse(root->left);
 		printf("%d ", root->data);
@@ -43,7 +43,7 @@ void inOrderTraverse(Node* root){
 	}
 }
 
-void preOrderTraverse(Node* root) {
+void preOrderTraverse(Node_prac* root) {
 	if(root != NULL) {
 		printf("%d ", root->data);
 		preOrderTraverse(root->left);
@@ -51,7 +51,7 @@ void preOrderTraverse(Node* root) {
 	}
 }
 
-void postOrderTraverse(Node* root){
+void postOrderTraverse(Node_prac* root){
 	if(root != NULL){
 		postOrderTraverse(root->left);
 		postOrderTraverse(root->right);
@@ -59,33 +59,48 @@ void postOrderTraverse(Node* root){
 	}
 }
 
-void DFT(Node* root, stack<Node*>& s){
+void DFT(Node_prac* root, stack<Node_prac*>& s){
 	if(root != NULL){
 		s.push(root);
-		if(root->left != NULL) {
-			DFT(root->left, s);
-		}
-		if(root->right != NULL) {
-			DFT(root->right, s);
-		}		
 	}
+
+	Node_prac* tmp = s.top();
+	if(tmp->left != NULL) {
+		DFT(tmp->left, s);
+	}
+	if(tmp->right != NULL) {
+		DFT(tmp->right, s);
+	}
+
+	printf("%d ", tmp->data);
+	s.pop();
+
+
+	// if(root != NULL){
+	// 	s.push(root);
+	// 	if(root->left != NULL) {
+	// 		DFT(root->left, s);
+	// 	}
+	// 	if(root->right != NULL) {
+	// 		DFT(root->right, s);
+	// 	}		
+	// }
 }
 
-void BFT(Node* root, queue<Node*>& q){
-	if(root != NULL) {
-		q.push 	(root);
-		if(root->left != NULL){
-			q.push 	(root->left);
+void BFT(Node_prac* root, queue<Node_prac*>& q){
+	if(root != NULL){
+		q.push(root);
+	}
+	while(!q.empty()){
+		Node_prac* tmp = q.front();
+		if(tmp->left != NULL) {
+			q.push(tmp->left);
 		}
-		if(root->right != NULL) {
-			q.push 	(root->right);
+		if(tmp->right != NULL){
+			q.push(tmp->right);
 		}
-		if(root->left != NULL){
-			BFT(root->left, q);
-		}
-		if(root->right != NULL){
-			BFT(root->right, q);
-		}
+		printf("%d ", tmp->data);
+		q.pop();
 	}
 }
 
