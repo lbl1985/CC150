@@ -38,6 +38,7 @@ int C3Q6();
 int C3Q7();
 //Chapter 4 Tree
 int BinaryTreeTest();
+int BinaryTreeTest_prac();
 int C4Q1();
 int C4Q2();
 int C4Q3();
