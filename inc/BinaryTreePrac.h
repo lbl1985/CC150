@@ -64,27 +64,17 @@ void DFT(Node_prac* root, stack<Node_prac*>& s){
 		s.push(root);
 	}
 
-	Node_prac* tmp = s.top();
-	if(tmp->left != NULL) {
-		DFT(tmp->left, s);
+	while(!s.empty()){
+		Node_prac* tmp = s.top();
+		s.pop();
+		printf("%d ", tmp->data);
+		if(tmp->right != NULL) {
+			s.push(tmp->right);
+		}
+		if(tmp->left != NULL) {
+			s.push(tmp->left);
+		}
 	}
-	if(tmp->right != NULL) {
-		DFT(tmp->right, s);
-	}
-
-	printf("%d ", tmp->data);
-	s.pop();
-
-
-	// if(root != NULL){
-	// 	s.push(root);
-	// 	if(root->left != NULL) {
-	// 		DFT(root->left, s);
-	// 	}
-	// 	if(root->right != NULL) {
-	// 		DFT(root->right, s);
-	// 	}		
-	// }
 }
 
 void BFT(Node_prac* root, queue<Node_prac*>& q){
