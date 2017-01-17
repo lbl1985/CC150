@@ -3,6 +3,7 @@ set(list
 	CLinkedList.h
 	utils.h
 	BinaryTreePrac.h
+	GraphPrac.h
 )
 
 foreach(item ${list})

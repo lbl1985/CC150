@@ -1,5 +1,6 @@
 set(list
 	BinaryTreeTest.cpp
+	GraphTest.cpp
 	C4Q1.cpp	
 	C4Q2.cpp
 	C4Q3.cpp

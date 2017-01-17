@@ -24,6 +24,7 @@ int main()
 	// Chapter 04 tree
      res = BinaryTreeTest();
     res = BinaryTreeTest_prac();
+    res = GraphTest();
 	// res = C4Q1();
     // cout << endl << "C4Q2" << endl;
     // res = C4Q2();
