@@ -1,6 +1,8 @@
 #include "..\inc\utils.h"
 #include "..\inc\GraphPrac.h"
 
+//http://www.programming-techniques.com/2012/07/depth-first-search-in-c-algorithm-and.html
+
 Graph::Graph(int size)
 {
 
