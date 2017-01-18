@@ -1,3 +1,5 @@
+#include <stack>
+using namespace std;
 class Graph{
 private: 
 	int n;
