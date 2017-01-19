@@ -6,14 +6,14 @@
 
 void bubbleSort(vector<int>& data)
 {
-	size_t sz = data.size();
-	int tmp;
-	for (int end = sz; end >1; end-- ) {		
-		for (int i = 0; i < end - 1; i++) {
-			if(data[i] > data[i+1]) {
-				tmp = data[i];
-				data[i] = data[i+1];
-				data[i+1] = tmp;
+	size_t n = data.size();
+	int t;
+	for(size_t i = 0; i < n; i++) {
+		for(size_t j = i + 1; j < n; j++) {
+			if(data[i] > data[j]) {
+				t = data[i];
+				data[i] = data[j];
+				data[j] = t;
 			}
 		}
 	}
