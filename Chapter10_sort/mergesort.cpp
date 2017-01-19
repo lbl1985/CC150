@@ -7,34 +7,33 @@ using namespace std;
 void merge(vector<int>& data, int low, int middle, int high)
 {
 	vector<int> helper(data);
-
-	int middleDis = middle - low;
-	int low_helper = low;
-	int high_helper = middle + 1;
+	int helperLeft = low;
+	int helperRight = middle + 1;
 	int current = low;
-	while(low_helper <= middle && high_helper <= high) {
-		if(helper[low_helper] < helper[high_helper]) {
-			data[current++] = helper[low_helper++];
+	while(helperLeft <= middle && helperRight <= high) {
+		if(helper[helperLeft] <= helper[helperRight]) {
+			data[current] = helper[helperLeft];
+			helperLeft++;
 		} else {
-			data[current++] = helper[high_helper++];
+			data[current] = helper[helperRight];
+			helperRight++;
 		}
+		current++;
 	}
 
-	// copy the left part
-	int residule = middle - low_helper;
-	for(int i = 0; i <= residule; i++) {
-		data[current++] = helper[low_helper++];
+	int reminder = middle - helperLeft;
+	for(int i = 0; i <= reminder; i++) {
+		data[current++] = helper[helperLeft++];
 	}
-	
 }
 
 void mergesort(vector<int>& data, int low, int high)
 {
-	if (low < high) {		
-		int middle = (low + high) / 2;
-		mergesort(data, low, middle);
-		mergesort(data, middle + 1, high);
-		merge(data, low, middle, high);
+	if(low < high) {
+		int mid = (low + high) / 2;
+		mergesort(data, low, mid);
+		mergesort(data, mid + 1, high);
+		merge(data, low, mid, high);
 	}
 }
 
