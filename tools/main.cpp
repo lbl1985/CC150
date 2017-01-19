@@ -22,7 +22,7 @@ int main()
     // res = C3Q7();
 
 	// Chapter 04 tree
-     res = BinaryTreeTest();
+    res = BinaryTreeTest();
     res = BinaryTreeTest_prac();
     res = GraphTest();
 	// res = C4Q1();
@@ -37,12 +37,12 @@ int main()
 
 
 	// Chapter 10 sort
- //    cout << endl << "bubbleSortTest" << endl;
-	// res = bubbleSortTest();
-	// cout << endl << "quicksort" << endl;
- //    res = quicksortTest();
-    // cout << endl << "mergesort test"<< endl;
-    // res = mergesortTest();
+    cout << endl << "bubbleSortTest" << endl;
+	res = bubbleSortTest();
+	cout << endl << "quicksort" << endl;
+    res = quicksortTest();
+    cout << endl << "mergesort test"<< endl;
+    res = mergesortTest();
 
 	// leetCode
     // cout << endl << "Q001_TwoSum:" << endl;

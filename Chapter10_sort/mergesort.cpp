@@ -40,9 +40,11 @@ void mergesort(vector<int>& data, int low, int high)
 
 int mergesortTest()
 {
-	printf("print inside of mergeTes\n");
 	vector<int> tcase1({3, 2, 1, 58, 0, -5, 33, 98, -3});
+	printf("This is mergesort test case, the array is: \n");
+	printVector<int>(tcase1);
 	mergesort(tcase1, 0, (int)(tcase1.size() - 1));
+	printf("\nafter mergesort, the array is: \n");
 	printVector<int>(tcase1);
 	return 0;
 }
