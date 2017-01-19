@@ -1,4 +1,5 @@
 #include <stack>
+#include <queue>
 using namespace std;
 class Graph{
 private: 
@@ -10,4 +11,5 @@ public:
 	bool isConnected(int, int);
 	void addEdge(int x, int y);
 	void DFS(int, int);
+	void BFS(int, int);
 };

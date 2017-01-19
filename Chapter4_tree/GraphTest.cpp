@@ -46,12 +46,18 @@ void Graph::DFS(int x, int required)
 	for(int i= 0; i < n; i++){
 		visited[i] = false;
 	} 
+	if(x == required) {
+		printf("DFS: find vertex %d connected with %d\n", x, required);
+		return;
+	}
 	s.push(x);
+	visited[x - 1] = true;
 	bool found = false;
 	while(!s.empty()){
 		int top = s.top();
+		printf("%d ", top);
 		if(top == required) {
-			printf("find vertex %d connected with %d\n", x, required);
+			printf("DFS: find vertex %d connected with %d\n", x, required);
 			found = true;
 			break;
 		}
@@ -64,9 +70,44 @@ void Graph::DFS(int x, int required)
 		}
 	}
 	if(!found) {
-		printf("Could not find %d connected with %d\n", x, required);
+		printf("DFS: Could not find %d connected with %d\n", x, required);
 	}
 	delete [] visited;
+}
+
+void Graph::BFS(int x, int required)
+{
+	queue<int> q;
+	bool* visited = new bool[n];
+	for(int i = 0; i < n; i++){
+		visited[i] = false;
+	}
+	if(x == required) {
+		printf("BFS: find vertex %d connected with %d\n", x, required);
+		return;
+	}
+	visited[x - 1] = true;
+	q.push(x);
+	bool found = false;
+	while(!q.empty()) {
+		int front = q.front();
+		printf("%d ", front);
+		q.pop();
+		if(front == required){
+			printf("BFS: find vertex %d connected with %d\n", x, required);
+			found = true;
+			break;
+		}
+		for(int i = 1; i <=n; i++) {
+			if(isConnected(front, i) && visited[i - 1] == false) {
+				q.push(i);
+				visited[i - 1] = true;
+			}
+		}
+	}
+	if(found == false) {
+		printf("BFS: Could not find %d connect with %d\n", x, required);
+	}
 }
 
 int GraphTest(){
@@ -75,13 +116,19 @@ int GraphTest(){
 	g.addEdge(1, 2); g.addEdge(1, 3); g.addEdge(1, 4);
 	g.addEdge(2, 5); g.addEdge(2, 6); g.addEdge(4, 7);
 	g.addEdge(4, 8);
-	g.DFS(1, 4);
 
 	Graph g_2(8);
-	g_2.addEdge(1, 2); g_2.addEdge(1, 3);
+	g_2.addEdge(1, 2); g_2.addEdge(6, 3);
 	g_2.addEdge(2, 5); g_2.addEdge(2, 6); g_2.addEdge(4, 7);
 	g_2.addEdge(4, 8);
+	
+	printf("\nDFS\n");
+	g.DFS(1, 4);
 	g_2.DFS(2, 7);
+
+	printf("\nBFS\n");
+	g.BFS(1, 4);
+	g_2.BFS(2, 7);
 
 	return 0;
 }
