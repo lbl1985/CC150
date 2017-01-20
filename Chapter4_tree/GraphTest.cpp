@@ -41,64 +41,64 @@ void Graph::addEdge(int x, int y)
 
 void Graph::DFS(int x, int required)
 {
+	if( x == required) {
+		printf("%d is connected with %d\n", x, required);
+		return;		
+	}
+	bool found = false;
 	stack<int> s;
 	bool* visited = new bool[n];
-	for(int i= 0; i < n; i++){
+	for(int i = 0; i < n; i++) {
 		visited[i] = false;
-	} 
-	if(x == required) {
-		printf("DFS: find vertex %d connected with %d\n", x, required);
-		return;
 	}
-	s.push(x);
 	visited[x - 1] = true;
-	bool found = false;
-	while(!s.empty()){
+	s.push(x);
+	while(!s.empty()) {
 		int top = s.top();
 		printf("%d ", top);
+		s.pop();
 		if(top == required) {
-			printf("DFS: find vertex %d connected with %d\n", x, required);
+			printf("%d is connected with %d\n", x, required);
 			found = true;
 			break;
 		}
-		s.pop();
-		for(int i = 1; i <= n; i++){
-			if(isConnected(top, i) && visited[i - 1] != true) {
+		for(int i = 1; i <= n; i++) {
+			if(isConnected(top, i) && visited[i-1] == false) {
 				s.push(i);
-				visited[i - 1] = true;
+				visited[i-1] = true;
 			}
 		}
 	}
-	if(!found) {
-		printf("DFS: Could not find %d connected with %d\n", x, required);
+	if(found == false) {
+		printf("%d is not connected with %d\n", x, required);
 	}
 	delete [] visited;
 }
 
 void Graph::BFS(int x, int required)
 {
-	queue<int> q;
-	bool* visited = new bool[n];
-	for(int i = 0; i < n; i++){
-		visited[i] = false;
-	}
 	if(x == required) {
-		printf("BFS: find vertex %d connected with %d\n", x, required);
+		printf("%d is connected with %d\n", x, required);
 		return;
 	}
-	visited[x - 1] = true;
-	q.push(x);
 	bool found = false;
+	queue<int> q;
+	bool* visited = new bool[n];
+	for(int i = 0; i < n; i++) {
+		visited[i] = false;
+	}
+	q.push(x);
+	visited[x - 1] = true;
 	while(!q.empty()) {
 		int front = q.front();
 		printf("%d ", front);
 		q.pop();
-		if(front == required){
-			printf("BFS: find vertex %d connected with %d\n", x, required);
+		if(front == required) {
+			printf("%d is connected with %d\n", x, required);
 			found = true;
 			break;
 		}
-		for(int i = 1; i <=n; i++) {
+		for(int i = 1; i <= n; i++) {
 			if(isConnected(front, i) && visited[i - 1] == false) {
 				q.push(i);
 				visited[i - 1] = true;
@@ -106,8 +106,9 @@ void Graph::BFS(int x, int required)
 		}
 	}
 	if(found == false) {
-		printf("BFS: Could not find %d connect with %d\n", x, required);
+		printf("%d is not connected with %d\n", x, required);
 	}
+	delete [] visited;
 }
 
 int GraphTest(){
