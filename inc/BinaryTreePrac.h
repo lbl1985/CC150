@@ -20,9 +20,6 @@ public:
 
 Node_p* CreateMinBinaryTree_p(int* arr, int start, int end)
 {
-	if(arr == NULL)	{
-		return NULL;
-	}
 	if(start > end) {
 		return NULL;
 	}
@@ -58,36 +55,36 @@ void postOrderTraverse(Node_p* root){
 }
 
 void DFT(Node_p* root){
-	if(root != NULL){
+	if(root != NULL) {
 		stack<Node_p*> s;
 		s.push(root);
-		while(!s.empty()){
-			Node_p* tmp = s.top();
-			printf("%d ", tmp->data);
+		while(!s.empty()) {
+			Node_p* top = s.top();
+			printf("%d ", top->data);
 			s.pop();
-			if(tmp->right != NULL) {
-				s.push(tmp->right);
+			if(top->right != NULL) {
+				s.push(top->right);
 			}
-			if(tmp->left != NULL) {
-				s.push(tmp->left);
+			if(top->left != NULL) {
+				s.push(top->left);
 			}
 		}
 	}
 }
 
 void BFT(Node_p* root){
-	if(root != NULL){
+	if(root != NULL) {
 		queue<Node_p*> q;
 		q.push(root);
-		while(!q.empty()){
-			Node_p* tmp = q.front();
-			printf("%d ", tmp->data);
+		while(!q.empty()) {
+			Node_p* front = q.front();
+			printf("%d ", front->data);
 			q.pop();
-			if(tmp->left != NULL) {
-				q.push(tmp->left);
+			if(front->left) {
+				q.push(front->left);
 			}
-			if(tmp->right != NULL) {
-				q.push(tmp->right);
+			if(front->right) {
+				q.push(front->right);
 			}
 		}
 	}
