@@ -7,11 +7,10 @@
 void bubbleSort(vector<int>& data)
 {
 	size_t n = data.size();
-	int t;
-	for(size_t i = 0; i < n; i++) {
-		for(size_t j = i + 1; j < n; j++) {
+	for(int i = 0; i < n; i++) {
+		for(int j = i + 1; j < n; j++) {
 			if(data[i] > data[j]) {
-				t = data[i];
+				int t = data[i];
 				data[i] = data[j];
 				data[j] = t;
 			}

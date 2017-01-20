@@ -16,10 +16,10 @@ int partition(vector<int>& data, int left, int right)
 	while(left <= right) {
 		while(data[left] < pivot) left++;
 		while(data[right] > pivot) right--;
-		if(left <= right){
+		if(left <= right) {
 			swap(data[left], data[right]);
 			left++;
-			right--;		
+			right--;
 		}
 	}
 	return left;
@@ -27,16 +27,14 @@ int partition(vector<int>& data, int left, int right)
 
 void quicksort(vector<int>& data, int left, int right)
 {
-	if(left > right){
-		return;
-	}
 	int index = partition(data, left, right);
-	if(left < index - 1) {
+	if(left < index - 1)  {
 		quicksort(data, left, index - 1);
 	}
-	if(index < right){
+	if(right > index ) {
 		quicksort(data, index, right);
 	}
+
 }
 
 int quicksortTest(){
