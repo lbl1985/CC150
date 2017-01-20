@@ -1,41 +1,41 @@
 set(list
-	Q001_TwoSum.cpp
-	Q005_longest_palindromic_substring.cpp
-	Q021_Merge_Two_Sorted_Lists.cpp
-	Q025_Reverse_Nodes_in_k_group.cpp
-	Q045_JumpGameII.cpp
-	Q50_pow.cpp
-	Q051_N_Queens.cpp
-	Q055_JumpGame.cpp
-	Q058_LengthOfLastWord.cpp
-	Q116_PopulatingNextRightPointersinEachNode.cpp
-	Q130_SurroundedRegions.cpp
-	Q149_Max_Points_on_a_line.cpp
-	Q162_FindPeakElement.cpp
-	Q179_LargestNumber.cpp
-	Q324_WiggleSortII.cpp
-	Q326_PowerOfThree.cpp
-	Q328_OddEvenLinkedList.cpp
-	Q329_LongestIncreasingPathInAMatrix.cpp
-	Q331_verify_preorder_serialization_of_a_binary_tree.cpp
-	Q338_CountingBits.cpp
-	Q342_PowerOfFour.cpp
-	Q343_IntegerBreak.cpp
-	Q344_ReverseString.cpp
-	Q345_ReverseVowelsOfAString.cpp
-	Q347_TopKFrequentElements.cpp
-	Q349_IntersectionOfTwoArrays.cpp
-	Q337_HouseRobberIII.cpp
-	Q336_Palindrome_pairs.cpp
-	Q335_Self_Crossing.cpp
-	Q334_Increasing_Triplet_Subsequence.cpp
-	Q332_Reconstruct_Itinerary.cpp
-	Q332_Coin_Change.cpp
-	Q189_Rotate_Array.cpp
-	Q321_Create_Maximum_Number.cpp
-	Q219_Contains_DuplicateII.cpp
-	Q216_CombinationSumIII.cpp
-	Q054_SpiralMatrix.cpp
+	# Q001_TwoSum.cpp
+	# Q005_longest_palindromic_substring.cpp
+	# Q021_Merge_Two_Sorted_Lists.cpp
+	# Q025_Reverse_Nodes_in_k_group.cpp
+	# Q045_JumpGameII.cpp
+	# Q50_pow.cpp
+	# Q051_N_Queens.cpp
+	# Q055_JumpGame.cpp
+	# Q058_LengthOfLastWord.cpp
+	# Q116_PopulatingNextRightPointersinEachNode.cpp
+	# Q130_SurroundedRegions.cpp
+	# Q149_Max_Points_on_a_line.cpp
+	# Q162_FindPeakElement.cpp
+	# Q179_LargestNumber.cpp
+	# Q324_WiggleSortII.cpp
+	# Q326_PowerOfThree.cpp
+	# Q328_OddEvenLinkedList.cpp
+	# Q329_LongestIncreasingPathInAMatrix.cpp
+	# Q331_verify_preorder_serialization_of_a_binary_tree.cpp
+	# Q338_CountingBits.cpp
+	# Q342_PowerOfFour.cpp
+	# Q343_IntegerBreak.cpp
+	# Q344_ReverseString.cpp
+	# Q345_ReverseVowelsOfAString.cpp
+	# Q347_TopKFrequentElements.cpp
+	# Q349_IntersectionOfTwoArrays.cpp
+	# Q337_HouseRobberIII.cpp
+	# Q336_Palindrome_pairs.cpp
+	# Q335_Self_Crossing.cpp
+	# Q334_Increasing_Triplet_Subsequence.cpp
+	# Q332_Reconstruct_Itinerary.cpp
+	# Q332_Coin_Change.cpp
+	# Q189_Rotate_Array.cpp
+	# Q321_Create_Maximum_Number.cpp
+	# Q219_Contains_DuplicateII.cpp
+	# Q216_CombinationSumIII.cpp
+	# Q054_SpiralMatrix.cpp
 )
 
 foreach(item ${list})

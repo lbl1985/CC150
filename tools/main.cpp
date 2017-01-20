@@ -43,6 +43,8 @@ int main()
     res = quicksortTest();
     cout << endl << "mergesort test"<< endl;
     res = mergesortTest();
+    cout << endl << "binrary search test" << endl;
+    res = binarySearchTest();
 
 	// leetCode
     // cout << endl << "Q001_TwoSum:" << endl;

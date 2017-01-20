@@ -1,5 +1,5 @@
 set(list
-	 C2Q7.cpp
+	 # C2Q7.cpp
 )
 
 foreach(item ${list})

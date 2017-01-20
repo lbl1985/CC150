@@ -2,6 +2,7 @@ set(list
 	bubbleSortTest.cpp
 	quicksort.cpp
 	mergesort.cpp
+	binarySearch.cpp
 )
 
 foreach(item ${list})

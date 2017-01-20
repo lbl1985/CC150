@@ -24,72 +24,73 @@ typedef unsigned int uint;
 #define JUDGE_RESULT(FUNC, INPUT) FUNC(INPUT) ? "true" : "false"
 // List of major entries for each question
 // Chapter 2
-int C2Q5();
-int C2Q5_part2();
-int C2Q6();
-int C2Q7();
+// int C2Q5();
+// int C2Q5_part2();
+// int C2Q6();
+// int C2Q7();
 // Chapter 3
-int C3Q1();
-int C3Q2();
-int C3Q3();
-int C3Q4();
-int C3Q5();
-int C3Q6();
-int C3Q7();
+// int C3Q1();
+// int C3Q2();
+// int C3Q3();
+// int C3Q4();
+// int C3Q5();
+// int C3Q6();
+// int C3Q7();
 //Chapter 4 Tree
 int BinaryTreeTest();
 int BinaryTreeTest_prac();
 int GraphTest();
-int C4Q1();
-int C4Q2();
-int C4Q3();
-int C4Q4();
-int C4Q5();
+// int C4Q1();
+// int C4Q2();
+// int C4Q3();
+// int C4Q4();
+// int C4Q5();
 
 // Chapter 10 Sort
 int bubbleSortTest();
 int quicksortTest();
 int mergesortTest();
+int binarySearchTest();
 
 // leetCode
-int Q001_TwoSum();
-int Q005_longest_palindromic_substring();
-int Q021_Merge_Two_Sorted_Lists();
-int Q025_Reverse_Nodes_in_k_group();
-int Q045_JumpGameII();
-int Q050_Pow_x_n();
-int Q051_N_Queens();
-int Q058_LengthOfLastWord();
-int Q055_JumpGame();
-int Q116_PopulatingNextRightPointersinEachNode();
-int Q130_SurroundedRegions();
-int Q149_Max_Points_on_aline();
-int Q162_FindPeakElement();
-int Q179_LargestNumber();
-int Q326_PowerOfThree();
-int Q324_WiggleSortII();
-int Q328_OddEvenLinkedList();
-int Q329_LongestIncreasingPathInAMatrix();
-int Q331_verify_preorder_serialization_of_a_binary_tree();
-int Q338_CountingBits();
-int Q342_PowerOfFour();
-int Q343_IntegerBreak();
-int Q344_ReverseString();
-int Q345_Reverse_vowels_of_a_string();
-int Q347_TopKFrequentElements();
-int Q349_IntersectionOfTwoArrays();
+// int Q001_TwoSum();
+// int Q005_longest_palindromic_substring();
+// int Q021_Merge_Two_Sorted_Lists();
+// int Q025_Reverse_Nodes_in_k_group();
+// int Q045_JumpGameII();
+// int Q050_Pow_x_n();
+// int Q051_N_Queens();
+// int Q058_LengthOfLastWord();
+// int Q055_JumpGame();
+// int Q116_PopulatingNextRightPointersinEachNode();
+// int Q130_SurroundedRegions();
+// int Q149_Max_Points_on_aline();
+// int Q162_FindPeakElement();
+// int Q179_LargestNumber();
+// int Q326_PowerOfThree();
+// int Q324_WiggleSortII();
+// int Q328_OddEvenLinkedList();
+// int Q329_LongestIncreasingPathInAMatrix();
+// int Q331_verify_preorder_serialization_of_a_binary_tree();
+// int Q338_CountingBits();
+// int Q342_PowerOfFour();
+// int Q343_IntegerBreak();
+// int Q344_ReverseString();
+// int Q345_Reverse_vowels_of_a_string();
+// int Q347_TopKFrequentElements();
+// int Q349_IntersectionOfTwoArrays();
 
-int Q337_HouseRobberIII();
-int Q336_Palindrome_pairs();
-int Q335_Self_Crossing();
-int Q334_Increasing_Triplet_Subsequence();
-int Q332_Reconstruct_Itinerary();
-int Q332_Coin_Change();
-int Q189_Rotate_Array();
-int Q321_Create_Maximum_Number();
-int Q216_CombinationSumIII();
-int Q219_Contains_DuplicateII();
-int Q054_SpiralMatrix();
+// int Q337_HouseRobberIII();
+// int Q336_Palindrome_pairs();
+// int Q335_Self_Crossing();
+// int Q334_Increasing_Triplet_Subsequence();
+// int Q332_Reconstruct_Itinerary();
+// int Q332_Coin_Change();
+// int Q189_Rotate_Array();
+// int Q321_Create_Maximum_Number();
+// int Q216_CombinationSumIII();
+// int Q219_Contains_DuplicateII();
+// int Q054_SpiralMatrix();
 
 // Exp
 int constructChar();
