@@ -6,25 +6,28 @@ using namespace std;
 
 void merge(vector<int>& data, int low, int middle, int high)
 {
-	vector<int> helper(data);
-	int helperLeft = low;
-	int helperRight = middle + 1;
-	int current = low;
-	while(helperLeft <= middle && helperRight <= high) {
-		if(helper[helperLeft] <= helper[helperRight]) {
-			data[current] = helper[helperLeft];
-			helperLeft++;
-		} else {
-			data[current] = helper[helperRight];
-			helperRight++;
+	if(low < high) {
+		vector<int> helper(data);
+		int helper_left = low;
+		int helper_right = middle + 1;
+		int current = low;
+		while(helper_left <= middle && helper_right <= high) {
+			if(helper[helper_left] <= helper[helper_right]) {
+				data[current] = helper[helper_left];
+				helper_left++;
+			} else {
+				data[current] = helper[helper_right];
+				helper_right++;
+			}
+			current++;
 		}
-		current++;
+
+		int reminder = middle - helper_left;
+		for(int i = 0; i <= reminder; i++) {
+			data[current++] = helper[helper_left++];
+		}
 	}
 
-	int reminder = middle - helperLeft;
-	for(int i = 0; i <= reminder; i++) {
-		data[current++] = helper[helperLeft++];
-	}
 }
 
 void mergesort(vector<int>& data, int low, int high)
