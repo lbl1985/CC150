@@ -39,38 +39,48 @@ void Graph::addEdge(int x, int y)
 	A[x-1][y-1] = A[y-1][x-1] = 1;
 }
 
+void printConnected(int x, int required)
+{
+	printf("%d is connected with %d\n", x, required);
+}
+
+void printNotConnected(int x, int required) 
+{
+	printf("\n%d is not connected with %d\n", x, required);
+}
+
 void Graph::DFS(int x, int required)
 {
-	if( x == required) {
-		printf("%d is connected with %d\n", x, required);
-		return;		
+	if(x == required) {
+		printConnected(x, required);
+		return;
 	}
 	bool found = false;
-	stack<int> s;
 	bool* visited = new bool[n];
 	for(int i = 0; i < n; i++) {
 		visited[i] = false;
 	}
 	visited[x - 1] = true;
+	stack<int> s;
 	s.push(x);
 	while(!s.empty()) {
 		int top = s.top();
 		printf("%d ", top);
 		s.pop();
 		if(top == required) {
-			printf("%d is connected with %d\n", x, required);
+			printConnected(x, required);
 			found = true;
 			break;
 		}
 		for(int i = 1; i <= n; i++) {
 			if(isConnected(top, i) && visited[i-1] == false) {
 				s.push(i);
-				visited[i-1] = true;
+				visited[i - 1] = true;
 			}
 		}
 	}
 	if(found == false) {
-		printf("%d is not connected with %d\n", x, required);
+		printNotConnected(x, required);
 	}
 	delete [] visited;
 }
@@ -78,23 +88,23 @@ void Graph::DFS(int x, int required)
 void Graph::BFS(int x, int required)
 {
 	if(x == required) {
-		printf("%d is connected with %d\n", x, required);
+		printConnected(x, required);
 		return;
 	}
 	bool found = false;
-	queue<int> q;
 	bool* visited = new bool[n];
 	for(int i = 0; i < n; i++) {
 		visited[i] = false;
 	}
-	q.push(x);
 	visited[x - 1] = true;
+	queue<int> q;
+	q.push(x);
 	while(!q.empty()) {
 		int front = q.front();
 		printf("%d ", front);
 		q.pop();
 		if(front == required) {
-			printf("%d is connected with %d\n", x, required);
+			printConnected(x, required);
 			found = true;
 			break;
 		}
@@ -106,7 +116,7 @@ void Graph::BFS(int x, int required)
 		}
 	}
 	if(found == false) {
-		printf("%d is not connected with %d\n", x, required);
+		printNotConnected(x, required);
 	}
 	delete [] visited;
 }
