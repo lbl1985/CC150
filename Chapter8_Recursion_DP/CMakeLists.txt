@@ -1,0 +1,9 @@
+set(list
+	fibonacci.cpp
+)
+
+foreach(item ${list})
+	list(APPEND CC150_CHAPTER8_RECURSION_DP_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/${item})
+endforeach()
+
+set(CC150_CHAPTER8_RECURSION_DP_SRCS ${CC150_CHAPTER8_RECURSION_DP_SRCS} PARENT_SCOPE)

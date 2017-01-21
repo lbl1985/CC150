@@ -35,6 +35,9 @@ int main()
     // cout << endl << "C4Q5" << endl;
     // res = C4Q5();
 
+    // Chapter 8 Recursion_DP
+    cout << endl << "Fabonacci Test" << endl;
+    res = fibonacciTest();
 
 	// Chapter 10 sort
     cout << endl << "bubbleSortTest" << endl;
