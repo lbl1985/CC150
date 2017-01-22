@@ -45,6 +45,12 @@ int BinaryTreeTest() {
 int BinaryTreeTest_prac(){
 	int arr[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 	Node_p* root = CreateMinBinaryTree_p(arr, 0, 9);
+	printf("prac: DFTraverse:\n");
+	DFT(root);
+	printf("\n");
+	printf("prac: BFTraverse\n");
+	BFT(root);
+	printf("\n");
 	printf("prac inOrder Traverse:\n");
 	inOrderTraverse(root); 
 	printf("\n");
@@ -53,12 +59,6 @@ int BinaryTreeTest_prac(){
 	printf("\n");
 	printf("prac PostOrder Traverse\n");
 	postOrderTraverse(root);
-	printf("\n");
-	printf("prac: DFTraverse:\n");
-	DFT(root);
-	printf("\n");
-	printf("prac: BFTraverse\n");
-	BFT(root);
 	printf("\n");
 	return 0; 
 }
