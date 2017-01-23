@@ -12,13 +12,10 @@ void merge(vector<int>& data, int low, int middle, int high)
 	int current = low;
 	while(helperleft <= middle && helperright <= high) {
 		if(helper[helperleft] <= helper[helperright]) {
-			data[current] = helper[helperleft];
-			helperleft++;
+			data[current++] = helper[helperleft++];
 		} else {
-			data[current] = helper[helperright];
-			helperright++;
+			data[current++] = helper[helperright++];
 		}
-		current++;
 	}
 
 	int reminder = middle - helperleft;
