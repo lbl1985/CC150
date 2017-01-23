@@ -68,12 +68,13 @@ void Graph::DFS(int x, int required)
 		printf("%d ", top);
 		s.pop();
 		if(top == required) {
+			printf("\n");
 			printConnected(x, required);
 			found = true;
 			break;
 		}
 		for(int i = 1; i <= n; i++) {
-			if(isConnected(top, i) && visited[i-1] == false) {
+			if(isConnected(i, top) && visited[i - 1] == false) {
 				s.push(i);
 				visited[i - 1] = true;
 			}
@@ -104,19 +105,20 @@ void Graph::BFS(int x, int required)
 		printf("%d ", front);
 		q.pop();
 		if(front == required) {
+			printf("\n");
 			printConnected(x, required);
 			found = true;
 			break;
 		}
 		for(int i = 1; i <= n; i++) {
-			if(isConnected(front, i) && visited[i - 1] == false) {
+			if(isConnected(i, front) && visited[i - 1] == false) {
+				visited[i-1] = true;
 				q.push(i);
-				visited[i - 1] = true;
 			}
 		}
 	}
 	if(found == false) {
-		printNotConnected(x, required);
+		printNotConnected(x, required);		
 	}
 	delete [] visited;
 }
