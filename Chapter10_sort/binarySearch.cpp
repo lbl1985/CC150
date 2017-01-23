@@ -4,12 +4,11 @@ int binarySearch(const vector<int>& data, int x)
 {
 	int low = 0;
 	int high = data.size() - 1;
-
 	while(low <= high) {
 		int mid = (low + high) / 2;
 		if(x < data[mid]) {
 			high = mid - 1;
-		} else if (data[mid] < x) {
+		} else if(data[mid] < x) {
 			low = mid + 1;
 		} else {
 			return mid;
@@ -24,11 +23,12 @@ int binarySearchRecursive(const vector<int>& data, const int x, int low, int hig
 		int mid = (low + high) / 2;
 		if(x < data[mid]) {
 			return binarySearchRecursive(data, x, low, mid - 1);
-		} else if (data[mid] < x) {
+		} else if(data[mid] < x) {
 			return binarySearchRecursive(data, x, mid + 1, high);
 		} else {
 			return mid;
 		}
+
 	}
 	return -1;
 }

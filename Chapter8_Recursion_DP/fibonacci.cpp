@@ -1,25 +1,18 @@
 #include "..\inc\utils.h"
 
 int fibonacciTopDown(unsigned int n, unsigned int* memo) {
-	if(n ==0 || n == 1){
+	if(n == 0 || n == 1) {
 		memo[n] = n;
 		return n;
 	}
-
-	memo[n] = fibonacciTopDown(n-1, memo) + fibonacciTopDown(n-2, memo);
-
+	memo[n] = fibonacciTopDown(n - 1, memo) + fibonacciTopDown(n - 2, memo);
 	return memo[n];
-
 }
 
 unsigned int fibonacciMemorization(unsigned int n)
 {
-	unsigned int* memo = new unsigned int [n];
-	for(int i = 0; i < n; i++) {
-		memo[i] = 0;
-	}
+	unsigned int* memo = new unsigned int[n];
 	return fibonacciTopDown(n, memo);
-
 }
 
 unsigned int fibonacciBottomUpMemorization(unsigned int n)
@@ -27,27 +20,20 @@ unsigned int fibonacciBottomUpMemorization(unsigned int n)
 	if(n == 0 || n == 1) {
 		return n;
 	}
-
-	unsigned int * memo = new unsigned int[n];
-	for(int i = 0; i < n; i++) {
-		memo[i] = 0;
-	}
-
+	unsigned int* memo = new unsigned int [n];
 	memo[0] = 0; memo[1] = 1;
-	for(int i = 2; i < n; i++ ) {
-		memo[i] = memo[i - 1] + memo[i - 2];
+	for(int i = 2; i < n; i++) {
+		memo[i] = memo[i - 1] + memo[i -2 ];
 	}
-	return memo[n- 1] + memo[n - 2];
+	return memo[n-1] + memo[n-2];
 }
 
 unsigned int fibonacciBottomUpEasy(unsigned int n)
 {
-	unsigned int a = 0;
-	unsigned int b = 1;
-	unsigned int t;
 	if(n == 0 || n == 1) {
 		return n;
 	}
+	int a = 0, b = 1, t;
 	for(int i = 2; i < n; i++) {
 		t = a + b;
 		a = b;
