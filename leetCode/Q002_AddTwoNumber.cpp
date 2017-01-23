@@ -13,6 +13,11 @@
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
  */
+
+// [[0, 8], [1]] => [1, 8]
+// [[5], [5]] => [0, 1]
+// [[2, 4, 3], [5, 6, 4]] => [7, 0, 8]
+
 class Solution {
 public:
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
