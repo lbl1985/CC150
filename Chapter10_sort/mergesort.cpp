@@ -4,21 +4,20 @@
 using namespace std;
 
 
-void merge(vector<int>& data, int low, int middle, int high)
+void merge(vector<int>& data, int low, int mid, int high)
 {
 	vector<int> helper(data);
 	int helperleft = low;
-	int helperright = middle + 1;
+	int helperright = mid + 1;
 	int current = low;
-	while(helperleft <= middle && helperright <= high) {
+	while(helperleft<= mid && helperright <= high) {
 		if(helper[helperleft] <= helper[helperright]) {
 			data[current++] = helper[helperleft++];
 		} else {
 			data[current++] = helper[helperright++];
 		}
 	}
-
-	int reminder = middle - helperleft;
+	int reminder = mid - helperleft;
 	for(int i = 0; i <= reminder; i++) {
 		data[current++] = helper[helperleft++];
 	}
@@ -29,8 +28,8 @@ void mergesort(vector<int>& data, int low, int high)
 	if(low < high) {
 		int mid = (low + high) / 2;
 		mergesort(data, low, mid);
-		mergesort(data, mid+1, high);
-		merge(data, low, mid, high);
+		mergesort(data, mid + 1, high);
+		merge(data, low, mid, high );
 	}
 }
 
