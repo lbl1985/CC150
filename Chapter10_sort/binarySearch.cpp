@@ -10,7 +10,7 @@ int binarySearch(const vector<int>& data, int x)
 			high = mid - 1;
 		} else if(data[mid] < x) {
 			low = mid + 1;
-		} else {
+		}else {
 			return mid;
 		}
 	}
