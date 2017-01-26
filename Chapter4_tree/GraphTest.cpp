@@ -50,13 +50,13 @@ void printNotConnected(int x, int required)
 }
 
 void Graph::DFS(int x, int required)
-{
+{	
 	if(x == required) {
 		printConnected(x, required);
 		return;
 	}
 	bool found = false;
-	bool* visited = new bool[n];
+	bool* visited = new bool [n];
 	for(int i = 0; i < n; i++) {
 		visited[i] = false;
 	}
@@ -73,9 +73,9 @@ void Graph::DFS(int x, int required)
 			break;
 		}
 		for(int i = 1; i <= n; i++) {
-			if(isConnected(top, i) && visited[i - 1] == false) {
-				s.push(i);
+			if(isConnected(i, top) && visited[i - 1] == false) {
 				visited[i - 1] = true;
+				s.push(i);
 			}
 		}
 	}
@@ -96,18 +96,18 @@ void Graph::BFS(int x, int required)
 	for(int i = 0; i < n; i++) {
 		visited[i] = false;
 	}
-	visited[x - 1] = false;
+	visited[x - 1] = true;
 	queue<int> q;
 	q.push(x);
 	while(!q.empty()) {
 		int front = q.front();
-		printf("%d ", front);
-		q.pop();
+		printf("%d ", front );
 		if(front == required) {
-			printConnected(x, required);
 			found = true;
+			printConnected(x, required);
 			break;
 		}
+		q.pop();
 		for(int i = 1; i <= n; i++) {
 			if(isConnected(i, front) && visited[i - 1] == false) {
 				visited[i - 1] = true;
