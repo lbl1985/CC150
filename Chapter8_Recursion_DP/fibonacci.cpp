@@ -1,7 +1,7 @@
 #include "..\inc\utils.h"
 
 int fibonacciTopDown(unsigned int n, unsigned int* memo) {
-	if(n == 0 || n ==1){
+	if(n == 0 || n == 1) {
 		memo[n] = n;
 		return n;
 	}
@@ -30,10 +30,13 @@ unsigned int fibonacciBottomUpMemorization(unsigned int n)
 
 unsigned int fibonacciBottomUpEasy(unsigned int n)
 {
+	if(n == 0 || n == 1) {
+		return n;
+	}
 	int a = 0, b = 1, t;
 	for(int i = 2; i < n; i++) {
 		t = a + b;
-		a = b; 
+		a = b;
 		b = t;
 	}
 	return a + b;
