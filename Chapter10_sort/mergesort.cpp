@@ -10,13 +10,14 @@ void merge(vector<int>& data, int low, int mid, int high)
 	int helperleft = low;
 	int helperright = mid + 1;
 	int current = low;
-	while(helperleft<= mid && helperright <= high) {
-		if(helper[helperleft] <= helper[helperright]) {
+	while(helperleft <= mid && helperright <= high) {
+		if(helper[helperleft] <= helper[helperright]){
 			data[current++] = helper[helperleft++];
 		} else {
 			data[current++] = helper[helperright++];
 		}
 	}
+
 	int reminder = mid - helperleft;
 	for(int i = 0; i <= reminder; i++) {
 		data[current++] = helper[helperleft++];
@@ -29,7 +30,7 @@ void mergesort(vector<int>& data, int low, int high)
 		int mid = (low + high) / 2;
 		mergesort(data, low, mid);
 		mergesort(data, mid + 1, high);
-		merge(data, low, mid, high );
+		merge(data, low, mid, high);
 	}
 }
 

@@ -12,7 +12,7 @@ void swap(int& a, int&b){
 
 int partition(vector<int>& data, int left, int right)
 {
-	int pivot = data[(left + right) / 2];
+	int pivot = data[(right + left) / 2];
 	while(left <= right) {
 		while(data[left] < pivot) left++;
 		while(pivot < data[right]) right--;
@@ -31,7 +31,7 @@ void quicksort(vector<int>& data, int left, int right)
 		int index = partition(data, left, right);
 		if(left < index) {
 			quicksort(data, left, index - 1);
-		} 
+		}
 		if(index < right) {
 			quicksort(data, index + 1, right);
 		}
