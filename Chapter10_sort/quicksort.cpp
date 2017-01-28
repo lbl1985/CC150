@@ -12,10 +12,10 @@ void swap(int& a, int&b){
 
 int partition(vector<int>& data, int left, int right)
 {
-	int pivot = data[(right + left) / 2];
+	int pivot = data[(left + right) / 2];
 	while(left <= right) {
 		while(data[left] < pivot) left++;
-		while(pivot < data[right]) right--;
+		while(data[right] > pivot) right--;
 		if(left <= right) {
 			swap(data[left], data[right]);
 			left++;
