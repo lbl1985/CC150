@@ -65,7 +65,7 @@ void DFT(Node_p* root){
 			if(top->right) {
 				s.push(top->right);
 			}
-			if(top->left) {
+			if(top->left ) {
 				s.push(top->left);
 			}
 		}
@@ -74,16 +74,16 @@ void DFT(Node_p* root){
 
 void BFT(Node_p* root){
 	if(root != NULL) {
-		queue<Node_p *> q;
+		queue<Node_p*> q;
 		q.push(root);
-		while(!q.empty()) {
-			Node_p *front = q.front();
+		while(!q.empty()){
+			Node_p* front = q.front();
 			printf("%d ", front->data);
 			q.pop();
 			if(front->left) {
-				q.push(front->left);
+				q.push(front->left);			
 			}
-			if(front->right) {
+			if(front->right){
 				q.push(front->right);
 			}
 		}

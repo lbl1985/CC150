@@ -7,3 +7,4 @@ Release/*
 .gitattributes
 cc150/*
 build/
+.vscode/
