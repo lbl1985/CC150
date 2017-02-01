@@ -31,7 +31,7 @@ Node_p* CreateMinBinaryTree_p(int* arr, int start, int end)
 }
 
 void inOrderTraverse(Node_p* root){
-	if(root != NULL) {
+	if(root) {
 		inOrderTraverse(root->left);
 		printf("%d ", root->data);
 		inOrderTraverse(root->right);
@@ -39,7 +39,7 @@ void inOrderTraverse(Node_p* root){
 }
 
 void preOrderTraverse(Node_p* root) {
-	if(root != NULL) {
+	if(root) {
 		printf("%d ", root->data);
 		preOrderTraverse(root->left);
 		preOrderTraverse(root->right);
@@ -47,7 +47,7 @@ void preOrderTraverse(Node_p* root) {
 }
 
 void postOrderTraverse(Node_p* root){
-	if(root != NULL) {
+	if(root) {
 		postOrderTraverse(root->left);
 		postOrderTraverse(root->right);
 		printf("%d ", root->data);
@@ -55,7 +55,7 @@ void postOrderTraverse(Node_p* root){
 }
 
 void DFT(Node_p* root){
-	if(root != NULL) {
+	if(root) {
 		stack<Node_p*> s;
 		s.push(root);
 		while(!s.empty()) {
@@ -65,29 +65,31 @@ void DFT(Node_p* root){
 			if(top->right) {
 				s.push(top->right);
 			}
-			if(top->left ) {
+			if(top->left) {
 				s.push(top->left);
 			}
 		}
 	}
+
 }
 
 void BFT(Node_p* root){
-	if(root != NULL) {
+	if(root) {
 		queue<Node_p*> q;
 		q.push(root);
-		while(!q.empty()){
+		while(!q.empty()) {
 			Node_p* front = q.front();
 			printf("%d ", front->data);
 			q.pop();
 			if(front->left) {
-				q.push(front->left);			
+				q.push(front->left);
 			}
-			if(front->right){
+			if(front->right) {
 				q.push(front->right);
 			}
 		}
 	}
+
 }
 
 #endif // !BINARYTREEPRAC_H
