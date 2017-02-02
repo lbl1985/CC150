@@ -13,29 +13,25 @@
 
 using namespace std;
 
-void getCheckBook(map<char, vector<int>>& checkbook, const string& s)
-{
-	size_t sz = s.size();
-	for(size_t i = 0; i < sz; i++) {
+void getCheckbook(map<char, vector<int>>& checkbook, const string& s) {
+	int sz = s.size();
+	for (int i = 0; i < sz; i++) {
 		char c = s[i];
 		auto it = checkbook.find(c);
 		if(it != checkbook.end()) {
 			it->second.push_back(i);
 		} else {
-			vector<int> temp;
-			temp.push_back(i);
-			checkbook.insert(pair<char, vector<int>>(c, temp));
+			vector<int> tmp;
+			tmp.push_back(i);
+			checkbook.insert(pair<char, vector<int>>(c, tmp));
 		}
 	}
 }
 
-// positive number represent the length of a Palindrome string
-// -1 represents not a palindrome string
-int isPalindrome(const string& str, int s, int e)
+int isPalindrome(const string& str, int s, int e) 
 {
-	int left = s;
-	int right = e;
-	while(left < right) {
+	int left = s, right = e;
+	while(left <= right) {
 		if(str[left] == str[right]) {
 			left++;
 			right--;
@@ -45,39 +41,44 @@ int isPalindrome(const string& str, int s, int e)
 	}
 	return e - s + 1;
 }
+// Solution # 1 by using 
 string longestPalindrome(string s) {
-	size_t sz = s.size();
-	if (sz == 1) {
+	int sz = s.size();
+	if(sz == 1) {
 		return s;
 	}
-
 	map<char, vector<int>> checkbook;
-	getCheckBook(checkbook, s);
-	int max = 0;
+	getCheckbook(checkbook, s);
 	string res;
-	for(auto it = checkbook.begin(); it != checkbook.end(); it++) {
-		size_t sz = it->second.size();
-		int tmpMax = 0;
-		for(size_t i = 0; i < sz; i++) {
-			for(size_t j = sz - 1; j > i; j--) {
-				int cur = isPalindrome(s, it->second[i], it->second[j]);
-				if (cur > max) {
-					max = cur;
-					res = s.substr(it->second[i], cur);
-				}
-				if (cur == -1) {
-					continue;
-				} else if (cur > tmpMax) {
-					tmpMax = cur;
-				} else {
-					break;
+	int longest = 0;
+	for(int i = 0; i < sz; i++) {
+		char c = s[i];
+		auto it = checkbook.find(c);
+		if(it != checkbook.end()) {
+			int j = it->second.size() - 1;
+			if(longest > it->second[j] - i + 1) {
+				continue;
+			}
+			for(; j >= 0; j--) {
+				int index = it->second[j];
+				if(index >= i) {
+					int len = isPalindrome(s, i, index);
+					if(len > longest) {
+						longest = len;
+						res = s.substr(i, index - i + 1);
+					}
+					if(len > 0) {
+						break;
+					}
 				}
 			}
 		}
+		
 	}
 	return res;
 }
 
+// string longestPalindrome(strig s)
 
 int Q005_longest_palindromic_substring()
 {
