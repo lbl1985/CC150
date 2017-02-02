@@ -78,7 +78,31 @@ string longestPalindrome(string s) {
 	return res;
 }
 
-// string longestPalindrome(strig s)
+// Solution # 2 by using dynamic programming
+// string subLongestPalindrom(const string& str, int s, int e, int** memo) {
+// 	if(s <= e) {
+// 		if (s == e) {
+// 			memo[s][e] = 1;
+// 		}
+// 		if( s == e - 1) {
+// 			if(str[s] == str[e]) {
+// 				memo[s][e] = 2;
+// 			} else {
+// 				memo[s][e] = 0;
+// 			}
+// 		}
+// 		if(str[s] == str[e]) {
+// 			memo[s][e] = subLongestPalindrom(str, s + 1)
+// 		}
+// 	} else {
+// 		return "";
+// 	}
+// }
+
+// string longestPalindrome(strig s){
+// 	int sz = s.size();
+
+// }
 
 int Q005_longest_palindromic_substring()
 {
@@ -92,6 +116,9 @@ int Q005_longest_palindromic_substring()
 	string test3 = "aaaabaaa";
 	string res3 = longestPalindrome(test3);
 	cout << test3.c_str() << endl << res3.c_str() << endl;
+	string test4 = "AABCDCBAZ";
+	string res4 = longestPalindrome(test4);
+	cout << test4.c_str() << endl << res4.c_str() << endl;
 	// cout << test1 << endl << longestPalindrome(test1) << endl;
 	return 0;
 }

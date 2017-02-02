@@ -1,6 +1,6 @@
 set(list
 	# Q001_TwoSum.cpp
-	# Q005_longest_palindromic_substring.cpp
+	Q005_longest_palindromic_substring.cpp
 	# Q021_Merge_Two_Sorted_Lists.cpp
 	# Q025_Reverse_Nodes_in_k_group.cpp
 	# Q045_JumpGameII.cpp
