@@ -10,9 +10,9 @@ void bubbleSort(vector<int>& data)
 	for(int i = 0; i < n; i++) {
 		for(int j = i + 1; j < n; j++) {
 			if(data[i] > data[j]) {
-				int t = data[i];
-				data[i] = data[j];
-				data[j] = t;
+				int t = data[j];
+				data[j] = data[i];
+				data[i] = t;
 			}
 		}
 	}
