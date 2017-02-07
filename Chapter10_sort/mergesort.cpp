@@ -19,7 +19,7 @@ void merge(vector<int>& data, int low, int mid, int high)
 	}
 	int reminder = mid - helperleft;
 	for(int i = 0; i <= reminder; i++) {
-		data[current++] = helper[helperleft];
+		data[current++] = helper[helperleft++];
 	}
 }
 

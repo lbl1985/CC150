@@ -30,7 +30,7 @@ void quicksort(vector<int>& data, int left, int right)
 	if(left < right) {
 		int index = partition(data, left, right);
 		if(left < index) {
-			quicksort(data,left, index - 1);
+			quicksort(data, left, index - 1);
 		}
 		if(index < right) {
 			quicksort(data, index + 1, right);
