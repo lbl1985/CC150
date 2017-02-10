@@ -20,11 +20,11 @@ public:
 
 Node_p* CreateMinBinaryTree_p(int* arr, int start, int end)
 {	
-	if(start <=end)  {
+	if(start <= end) {
 		int mid = (start + end) / 2;
 		Node_p* root = new Node_p(arr[mid]);
 		root->left = CreateMinBinaryTree_p(arr, start, mid - 1);
-		root->right = CreateMinBinaryTree_p(arr, mid+1, end);
+		root->right = CreateMinBinaryTree_p(arr, mid + 1, end);
 		return root;
 	}
 	return NULL;
@@ -77,10 +77,10 @@ void BFT(Node_p* root){
 		queue<Node_p*> q;
 		q.push(root);
 		while(!q.empty()) {
-			Node_p * front = q.front();
+			Node_p* front = q.front();
 			printf("%d ", front->data);
 			q.pop();
-			if(front->left) {
+			if(front->left){
 				q.push(front->left);
 			}
 			if(front->right) {

@@ -15,7 +15,7 @@ int partition(vector<int>& data, int left, int right)
 	int pivot = data[(left + right) / 2];
 	while(left <= right) {
 		while(data[left] < pivot) left++;
-		while(data[right] > pivot) right--;
+		while(pivot < data[right]) right--;
 		if(left <= right) {
 			swap(data[left], data[right]);
 			left++;
