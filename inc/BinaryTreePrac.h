@@ -80,7 +80,7 @@ void BFT(Node_p* root){
 			Node_p* front = q.front();
 			printf("%d ", front->data);
 			q.pop();
-			if(front->left){
+			if(front->left) {
 				q.push(front->left);
 			}
 			if(front->right) {
