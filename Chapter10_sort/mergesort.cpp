@@ -10,7 +10,7 @@ void merge(vector<int>& data, int low, int mid, int high)
 	int helperleft = low;
 	int helperright = mid + 1;
 	int current = low;
-	while(helperleft <= mid && helperright <= high) {
+	while(helperleft <= mid && helperright <= high ) {
 		if(helper[helperleft] <= helper[helperright]) {
 			data[current++] = helper[helperleft++];
 		} else {
