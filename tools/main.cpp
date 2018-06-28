@@ -54,6 +54,8 @@ int main()
     // res = Q001_TwoSum();
     // cout << endl << "Q005_longest_palindromic_substring" << endl;
     // res = Q005_longest_palindromic_substring();
+     cout << endl << "Q006_zigzag_conversion" << endl;
+     res = Q006_zigzag_conversion();
     // cout << endl << "Q045_JumpGameII:" << endl;
     // res = Q021_Merge_Two_Sorted_Lists();
     // cout << endl << "Q021_Merge_Two_Sorted_Lists" << endl;
